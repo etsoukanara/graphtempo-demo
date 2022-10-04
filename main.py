@@ -97,7 +97,7 @@ st.set_page_config(layout='wide')
 
 
 
-#@st.experimental_memo
+@st.experimental_memo
 def read_data(edgesdf,time_var,time_invar,timepoint):
 	# get indexes of edges_df where first column value is not 0.
 	edges = edges_df.loc[:,timepoint][edges_df.loc[:,timepoint]!=0].index.tolist()
