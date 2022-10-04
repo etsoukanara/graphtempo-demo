@@ -1,0 +1,2337 @@
+Source,Target
+Aaron Hertzmann,Henning Biermann
+Ada Wai-Chee Fu,Chun Hing Cai
+Adam Bosworth,Bruce G. Lindsay 0001
+Adam Bosworth,Dan Suciu
+Adam Bosworth,Jennifer Widom
+Adam Bosworth,Michael Stonebraker
+Adam L. Berger,David Cohn
+Adam L. Berger,Rich Caruana
+Adele H. Marshall,Mary Shapcott
+Adele H. Marshall,Peter H. Millard
+Adele H. Marshall,Sally I. McClean
+Adrian G. Bors,Edwin R. Hancock
+Adrian G. Bors,Richard C. Wilson 0001
+Adrian Hilton,Phil Palmer
+Adrian Hilton,Philip F. McLauchlan
+Agapios N. Platis,George A. Vouros
+Akihiro Inokuchi,Hiroshi Motoda
+Akihiro Inokuchi,Takashi Washio
+Alan Bundy,Toby Walsh
+Alan Fern,Robert Givan
+Alan L. Yuille,James M. Coughlan
+Alan L. Yuille,Song Chun Zhu
+Alan L. Yuille,Ying Nian Wu
+Alberto Corni,Maurizio Vincini
+Alberto Corni,Michele Melchiori
+Alberto Finzi,Fiora Pirri
+Alberto Finzi,Raymond Reiter
+Alberto O. Mendelzon,Alejandro A. Vaisman
+Alberto Paccanaro,Geoffrey E. Hinton
+Aleksandar Lazarevic,Tim Fiez
+Aleksandar Lazarevic,Zoran Obradovic
+Alessandro Cucchiarelli,Constantine D. Spyropoulos
+Alessandro Cucchiarelli,Georgios Paliouras
+Alessandro Cucchiarelli,Paola Velardi
+Alessandro Cucchiarelli,Vangelis Karkaletsis
+Alessandro Sperduti,Nicola Valdambrini
+Alexander C. Berg,Dror Weitz
+Alexander C. Berg,Steve Chien
+Alexander Hinneburg,Charu C. Aggarwal
+Alexander Hinneburg,Daniel A. Keim
+Alexander J. Smola,Bernhard Schölkopf
+Alexander J. Smola,Sebastian Mika
+Alexander J. Smola,Takashi Onoda
+Alexander Maedche,Rudi Studer
+Alexander Maedche,York Sure
+Alexander S. Szalay,Ani Thakar
+Alexander S. Szalay,Donald R. Slutz
+Alexander S. Szalay,Jim Gray 0001
+Alexander S. Szalay,Peter Z. Kunszt
+Alexander S. Szalay,Robert J. Brunner
+Alexander Vaschillo,Artyom Shaposhnikov
+Alexander Vaschillo,Dmitry Vasilevsky
+Alexandros Labrinidis,Nick Roussopoulos
+Alexey Tsymbal,Seppo Puuronen
+Alfred Inselberg,Tova Avidan
+Ali Can,Charles V. Stewart
+Ali Can,Howard L. Tanenbaum
+Ali Rahimi,Michael Harville
+Ali Rahimi,Trevor Darrell
+Alin Deutsch,Arnaud Sahuguet
+Alin Deutsch,Val Tannen
+Allison L. Powell,Charles L. Viles
+Allison L. Powell,James C. French
+Allison L. Powell,James P. Callan
+Allison L. Powell,Margaret E. Connell
+Alok Gupta,Gareth Funka-Lea
+Alok Gupta,Richard D. White
+Alok Gupta,Sandra Simon Halliburton
+Alon Y. Levy,Ewa Jaslikowska
+Alon Y. Levy,Igor Tatarinov
+Alon Y. Levy,Jing Su
+Alon Y. Levy,Marc Friedman
+Alon Y. Levy,Qiong Chen
+Alon Y. Levy,Rachel Pottinger
+Alon Y. Levy,Shiori Betzler
+Alon Y. Levy,Stefan Saroiu
+Alon Y. Levy,Wai Tak Theodora Yeung
+Amanda Clare,Luc Dehaspe
+Amanda Spink,Michelle Sollenberger
+Amanda Spink,Stephanie Milchak
+Amar Gupta,Sanjeev Vadhavkar
+Amedeo Cesta,Angelo Oddi
+Amedeo Cesta,Stephen F. Smith
+Amir Netz,Jeff Bernhardt
+Amir Netz,Usama M. Fayyad
+Amit Adam,Ehud Rivlin
+Amit Adam,Ilan Shimshoni
+Amit Shukla,Jeffrey F. Naughton
+Amit Shukla,Prasad Deshpande
+Amit Somani,Markos Zaharioudakis
+Amy C. Larson,Richard M. Voyles
+Anastasios Manessis,Adrian Hilton
+Anastasios Manessis,Phil Palmer
+Anastasios Manessis,Philip F. McLauchlan
+Andreas Boehmer,Matthias Jarke
+Andreas Herzig,Dominique Longin
+Andreas Herzig,Jérôme Lang
+Andreas Herzig,Thomas Polacsek
+Andreas Hotho,Alexander Maedche
+Andreas Hotho,Rudi Studer
+Andreas Hotho,York Sure
+Andreas Karwath,Amanda Clare
+Andreas Karwath,Luc Dehaspe
+Andreas Tuerk,Karen Sparck Jones
+Andreas Tuerk,Philip C. Woodland
+Andreas Tuerk,Pierre Jourlin
+Andreas Tuerk,Sue E. Johnson
+Andrew Blake 0001,Ian D. Reid 0001
+Andrew C. Jones,Frank A. Bisby
+Andrew C. Jones,Richard J. White
+Andrew C. Jones,Suzanne M. Embury
+Andrew G. Barto,Michael T. Rosenstein
+Andrew Lim 0001,Ang Juay Chin
+Andrew Lim 0001,Qi Zhang Liu
+Andrew McCallum,Fernando C. N. Pereira
+Andrew McCallum,Kamal Nigam
+Andrew McCallum,Lyle H. Ungar
+Andrew Philpot,Cyrus Shahabi
+Andrew Tomkins,Eli Upfal
+Andrew Turpin,Benjamin Chan
+Andrew Turpin,Dale Kraemer
+Andrew Turpin,Daniel Olson
+Andrew Turpin,Susan Price
+Andrew W. Crapo,Laurie B. Waisel
+Andrew W. Crapo,Thomas R. Willemain
+Andrew W. Crapo,William A. Wallace
+Andrew W. Moore 0001,David Cohn
+Andrew Y. Ng,Stuart J. Russell
+Andrey Balmin,Yannis Papakonstantinou
+Andries Kruger,Christian W. Omlin
+Andries Kruger,Eric J. Glover
+Andries Kruger,Frans Coetzee
+Andries Kruger,Gary William Flake
+Andries Kruger,Steve Lawrence
+Andrzej Cichocki,Dimitrios Georgakopoulos
+Andrzej Cichocki,Marek Rusinkiewicz
+Andrzej Skowron,Shusaku Tsumoto
+Andy Tsai,Alan S. Willsky
+Andy Tsai,Anthony J. Yezzi
+Angelo Oddi,Stephen F. Smith
+Ani Thakar,Donald R. Slutz
+Ani Thakar,Jim Gray 0001
+Ani Thakar,Robert J. Brunner
+Anjali Dhond,Amar Gupta
+Anjali Dhond,Sanjeev Vadhavkar
+Ann B. Lee,David Mumford
+Anni Coden,Dragomir R. Radev
+Antal van den Bosch,Jakub Zavrel
+Anthony G. Cohn,Paolo Torrini
+Anthony J. Yezzi,Alan S. Willsky
+Anthony K. H. Tung,Jean Hou
+Anthony K. H. Tung,Raymond T. Ng
+Antonio Ciampi,Djamel A. Zighed
+Antonio Ciampi,Jérémy Clech
+Antonio Ciampi,Yves Lechevallier
+Antonio Corral,Michael Vassilakopoulos
+Antonio Corral,Yannis Manolopoulos
+Antonio Corral,Yannis Theodoridis
+Antonio Haro,Irfan A. Essa
+Antonio Haro,Myron Flickner
+Antony Francis Bowers,Christophe G. Giraud-Carrier
+Antony Francis Bowers,John W. Lloyd
+Arie Shoshani,Christian S. Jensen
+Arif Tumer,Catriel Beeri
+Aristides Gionis,Cheng Yang
+Aristides Gionis,Jeffrey D. Ullman
+Aristides Gionis,Piotr Indyk
+Aristides Gionis,Rajeev Motwani 0001
+Aristides Gionis,Rajeev Rastogi
+Arnaud Sahuguet,Val Tannen
+Arno J. Knobbe,Arno Siebes
+Arno J. Knobbe,Hendrik Blockeel
+Arno Siebes,Adalbert F. X. Wilhelm
+Arno Siebes,Hendrik Blockeel
+Arnold W. M. Smeulders,Rein van den Boomgaard
+Arnold W. M. Smeulders,Theo Gevers
+Arnon Amir,Brian Blanchard
+Arnon Amir,Dragutin Petkovic
+Arnon Amir,Dulce B. Ponceleon
+Arnon Rosenthal,Edward Sciore
+Artur Bykowski,Christophe Rigotti
+Arturo Crespo,Hector Garcia-Molina
+Artyom Shaposhnikov,Dmitry Vasilevsky
+Arvind Rajendran,David Maier 0001
+Asaf Adi,David Botzer
+Asaf Adi,Tali Yatzkar-Haham
+Ashraf Aboulnaga,Jeffrey F. Naughton
+Ashutosh Garg,Thomas S. Huang
+Astro Teller,Manuela M. Veloso
+Asuman Dogac,Arif Tumer
+Asuman Dogac,Catriel Beeri
+Asuman Dogac,Yusuf Tambag
+Attilio Giordana,Lorenza Saitta
+Attilio Giordana,Marco Botta
+Attilio Giordana,Michèle Sebag
+Atul Adya,Barbara Liskov
+Atul Adya,Patrick E. O'Neil
+Austin Tate,Jeff Dalton 0002
+Austin Tate,John Levine
+Avi Pfeffer,Daphne Koller
+Ayhan Demiriz,John Shawe-Taylor
+Barbara Liskov,Patrick E. O'Neil
+Barbara M. Smith,Kostas Stergiou 0001
+Barbara M. Smith,Toby Walsh
+Barry Smyth,Elizabeth McKenna
+Bart Baesens,Bart De Moor
+Bart Baesens,Dirk Van den Poel
+Bart Baesens,Guido Dedene
+Bart Baesens,Jan Vanthienen
+Bart Baesens,Johan A. K. Suykens
+Bart Baesens,Tony Van Gestel
+Bart De Moor,Guido Dedene
+Bart Goethals,Geert Wets
+Bart Goethals,Gilbert Swinnen
+Bart Goethals,Koen Vanhoof
+Bart Selman,Henry A. Kautz
+Behzad Mortazavi-Asl,Hua Zhu
+Ben Kao,David Wai-Lok Cheung
+Benedicte Bascle,Bernhard Geiger
+Benedicte Bascle,Michael H. Loser
+Benedicte Bascle,Nassir Navab
+Benedicte Bascle,Russell H. Taylor
+Benjamin Chan,Dale Kraemer
+Benjamin Chan,Daniel Olson
+Benjamin Korvemaker,Russell Greiner
+Bernhard Braunmüller,Jörg Sander 0001
+Bernhard Braunmüller,Markus M. Breunig
+Bernhard Braunmüller,Martin Ester
+Bernhard Geiger,Russell H. Taylor
+Bernhard Pfahringer,Christophe G. Giraud-Carrier
+Bernhard Schölkopf,Alexander J. Smola
+Bernhard Schölkopf,Sebastian Mika
+Bernhard Schölkopf,Takashi Onoda
+Bernhard Seeger,Caetano Traina Jr.
+Bernhard Seeger,Christos Faloutsos
+Bertram Ludäscher,Maryann E. Martone
+Bertram Ludäscher,Pavel Velikhov
+Bertram Ludäscher,Yannis Papakonstantinou
+Bertrand Thirion,Benedicte Bascle
+Bertrand Thirion,Nassir Navab
+Bettina Kemme,Gustavo Alonso
+Betty Salzberg,David B. Lomet
+Betty Salzberg,Manuel Barrena García
+Beverly Park Woolf,Carole R. Beal
+Bharat Kumar,Gang Zhou
+Bin Lan,Stéphane Bressan
+Bin Zhang 0004,George Forman
+Bing Liu 0001,Ching Kian Wong
+Bing Liu 0001,Philip S. Yu
+Bing Liu 0001,Wynne Hsu
+Binyamin Rosenfeld,Jonathan Stoppi
+Binyamin Rosenfeld,Yonatan Schler
+Bo Xu 0001,Sam Chamberlain
+Bogdan Matei,Peter Meer
+Boris Chidlovskii,Jon Ragetli
+Boris Chidlovskii,Maarten de Rijke
+Bradley S. Peterson,Lawrence H. Staib
+Brandon Bennett,Anthony G. Cohn
+Brandon Bennett,Paolo Torrini
+Brendan Kitts,David Freed
+Brendan Kitts,Martin Vrieze
+Brian Amento,Loren G. Terveen
+Brian Amento,William C. Hill
+Brian Blanchard,Dragutin Petkovic
+Brian Mirtich,David Ratajczak
+Brian Mirtich,Kathy Ryall
+Brian P. Gerkey,Maja J. Mataric
+Brock Barber,Howard J. Hamilton
+Bruce A. Draper,David A. Peterson
+Bruce Blumberg,Gerald E. Schneider
+Bruce G. Lindsay 0001,Berthold Reinwald
+Bruce G. Lindsay 0001,Dan Suciu
+Bruce G. Lindsay 0001,Hamid Pirahesh
+Bruce G. Lindsay 0001,Jennifer Widom
+Bruce G. Lindsay 0001,Michael Stonebraker
+Bryan Singer,Manuela M. Veloso
+Caetano Traina Jr.,Bernhard Seeger
+Caetano Traina Jr.,Christos Faloutsos
+Carla P. Gomes,Bart Selman
+Carla P. Gomes,Henry A. Kautz
+Carlos Alonso González,Henrik Boström
+Carlos Barron,Ioannis A. Kakadiaris
+Carlos Domingo,Osamu Watanabe 0001
+Carlos Ordonez 0001,Paul Cereghini
+Carlos Soares,Pavel Brazdil
+Carlotta Domeniconi,Dimitrios Gunopulos
+Carlotta Domeniconi,Jing Peng
+Cen Li,Gautam Biswas
+Cenk Kaynak,Ethem Alpaydin
+Chad Carson,Joseph M. Hellerstein
+Chandra Kambhamettu,Dmitry B. Goldgof
+Charles E. Thorpe,Sebastian Thrun
+Charles Lee Isbell Jr.,David P. Kormann
+Charles Lee Isbell Jr.,Michael J. Kearns
+Charles Lee Isbell Jr.,Peter Stone
+Charles Lee Isbell Jr.,Satinder P. Singh
+Charles V. Stewart,Howard L. Tanenbaum
+Charles W. Anderson,Bruce A. Draper
+Charles W. Anderson,David A. Peterson
+Charles Wiecha,Julie MacNaught
+Charu C. Aggarwal,Daniel A. Keim
+Charu C. Aggarwal,Philip S. Yu
+Chen (Cherie) Ding,Chi-Hung Chi
+Chen Li 0001,Edward Y. Chang
+Cheng Yang,Tomás Lozano-Pérez
+ChengXiang Zhai,David A. Evans 0001
+ChengXiang Zhai,Peter Jansen
+Cheryl E. Martin,Ryan McKay
+Chi-Yuen Ng,Ben Kao
+Chi-Yuen Ng,David Wai-Lok Cheung
+Ching Kian Wong,Philip S. Yu
+Chitra Dorai,Nalini K. Ratha
+Chitra Dorai,Ruud M. Bolle
+Chong Leng Goh,Stéphane Bressan
+Chris Buckley,Ellen M. Voorhees
+Chris Drummond,Robert C. Holte
+Chris Olston,Jennifer Widom
+Christian Barillot,Patrick Pérez
+Christian Böhm,Bernhard Braunmüller
+Christian Böhm,Jörg Sander 0001
+Christian Böhm,Markus M. Breunig
+Christian Lebiere,Marsha C. Lovett
+Christian S. Jensen,Curtis E. Dyreson
+Christian S. Jensen,Mario Alberto López
+Christian S. Jensen,Richard T. Snodgrass
+Christian S. Jensen,Scott T. Leutenegger
+Christian S. Jensen,Yannis Theodoridis
+Christoph Bregler,Aaron Hertzmann
+Christoph Bregler,Henning Biermann
+Christoph Quix,Diego Calvanese
+Christoph Quix,Enrico Franconi
+Christoph Quix,Maurizio Lenzerini
+Christoph Quix,Panos Vassiliadis
+Christoph Quix,Spyros Ligoudistianos
+Christoph Quix,Yannis Vassiliou
+Christophe Bobineau,Luc Bouganim
+Christophe Bobineau,Patrick Valduriez
+Christophe Bobineau,Philippe Pucheral
+Christophe Druet,Damien Ernst
+Christophe Druet,Louis Wehenkel
+Christophe G. Giraud-Carrier,John W. Lloyd
+Christophe Vestri,Frederic Devernay
+Christopher A. Welty,Jessica Jenkins
+Christopher H. Brooks,Edmund H. Durfee
+Christopher K. I. Williams,Matthias W. Seeger
+Christopher Meek,Steven White
+Christopher R. Palmer,Christos Faloutsos
+Christos Faloutsos,Alexandros Biliris
+Christos Faloutsos,Bernhard Seeger
+Christos Faloutsos,Caetano Traina Jr.
+Christos Faloutsos,David Nagle
+Christos Faloutsos,Gregory R. Ganger
+Christos Faloutsos,Katia P. Sycara
+Christos Faloutsos,Terry R. Payne
+Christos Papatheodorou,Constantine D. Spyropoulos
+Christos Papatheodorou,Vangelis Karkaletsis
+Chuck Freiwald,Eugene Inseok Chong
+Chuck Freiwald,Mahesh Jagannath
+Chuck Freiwald,Samuel DeFazio
+Chung-Min Chen,Claudio Petrone
+Chung-Min Chen,Marc Pucci
+Chung-Min Chen,Marco Mesiti
+Chung-Min Chen,Munir Cochinwala
+Chung-Min Chen,Patrizia Santa
+Chung-Min Chen,Sunil Samtani
+Chung-Sheng Li,John R. Smith
+Chung-Sheng Li,Lawrence D. Bergman
+Chung-Sheng Li,Vittorio Castelli
+Cindy Yoshiko Shirata,Takao Terano
+Clark F. Olson,Larry H. Matthies
+Clark F. Olson,Marcel Schoppers
+Clark F. Olson,Mark W. Maimone
+Claudio Eccher,Andrea Sboner
+Claudio Eccher,Stefano Forti 0001
+Claudio Petrone,Marc Pucci
+Claudio Petrone,Marco Mesiti
+Claudio Petrone,Patrizia Santa
+Claudio Petrone,Sunil Samtani
+Claus B. Madsen,Adam W. Hoover
+Colin Campbell,Alexander J. Smola
+Colin Campbell,Nello Cristianini
+Constantine Domashnev,Martin Van Velsen
+Constantine Domashnev,Sean Owens
+Cordelia Schmid,Radu Horaud
+Corinna Cortes,Anne Rogers
+Corinna Cortes,Daryl Pregibon
+Corinna Cortes,Kathleen Fisher
+Craig A. Knoblock,Andrew Philpot
+Craig A. Knoblock,Cyrus Shahabi
+Craig A. Knoblock,Ion Muslea
+Craig A. Knoblock,Steven Minton
+Craig A. Tovey,Sven Koenig
+Craig Boutilier,Mikhail Soutchanski
+Craig Boutilier,Raymond Reiter
+Craig Boutilier,Sebastian Thrun
+Cui Yu,Stéphane Bressan
+Cyrus Shahabi,Adil Faisal
+Céline Robardet,Fabien Feschet
+Céline Robardet,Nicolas Nicoloyannis
+Dale Kraemer,Daniel Olson
+Damien Ernst,Louis Wehenkel
+Dan A. Simovici,Dana Cristofor
+Dan A. Simovici,Laurentiu Cristofor
+Dan DiPasquo,Craig A. Knoblock
+Dan DiPasquo,Cyrus Shahabi
+Dan DiPasquo,Ion Muslea
+Dan DiPasquo,Steven Minton
+Dan Pelleg,Andrew W. Moore 0001
+Dan Roth,Dmitry Zelenko
+Dan Suciu,Jennifer Widom
+Dan Suciu,Victor Vianu
+Dana Cristofor,Laurentiu Cristofor
+Dani Goldberg,Maja J. Mataric
+Daniel Barbará,Ping Chen 0001
+Daniel Barbará,Rajni Goel
+Daniel Barbará,Sushil Jajodia
+Daniel Borrajo,Pedro Isasi
+Daniel C. Zilio,Alan Skelley
+Daniel C. Zilio,Guy M. Lohman
+Daniel D. Morris,Takeo Kanade
+Daniel F. Lieuwen,Gavin Michael
+Daniel F. Lieuwen,Hector Urroz
+Daniel F. Lieuwen,Joann J. Ordille
+Daniel F. Lieuwen,Julian Orbach
+Daniel F. Lieuwen,Lalit Garg
+Daniel F. Lieuwen,Luke Tucker
+Daniel F. Lieuwen,Michael Holder
+Daniel F. Lieuwen,Qian Ye
+Daniel F. Lieuwen,Robert M. Arlein
+Daniel Freedman,Michael S. Brandstein
+Daniel Marcu,Kenji Yamada
+Daniela Florescu,Dan Olteanu
+Daniela Florescu,Dennis E. Shasha
+Daniela Florescu,Donald Kossmann
+Daniela Florescu,Eric Simon
+Daniela Florescu,Florian Xhumari
+Daniela Florescu,Patrick Valduriez
+Daniela Florescu,Valérie Issarny
+Daniela Pucci de Farias,Benjamin Van Roy
+Daphne Koller,Gautam Biswas
+Daphne Koller,Ronald Parr
+Dara Koozekanani,Cynthia Roberts
+Dara Koozekanani,Kim L. Boyer
+Daryl Pregibon,Anne Rogers
+David A. Basin,Alan Bundy
+David A. Grossman,Ophir Frieder
+David A. Maluf,Robin D. Morris
+David Anderson 0002,Brian Mirtich
+David Anderson 0002,David Ratajczak
+David Anderson 0002,Emily Anderson
+David Anderson 0002,Joe Marks
+David Anderson 0002,Kathy Ryall
+David Anderson 0002,Neal Lesh
+David Apfelbaum,Dieter Fox
+David Apfelbaum,Håkan L. S. Younes
+David Apfelbaum,Mark Moors
+David Apfelbaum,Sebastian Thrun
+David Apfelbaum,Wolfram Burgard
+David B. Lomet,Manuel Barrena García
+David B. Lomet,Sanjay Agrawal 0001
+David B. Lomet,Thomas Baby
+David Billington,Guido Governatori
+David Billington,Michael J. Maher
+David Botzer,Tali Yatzkar-Haham
+David Buttler,Henrique Paques
+David Buttler,Wei Han
+David Buttler,Wei Tang 0005
+David C. Han,Cheryl E. Martin
+David C. Han,Dung N. Lam
+David C. Han,Ryan McKay
+David C. Parkes,Lyle H. Ungar
+David Cohn,Andrew McCallum
+David Cohn,Huan Chang
+David D. Jensen,James Allan
+David D. Lewis,Amit Singhal 0001
+David D. Lewis,Robert E. Schapire
+David D. Lewis,Yoram Singer
+David Freed,Martin Vrieze
+David Furcy,Sven Koenig
+David Heckerman,Christopher Meek
+David Heckerman,Steven White
+David J. DeWitt,Feng Tian
+David J. DeWitt,Yuan Wang
+David J. Fleet,David J. Heeger
+David J. Harper,Peter Lowit
+David M. Pennock,Andries Kruger
+David M. Pennock,Eric Horvitz
+David M. Pennock,Finn Årup Nielsen
+David M. Pennock,Robert Krovetz
+David McGee,Hector J. Levesque
+David McGee,Philip R. Cohen
+David McKoskey,Daniel Boley
+David P. Kormann,Peter Stone
+David P. Kormann,Satinder P. Singh
+David Page,Jeremy D. Glasner
+David Page,Joseph Bockhorst
+David Page,Jude W. Shavlik
+David Pye,David Sinclair
+David Pye,Kenneth R. Wood
+David Ratajczak,Kathy Ryall
+David Sinclair,Kenneth R. Wood
+David Wai-Lok Cheung,Ben Kao
+David Wai-Lok Cheung,Bo Zhou
+David Wai-Lok Cheung,Lian Wang
+Dawn J. Lawrie,David D. Jensen
+Dawn J. Lawrie,James Allan
+Dawn J. Lawrie,Paul Ogilvie
+Dean F. Hougen,James R. Slagle
+Dean F. Hougen,Maria L. Gini
+Deborah L. McGuinness,James Rice
+Deborah L. McGuinness,Richard Fikes
+Deborah L. McGuinness,Steve Wilder
+Deborah R. Carvalho,Alex Alves Freitas
+Dennis E. Shasha,Bruce A. Shapiro
+Dennis E. Shasha,Cathy H. Wu
+Dennis E. Shasha,Eric Simon
+Dennis Koelma,Arnold W. M. Smeulders
+Dennis Koelma,Theo Gevers
+Diane J. Litman,Marilyn A. Walker
+Diane Lambert,José C. Pinheiro
+Diego Calvanese,Enrico Franconi
+Diego Calvanese,Giuseppe De Giacomo
+Diego Calvanese,Maurizio Lenzerini
+Diego Calvanese,Moshe Y. Vardi
+Diego Calvanese,Panos Vassiliadis
+Diego Calvanese,Spyros Ligoudistianos
+Diego Calvanese,Yannis Vassiliou
+Dieter Fox,Håkan L. S. Younes
+Dieter Fox,Mark Moors
+Dieter Fox,Sebastian Thrun
+Dieter Fox,Wolfram Burgard
+Dieter Merkl,Andreas Rauber
+Dieter Pfoser,Christian S. Jensen
+Dieter Pfoser,Yannis Theodoridis
+Dimitrios Georgakopoulos,Andrzej Cichocki
+Dimitrios Georgakopoulos,Donald Baker
+Dimitrios Georgakopoulos,Hans Schuster
+Dimitrios Georgakopoulos,Marek Rusinkiewicz
+Dimitrios Gunopulos,Carlotta Domeniconi
+Dimitrios Gunopulos,George Kollios
+Dimitrios Gunopulos,Jing Peng
+Dimitris Achlioptas,Bart Selman
+Dimitris Achlioptas,Carla P. Gomes
+Dimitris Achlioptas,Henry A. Kautz
+Dimitris N. Metaxas,Pascal Fua
+Dimitris N. Metaxas,Yvan G. Leclerc
+Dimitris Samaras,Dimitris N. Metaxas
+Dimitris Samaras,Pascal Fua
+Dimitris Samaras,Yvan G. Leclerc
+Dinesh Keshwani,Peter Z. Revesz
+Dirk Van den Poel,Bart De Moor
+Dirk Van den Poel,Guido Dedene
+Dirk Van den Poel,Jan Vanthienen
+Djamel A. Zighed,Jérémy Clech
+Djamila Sam-Haroud,Boi Faltings
+Dmitry Pavlov,Darya Chudova
+Doina Caragea,Adrian Silvescu
+Doina Precup,Richard S. Sutton
+Doina Precup,Satinder P. Singh
+Domenico Beneventano,Alberto Corni
+Domenico Beneventano,Maurizio Vincini
+Domenico Beneventano,Michele Melchiori
+Domenico Beneventano,Silvana Castano
+Domenico Beneventano,Sonia Bergamaschi
+Dominic Létourneau,François Bélanger
+Dominic Létourneau,Jonathan Audet
+Dominique Béréziat,Isabelle Herlin
+Dominique Béréziat,Laurent Younes
+Dominique Longin,Thomas Polacsek
+Donald Baker,Andrzej Cichocki
+Donald Baker,Dimitrios Georgakopoulos
+Donald Baker,Marek Rusinkiewicz
+Donald Kossmann,Dan Olteanu
+Donald Kossmann,Florian Xhumari
+Donald R. Slutz,Jim Gray 0001
+Donald R. Slutz,Robert J. Brunner
+Donko Donjerkovic,Yannis E. Ioannidis
+Dorian Suc,Ivan Bratko
+Dorin Comaniciu,Heinrich Niemann
+Dorin Comaniciu,Peter Meer
+Dorin Marcu,Cristian Levcovici
+Dorin Marcu,Florin Ciucu
+Dorin Marcu,Michael Bowman
+Dorin Marcu,Ping Shyr
+Doug Beeferman,Adam L. Berger
+Douglas A. Talbert,Douglas H. Fisher
+Dragan Gamberger,Nada Lavrac
+Dragomir Anguelov,Piotr Indyk
+Dragomir Anguelov,Rajeev Motwani 0001
+Dulce B. Ponceleon,Brian Blanchard
+Dulce B. Ponceleon,Dragutin Petkovic
+Dung N. Lam,Cheryl E. Martin
+Dung N. Lam,Ryan McKay
+Eamonn J. Keogh,Michael J. Pazzani
+Edith Cohen,Aristides Gionis
+Edith Cohen,Cheng Yang
+Edith Cohen,Jeffrey D. Ullman
+Edith Cohen,Piotr Indyk
+Edith Cohen,Rajeev Motwani 0001
+Edith Cohen,Shinji Fujiwara
+Edmond Boyer,Sylvain Petitjean
+Edna Grossman,Dimitrios Gunopulos
+Edward Hung,Ben Kao
+Edward Hung,David Wai-Lok Cheung
+Edwin R. Hancock,Richard C. Wilson 0001
+Efstathios Hadjidemetriou,Michael D. Grossberg
+Ehud Rivlin,Ilan Shimshoni
+Einat Amitay,Cécile Paris
+Eitan Sharon,Ronen Basri
+Elisa Bertino,Ahmed K. Elmagarmid
+Elisa Bertino,Moustafa A. Hammad
+Elisa Bertino,Walid G. Aref
+Elke A. Rundensteiner,Hong Su
+Elke A. Rundensteiner,Kajal T. Claypool
+Elke A. Rundensteiner,Keiji Oenoki
+Elke A. Rundensteiner,Li Chen 0016
+Ellen M. Voorhees,Dawn M. Tice
+Elly Winner,Manuela M. Veloso
+Elvira Schaefer,Andreas Boehmer
+Elvira Schaefer,Matthias Jarke
+Emily Anderson,Brian Mirtich
+Emily Anderson,David Ratajczak
+Emily Anderson,Joe Marks
+Emily Anderson,Kathy Ryall
+Emily Anderson,Neal Lesh
+Enrico Blanzieri,Andrea Sboner
+Enrico Blanzieri,Claudio Eccher
+Enrico Blanzieri,Stefano Forti 0001
+Enrico Franconi,Panos Vassiliadis
+Enrico Franconi,Spyros Ligoudistianos
+Enrico Franconi,Yannis Vassiliou
+Enrico Nardelli,Markus Schneider 0001
+Eraldo Ribeiro,Edwin R. Hancock
+Eric Chown,Thomas G. Dietterich
+Eric J. Glover,Christian W. Omlin
+Eric J. Glover,Gary William Flake
+Eric J. Glover,Steve Lawrence
+Eric N. Mortensen,William A. Barrett
+Eric W. Brown 0001,Anni Coden
+Eric W. Brown 0001,Dragomir R. Radev
+Erik F. Tjong Kim Sang,Steven Gillis
+Erik G. Miller,Nicholas E. Matsakis
+Erik G. Miller,Paul A. Viola
+Erik Riedel,Christos Faloutsos
+Erik Riedel,David Nagle
+Erik Riedel,Gregory R. Ganger
+Erik S. Steinmetz,Christopher L. Johnson
+Erin L. Allwein,Robert E. Schapire
+Erin L. Allwein,Yoram Singer
+Ernesto Damiani,Pierangela Samarati
+Ernesto Damiani,Sabrina De Capitani di Vimercati
+Ernesto Damiani,Stefano Paraboschi
+Esma Aïmeur,Mathieu Vézeau
+Etienne G. Huot,Isaac Cohen
+Etienne G. Huot,Isabelle Herlin
+Eugene Inseok Chong,Mahesh Jagannath
+Eugene Inseok Chong,Samuel DeFazio
+Eugene J. Shekita,Berthold Reinwald
+Eugene J. Shekita,Bruce G. Lindsay 0001
+Eugene J. Shekita,Hamid Pirahesh
+Eugene J. Shekita,Michael J. Carey 0001
+Ewa Jaslikowska,Jing Su
+Ewa Jaslikowska,Wai Tak Theodora Yeung
+Fabien Feschet,Nicolas Nicoloyannis
+Fabrice Guillet,Henri Briand
+Fabrice Guillet,Rémi Lehn
+Fabrice Rossi,Frédérick Vautrain
+Fabrizio Angiulli,Luigi Palopoli
+Fabrizio Angiulli,Rachel Ben-Eliyahu-Zohary
+Fabrizio Sebastiani 0001,Alessandro Sperduti
+Fabrizio Sebastiani 0001,Nicola Valdambrini
+Fan Jiang,Michael L. Littman
+Fanny Wattez,Christian Fiegel
+Fanny Wattez,Guy Ferran
+Fanny Wattez,Sophie Cluet
+Fanny Wattez,Véronique Benzaken
+Farhad Hussain,Huan Liu 0001
+Fei Chen,Diane Lambert
+Fei Chen,José C. Pinheiro
+Fei Sha,Georges Gardarin
+Fei Sha,Laurent Némirovski
+Feng Tian,Yuan Wang
+Finn Årup Nielsen,Andries Kruger
+Fiora Pirri,Raymond Reiter
+Flip Korn,Christos Faloutsos
+Flip Korn,Nick Koudas
+Florent Masseglia,Maguelonne Teisseire
+Florent Masseglia,Pascal Poncelet
+Florian Waas,César A. Galindo-Legaria
+Florian Xhumari,Dan Olteanu
+Floriana Esposito,Giovanni Semeraro
+Floriana Esposito,Nicola Fanizzi
+Floriana Esposito,Stefano Ferilli
+Florin Ciucu,Cristian Levcovici
+Floris Geerts,Bart Kuijpers
+Fosca Giannotti,Giuseppe Manco 0001
+Francesco Caruso,Gail Lalk
+Francesco Caruso,Munir Cochinwala
+Francesco Caruso,Paolo Missier
+Francesco Caruso,Uma Ganapathy
+Franck Thollard,Colin de la Higuera
+Franck Thollard,Pierre Dupont
+Frank Dellaert,Charles E. Thorpe
+Frank Dellaert,Sebastian Thrun
+Frank Dellaert,Steven M. Seitz
+Frank Neven,Thomas Schwentick
+Frank Ramsak,Klaus Elhardt
+Frank Ramsak,Martin Zirkel
+Frank Ramsak,Robert Fenk
+Frank Ramsak,Rudolf Bayer
+Frank Ramsak,Volker Markl
+Frans Coetzee,Andries Kruger
+Frans Coetzee,Christian W. Omlin
+Frans Coetzee,David M. Pennock
+Frans Coetzee,Eric J. Glover
+Frans Coetzee,Finn Årup Nielsen
+Frans Coetzee,Gary William Flake
+Frans Coetzee,Marco Gori
+Frans Coetzee,Robert Krovetz
+Frans Coetzee,Steve Lawrence
+François Llirbat,Bharat Kumar
+François Llirbat,Dennis E. Shasha
+François Llirbat,Gang Zhou
+François Llirbat,Kenneth A. Ross
+François Llirbat,Radu Preotiuc-Pietro
+François Michaud,Dominic Létourneau
+François Michaud,François Bélanger
+François Michaud,Jonathan Audet
+Françoise Fabret,Dennis E. Shasha
+Françoise Fabret,François Llirbat
+Françoise Fabret,Kenneth A. Ross
+Françoise Fabret,Patrick Valduriez
+Françoise Fabret,Radu Preotiuc-Pietro
+Frédéric Moal,Christel Vrain
+Frédéric Moal,Teddy Turmeaux
+Fumiyo Fukumoto,Yoshimi Suzuki
+Gabriel J. Ferrer,Glenn S. Wasson
+Gabriel J. Ferrer,James P. Gunderson
+Gabriela Mußler,Siegfried Handschuh
+Gabriela Mußler,Thomas M. Mann
+Gail Lalk,Paolo Missier
+Gang Liu,Robert M. Haralick
+Gareth Funka-Lea,Richard D. White
+Gareth Funka-Lea,Sandra Simon Halliburton
+Gareth J. F. Jones,Peter J. Brown
+Gary R. Bradski,Michael H. Chu
+Gary R. Bradski,Vadim Pisarevsky
+Gary Valentin,Alan Skelley
+Gary Valentin,Daniel C. Zilio
+Gary Valentin,Guy M. Lohman
+Gary Valentin,Michael Zuliani
+Gary William Flake,Andries Kruger
+Gary William Flake,Christian W. Omlin
+Gary William Flake,David M. Pennock
+Gary William Flake,Finn Årup Nielsen
+Gary William Flake,Robert Krovetz
+Gary William Flake,Steve Lawrence
+Gautam Das 0001,Heikki Mannila
+Gavin Michael,Julian Orbach
+Gavin Michael,Luke Tucker
+Gavin Michael,Qian Ye
+Gavin Michael,Robert M. Arlein
+Ge Cong,Bahram Parvin
+Geoffrey Egnal,Richard P. Wildes
+Geoffrey J. Gordon,Andrew W. Moore 0001
+Georg Lausen,Heinrich Spiecker
+Georg Lausen,Iztok Savnik
+Georg Lausen,Sebastian Hein
+George Kollios,Carlotta Domeniconi
+George Lapis,Hamid Pirahesh
+George Lapis,Monica Urata
+Georges Gardarin,Laurent Némirovski
+Georgios Paliouras,Christos Papatheodorou
+Georgios Paliouras,Constantine D. Spyropoulos
+Georgios Paliouras,Vangelis Karkaletsis
+Georgios Petasis,Alessandro Cucchiarelli
+Georgios Petasis,Constantine D. Spyropoulos
+Georgios Petasis,Georgios Paliouras
+Georgios Petasis,Paola Velardi
+Georgios Petasis,Vangelis Karkaletsis
+Gerhard Paass,Jörg Kindermann
+Gerhard Weikum,Achim Kraiss
+German K. M. Cheung,Mark Holler
+German K. M. Cheung,Takeo Kanade
+German Shegalov,Gerhard Weikum
+German Shegalov,Wolfgang Wonner
+Gheorghe Muresan,David J. Harper
+Gheorghe Muresan,Peter Lowit
+Gheorghe Tecuci,Cristian Levcovici
+Gheorghe Tecuci,Dorin Marcu
+Gheorghe Tecuci,Florin Ciucu
+Gheorghe Tecuci,Michael Bowman
+Gheorghe Tecuci,Mihai Boicu
+Gheorghe Tecuci,Ping Shyr
+Giedrius Slivinskas,Christian S. Jensen
+Giedrius Slivinskas,Richard T. Snodgrass
+Gilbert Ritschard,Nicolas Nicoloyannis
+Gilbert Swinnen,Geert Wets
+Gilbert Swinnen,Koen Vanhoof
+Gilles Nachouki,Henri Briand
+Gilles Nachouki,Jacques Philippe
+Giovanni Giuffrida,Dominique M. Hanssens
+Giovanni Giuffrida,Wesley W. Chu
+Giuseppe De Giacomo,Maurizio Lenzerini
+Giuseppe De Giacomo,Moshe Y. Vardi
+Glenn S. Wasson,James P. Gunderson
+Graham J. Williams,Peter Milne
+Greg Barish,Andrew Philpot
+Greg Barish,Craig A. Knoblock
+Greg Barish,Cyrus Shahabi
+Greg Barish,Dan DiPasquo
+Greg Barish,Ion Muslea
+Greg Barish,Steven Minton
+Greg Schohn,David Cohn
+Gregory R. Ganger,David Nagle
+Gregory Z. Grudic,Lyle H. Ungar
+Guido Governatori,Michael J. Maher
+Gunnar Rätsch,Alexander J. Smola
+Gunnar Rätsch,Bernhard Schölkopf
+Gunnar Rätsch,Sebastian Mika
+Gunnar Rätsch,Takashi Onoda
+Guy Ferran,Christian Fiegel
+Guy M. Lohman,Alan Skelley
+Guy Pardon,Gustavo Alonso
+Hai Tao,Harpreet S. Sawhney
+Hai Tao,Rakesh Kumar 0001
+Hajime Kimura,Shigenobu Kobayashi
+Hakan Ferhatosmanoglu,Amr El Abbadi
+Hamid Pirahesh,Berthold Reinwald
+Hamid Pirahesh,Monica Urata
+Hamid Pirahesh,Roberta Cochrane
+Hannah Blau,Robert P. Goldman
+Hannah Blau,Steven A. Harp
+Hans Schuster,Andrzej Cichocki
+Hans Schuster,Dimitrios Georgakopoulos
+Hans Schuster,Donald Baker
+Hans Schuster,Marek Rusinkiewicz
+Hans Tompits,Stefan Woltran
+Harald Reiterer,Gabriela Mußler
+Harald Reiterer,Siegfried Handschuh
+Harald Reiterer,Thomas M. Mann
+Harald Schöning,Jürgen Wäsch
+Harpreet S. Sawhney,Rakesh Kumar 0001
+Hartmut Liefke,Dan Suciu
+Hasan Davulcu,Michael Kifer
+Heather Holmback,Lisbeth Duncan
+Hector Garcia-Molina,Jennifer Widom
+Hector Garcia-Molina,Vlad Gorelik
+Hector Urroz,Gavin Michael
+Hector Urroz,Julian Orbach
+Hector Urroz,Luke Tucker
+Hector Urroz,Qian Ye
+Hector Urroz,Robert M. Arlein
+Heike Hofmann,Adalbert F. X. Wilhelm
+Heike Hofmann,Arno Siebes
+Heikki Mannila,Christopher Meek
+Heinrich Spiecker,Sebastian Hein
+Helena Galhardas,Daniela Florescu
+Helena Galhardas,Dennis E. Shasha
+Helena Galhardas,Eric Simon
+Hemant D. Tagare,James S. Duncan
+Henning Müller,David McG. Squire
+Henning Müller,Wolfgang Müller 0001
+Henri Briand,Jacques Philippe
+Henrik Grosskreutz,Gerhard Lakemeyer
+Henrique Paques,Wei Tang 0005
+Henry A. Kautz,Bart Selman
+Henry A. Kautz,David A. McAllester
+Henry Schneiderman,Takeo Kanade
+Hideo Joho,Mark Sanderson
+Hieu Tat Nguyen,Marcel Worring
+Hirofumi Matsuzawa,Takeshi Fukuda
+Hiroshi G. Okuno,Hiroaki Kitano
+Hiroshi Kawasaki,Katsushi Ikeuchi
+Hiroshi Kawasaki,Masao Sakauchi
+Hiroshi Mamitsuka,Naoki Abe
+Hiroshi Motoda,Takashi Washio
+Hiroshi Motoda,Yuji Niwa
+Hoa Trang Dang,Martha Stone Palmer
+Holger H. Hoos,Craig Boutilier
+Holger Märtens,Erhard Rahm
+Hong Su,Keiji Oenoki
+Horst W. Haussecker,David J. Fleet
+Howard J. Hamilton,Dee Jay Randall
+Huan Chang,Andrew McCallum
+Huan Chang,David Cohn
+Huan Liu 0001,Hiroshi Motoda
+Huan Wang,Wynne Hsu
+Hui Luo,Qiang Lu
+Hui Luo,Raj Acharya
+Hui Luo,Roger S. Gaborski
+Hung Hai Bui,Geoff A. W. West
+Hussein M. Yahia,Etienne G. Huot
+Hussein M. Yahia,Isaac Cohen
+Hussein M. Yahia,Isabelle Herlin
+Iain Sutherland,Andrew C. Jones
+Iain Sutherland,Frank A. Bisby
+Iain Sutherland,John S. Robinson
+Iain Sutherland,Richard J. White
+Iain Sutherland,Sue M. Brandt
+Iain Sutherland,Suzanne M. Embury
+Ian Frank,Alan Bundy
+Ian Frank,David A. Basin
+Ian Horrocks,Sergio Tessaris
+Ian Soboroff,Charles K. Nicholas
+Ibrahim Kamel,Shahram Ghandeharizadeh
+Igor Tatarinov,Ewa Jaslikowska
+Igor Tatarinov,Jing Su
+Igor Tatarinov,Qiong Chen
+Igor Tatarinov,Shiori Betzler
+Igor Tatarinov,Wai Tak Theodora Yeung
+Igor V. Cadez,Christopher Meek
+Igor V. Cadez,David Heckerman
+Igor V. Cadez,Scott Gaffney
+Igor V. Cadez,Steven White
+Ioana Manolescu,Dan Olteanu
+Ioana Manolescu,Daniela Florescu
+Ioana Manolescu,Donald Kossmann
+Ioana Manolescu,Florian Xhumari
+Ioannis Stamos,Peter K. Allen
+Ion Androutsopoulos,Constantine D. Spyropoulos
+Ion Androutsopoulos,John Koutsias
+Ion Androutsopoulos,Konstantinos Chandrinos
+Ion Muslea,Craig A. Knoblock
+Ion Muslea,Cyrus Shahabi
+Ion Muslea,Steven Minton
+Isabelle Herlin,Isaac Cohen
+Isabelle Herlin,Laurent Younes
+Isamu Shioya,Yukio Wada
+Ivan Bratko,Janez Demsar
+Ivan Bratko,Marko Bohanec
+Iván Ordóñez,Feng Zhao 0001
+Iztok Savnik,Georg Lausen
+Iztok Savnik,Heinrich Spiecker
+Iztok Savnik,Sebastian Hein
+Jacquelyn Martino,John Milanski
+Jacquelyn Martino,John Zimmerman
+Jade Goldstein,Jaime G. Carbonell
+Jade Goldstein,James P. Callan
+Jaime G. Carbonell,James P. Callan
+Jake D. Brutlag,Christopher Meek
+James A. Bednar,Risto Miikkulainen
+James Allan,Hubert Jin
+James Allan,Victor Lavrenko
+James C. French,Charles L. Viles
+James C. French,James P. Callan
+James C. French,Margaret E. Connell
+James Chen,Shawn R. Wolfe
+James Chen,Stephen D. Wragg
+James Davis 0001,Philipp Slusallek
+James M. Coughlan,Song Chun Zhu
+James M. Coughlan,Ying Nian Wu
+James M. Rehg,Ashutosh Garg
+James M. Rehg,Thomas S. Huang
+James P. Callan,Charles L. Viles
+James P. Callan,Margaret E. Connell
+James P. Delgrande,Torsten Schaub
+James Rice,Steve Wilder
+James W. Davis,Aaron F. Bobick
+Jan Vahrenhold,Jeffrey Scott Vitter
+Jan Vanthienen,Bart De Moor
+Jan Vanthienen,Guido Dedene
+Janet L. Wiener,Hector Garcia-Molina
+Janet L. Wiener,Vlad Gorelik
+Jason I. Hong,Mark W. Newman
+Jason I. Hong,Megan Thomas
+Jason I. Hong,Rich Vuduc
+Jason Tsong-Li Wang,Bruce A. Shapiro
+Jason Tsong-Li Wang,Cathy H. Wu
+Jason Tsong-Li Wang,Dennis E. Shasha
+Jason Tsong-Li Wang,Xiong Wang
+Javed A. Aslam,Daniela Rus
+Javed A. Aslam,Katya Pelekhov
+Javed A. Aslam,Mark H. Montague
+Jeanine Weißenfels,Achim Kraiss
+Jeanine Weißenfels,Gerhard Weikum
+Jeanine Weißenfels,German Shegalov
+Jeanine Weißenfels,Michael Gillmann
+Jeanine Weißenfels,Olivier Roth
+Jeanine Weißenfels,Wolfgang Wonner
+Jeff Bernhardt,Usama M. Fayyad
+Jeff Dalton 0002,John Levine
+Jeff Heflin,James A. Hendler
+Jefferson A. Coelho Jr.,Roderic A. Grupen
+Jeffrey D. Ullman,Cheng Yang
+Jeffrey D. Ullman,Rajeev Motwani 0001
+Jeffrey O. Kephart,Gerald Tesauro
+Jeffrey Scott Vitter,Min Wang 0001
+Jennifer G. Dy,Carla E. Brodley
+Jens Lechtenbörger,Gottfried Vossen
+Jeremy H. Wright,Irene Langkilde
+Jerry Kiernan,Eugene J. Shekita
+Jesse Hoey,James J. Little
+Jesus A. Gonzalez,Diane J. Cook
+Jesus A. Gonzalez,Lawrence B. Holder
+Jette Randløv,Andrew G. Barto
+Jette Randløv,Michael T. Rosenstein
+Ji Jin,Anand Sivasubramaniam
+Ji Jin,Ning An
+Jian Pei,Behzad Mortazavi-Asl
+Jian Pei,Hua Zhu
+Jian Pei,Kan Hu
+Jim Gray 0001,Donald R. Slutz
+Jim Gray 0001,Prashant J. Shenoy
+Jim Gray 0001,Robert J. Brunner
+Jim Smith,Norman W. Paton
+Jim Smith,Paul Watson 0001
+Jim Smith,Sandra de F. Mendes Sampaio
+Jing Cao,Wen Jin
+Jing Cao,Ye Fan
+Jing Su,Wai Tak Theodora Yeung
+Jiong Yang,Philip S. Yu
+Jiong Yang,Wei Wang 0010
+Joachim Hammer,Liu Wang
+Joachim Hammer,Stanley Y. W. Su
+Joann J. Ordille,Gavin Michael
+Joann J. Ordille,Hector Urroz
+Joann J. Ordille,Julian Orbach
+Joann J. Ordille,Lalit Garg
+Joann J. Ordille,Luke Tucker
+Joann J. Ordille,Michael Holder
+Joann J. Ordille,Qian Ye
+Joann J. Ordille,Robert M. Arlein
+Jochen Hipp,Ulrich Güntzer
+Jochen Van den Bercken,Bernhard Seeger
+Jochen Van den Bercken,Martin Schneider 0006
+Joe Marks,Brian Mirtich
+Joe Marks,David Ratajczak
+Joe Marks,Kathy Ryall
+Johan A. K. Suykens,Bart De Moor
+Johan A. K. Suykens,Dirk Van den Poel
+Johan A. K. Suykens,Guido Dedene
+Johan A. K. Suykens,Jan Vanthienen
+John A. Thompson,Heather Holmback
+John A. Thompson,Lisbeth Duncan
+John B. Hampshire II,Pradeep K. Khosla
+John E. Laird,Michael van Lent
+John F. Roddick,Kathleen Hornsby
+John F. Roddick,Myra Spiliopoulou
+John Koutsias,Constantine D. Spyropoulos
+John Koutsias,Konstantinos Chandrinos
+John Langford 0001,Rich Caruana
+John M. McGann,Joseph JáJá
+John M. McGann,Stephen Kelley
+John M. McGann,Vadim Katz
+John M. Prager,Anni Coden
+John M. Prager,Dragomir R. Radev
+John M. Prager,Eric W. Brown 0001
+John Milanski,John Zimmerman
+John Oliensis,Michael Werman
+John R. Anderson,Christian Lebiere
+John R. Anderson,Marsha C. Lovett
+John S. Robinson,Andrew C. Jones
+John S. Robinson,Frank A. Bisby
+John S. Robinson,Richard J. White
+John S. Robinson,Sue M. Brandt
+John S. Robinson,Suzanne M. Embury
+John Shawe-Taylor,Manfred Glesner
+Jon M. Kleinberg,Christos H. Papadimitriou
+Jon Ragetli,Maarten de Rijke
+Jonathan Alon,Stan Sclaroff
+Jonathan Audet,François Bélanger
+Jonathan Baxter,Peter L. Bartlett
+Jonathan D. Becher,Edmund Freeman
+Jonathan D. Becher,Pavel Berkhin
+Jonathan Deutscher,Andrew Blake 0001
+Jonathan Deutscher,Ian D. Reid 0001
+Jordi Vitrià,Juan José Villanueva
+Joseph Beck,Beverly Park Woolf
+Joseph Beck,Carole R. Beal
+Joseph Bockhorst,Jeremy D. Glasner
+Joseph L. Hellerstein,Irina Rish
+Joseph O'Sullivan,John Langford 0001
+Joseph O'Sullivan,Rich Caruana
+Joseph Shamir,Nahum Kiryati
+José A. Blakeley,Anand Deshpande
+José M. Peña 0002,Sylvain Létourneau
+João L. M. Pereira,Dennis E. Shasha
+João L. M. Pereira,François Llirbat
+João L. M. Pereira,Françoise Fabret
+João L. M. Pereira,Kenneth A. Ross
+João L. M. Pereira,Radu Preotiuc-Pietro
+Juan J. Rodríguez Diez,Carlos Alonso González
+Juan J. Rodríguez Diez,Henrik Boström
+Jude W. Shavlik,Jeremy D. Glasner
+Jude W. Shavlik,Joseph Bockhorst
+Julia Hirschberg,Steve Whittaker
+Julian Orbach,Luke Tucker
+Julian Orbach,Qian Ye
+Julian Orbach,Robert M. Arlein
+Juliana Freire,Daniel F. Lieuwen
+Juliana Freire,Gavin Michael
+Juliana Freire,Hector Urroz
+Juliana Freire,Joann J. Ordille
+Juliana Freire,Julian Orbach
+Juliana Freire,Lalit Garg
+Juliana Freire,Luke Tucker
+Juliana Freire,Michael Holder
+Juliana Freire,Qian Ye
+Juliana Freire,Robert M. Arlein
+Jun Morimoto,Kenji Doya
+Jun Rao,Kenneth A. Ross
+Jun Yang 0001,Hector Garcia-Molina
+Jun Yang 0001,Jennifer Widom
+Jun Yuan,Alexander Vaschillo
+Jun Yuan,Artyom Shaposhnikov
+Jun Yuan,Dmitry Vasilevsky
+Jung-Hwan Oh,Kien A. Hua
+Jussi Lahtinen,Henry Tirri
+Jussi Lahtinen,Petri Myllymäki
+Justus H. Piater,Roderic A. Grupen
+Jérôme Lang,Dominique Longin
+Jérôme Lang,Thomas Polacsek
+Jérôme Thoméré,Richard J. Waldinger
+Jörg Conradt,Stefan Schaal
+Jürgen Angele,Alexander Maedche
+Jürgen Angele,Andreas Hotho
+Jürgen Angele,Michael Erdmann
+Jürgen Angele,Rudi Studer
+Jürgen Angele,Stefan Decker
+Jürgen Angele,York Sure
+Jürgen Forster,Manfred K. Warmuth
+Kajal T. Claypool,Hong Su
+Kajal T. Claypool,Keiji Oenoki
+Kajal T. Claypool,Li Chen 0016
+Kalervo Järvelin,Jaana Kekäläinen
+Kamal Nigam,Lyle H. Ungar
+Kan Hu,Hua Zhu
+Karen C. Davis,Shobha Ravishankar
+Karen Sparck Jones,Philip C. Woodland
+Kari Torkkola,William M. Campbell
+Karin Kipper,Hoa Trang Dang
+Karin Kipper,Martha Stone Palmer
+Karine Zeitouni,Laurent Yeh
+Kary L. Myers,Marilyn A. Walker
+Kary L. Myers,Michael J. Kearns
+Kary L. Myers,Satinder P. Singh
+Kate Larson,Tuomas Sandholm
+Kathleen Fisher,Anne Rogers
+Kathleen Fisher,Daryl Pregibon
+Kathleen Hornsby,Myra Spiliopoulou
+Katia P. Sycara,Constantine Domashnev
+Katia P. Sycara,James Ying
+Katia P. Sycara,Martin Van Velsen
+Katia P. Sycara,Sean Owens
+Katia P. Sycara,Terry R. Payne
+Katia P. Sycara,Yian Chen
+Katsushi Ikeuchi,Masao Sakauchi
+Katya Pelekhov,Daniela Rus
+Kaushal Kurapati,Jacquelyn Martino
+Kaushal Kurapati,John Milanski
+Kaushal Kurapati,John Zimmerman
+Kaushik Chakrabarti,Rajeev Rastogi
+Kaushik Chakrabarti,Sharad Mehrotra
+Kazuhiro Nakadai,Hiroaki Kitano
+Kazuhiro Nakadai,Hiroshi G. Okuno
+Kazuhiro Nakadai,Tino Lourens
+Kazuhiro Otsuka,Haruhiko Kojima
+Kazuhiro Otsuka,Satoshi Suzuki
+Kazuhiro Otsuka,Tsutomu Horikoshi
+Kazumi Saito,Ryohei Nakano
+Kazunori Matsumoto,Kazuo Hashimoto
+Kazunori Matsumoto,Naomi Inoue
+Ke Wang,Yu He
+Ke Wang 0001,Yu He
+Keiichiro Hoashi,Kazunori Matsumoto
+Keiichiro Hoashi,Kazuo Hashimoto
+Keiichiro Hoashi,Naomi Inoue
+Keisuke Kinoshita,Michael Lindenbaum
+Keith B. Hall,Thomas Hofmann
+Ken Satoh,Hidenori Okamoto
+Kenichi Takahashi,Hiroaki Ueda
+Kenji Yamanishi,Graham J. Williams
+Kenji Yamanishi,Peter Milne
+Kenneth A. Kaufman,Ryszard S. Michalski
+Kenneth A. Ross,Dennis E. Shasha
+Kenneth D. Forbus,Cara Meverden
+Kenneth Salem,Bruce G. Lindsay 0001
+Kenneth Salem,Kevin S. Beyer
+Kenneth Salem,Roberta Cochrane
+Kevin Chen-Chuan Chang,Hector Garcia-Molina
+Kevin Knight,Daniel Marcu
+Kevin Knight,Irene Langkilde
+Kevin Knight,Kenji Yamada
+Kevin Knight,Philipp Koehn
+Kevin Leyton-Brown,Moshe Tennenholtz
+Kevin Leyton-Brown,Yoav Shoham
+Kevin S. Beyer,Bruce G. Lindsay 0001
+Kevin S. Beyer,Roberta Cochrane
+Khaled Yagoub,Daniela Florescu
+Khaled Yagoub,Patrick Valduriez
+Khaled Yagoub,Valérie Issarny
+Kien A. Hua,Jung-Hwan Oh
+Kim L. Boyer,Cynthia Roberts
+Kim Shearer,Chitra Dorai
+Kinh Tieu,Paul A. Viola
+Kiran Prabhakara,Jung-Hwan Oh
+Kiran Prabhakara,Kien A. Hua
+Klaus Elhardt,Rudolf Bayer
+Koen Vanhoof,Geert Wets
+Konstantinos Chandrinos,Constantine D. Spyropoulos
+Kostas Stergiou 0001,Toby Walsh
+Kris Hildrum,Jason I. Hong
+Kris Hildrum,Mark W. Newman
+Kris Hildrum,Megan Thomas
+Kris Hildrum,Rich Vuduc
+Kristin P. Bennett,Ayhan Demiriz
+Kristin P. Bennett,Erin J. Bredensteiner
+Kristin P. Bennett,John Shawe-Taylor
+Kristina Lerman,Steven Minton
+Krzysztof Koperski,Giovanni B. Marchisio
+Lalit Garg,Gavin Michael
+Lalit Garg,Hector Urroz
+Lalit Garg,Julian Orbach
+Lalit Garg,Luke Tucker
+Lalit Garg,Michael Holder
+Lalit Garg,Qian Ye
+Lalit Garg,Robert M. Arlein
+Lance A. Forbes,Bruce A. Draper
+Larry H. Matthies,Marcel Schoppers
+Larry H. Matthies,Mark W. Maimone
+Larry M. Manevitz,Malik Yousef
+Lars Arge,Jan Vahrenhold
+Lars Arge,Jeff Erickson 0001
+Lars Arge,Jeffrey Scott Vitter
+Lars Arge,Octavian Procopiuc
+Lars Arge,Torsten Suel
+Laura Barbulescu,Jean-Paul Watson
+Laura Bright,Tolga Urhan
+Laura M. Haas,Erhard Rahm
+Laura M. Haas,Matthias Jarke
+Laura M. Haas,Mauricio A. Hernández
+Laurie B. Waisel,Thomas R. Willemain
+Laurie B. Waisel,William A. Wallace
+Lawrence B. Holder,Diane J. Cook
+Lawrence D. Bergman,Chung-Sheng Li
+Lawrence D. Bergman,John R. Smith
+Lawrence D. Bergman,Vittorio Castelli
+Leah S. Larkey,James P. Callan
+Leah S. Larkey,Margaret E. Connell
+Lee D. Coraor,Jeffrey McCandless
+Leonid Libkin,Luc Segoufin
+Leonid Sigal,Stan Sclaroff
+Leonid V. Tsap,Dmitry B. Goldgof
+Leonidas Fegaras,Arvind Rajendran
+Leonidas Fegaras,David Maier 0001
+Leslie Pack Kaelbling,Yoram Singer
+Li Chen 0016,Hong Su
+Li Chen 0016,Keiji Oenoki
+Lian Wang,Bo Zhou
+Liana M. Lorigo,Olivier D. Faugeras
+Liana M. Lorigo,Renaud Keriven
+Liana M. Lorigo,Ron Kikinis
+Lin Padgham,Patrick Lambrix
+Lin Zhou,Chandra Kambhamettu
+Lin Zhou,Dmitry B. Goldgof
+Ling Liu 0001,David Buttler
+Ling Liu 0001,Henrique Paques
+Ling Liu 0001,Wei Han
+Ling Liu 0001,Wei Tang 0005
+Liu Wang,Stanley Y. W. Su
+Longin Jan Latecki,Rolf Lakämper
+Longin Jan Latecki,Ulrich Eckhardt
+Loren G. Terveen,William C. Hill
+Lorenza Saitta,Marco Botta
+Lorenza Saitta,Michèle Sebag
+Luc Bouganim,Françoise Fabret
+Luc Bouganim,Patrick Valduriez
+Luc Bouganim,Philippe Pucheral
+Luca Forlizzi,Enrico Nardelli
+Luca Forlizzi,Markus Schneider 0001
+Luca Forlizzi,Ralf Hartmut Güting
+Luca Spalazzi,Alberto Giretti
+Lucian Popa 0001,Alin Deutsch
+Lucian Popa 0001,Arnaud Sahuguet
+Lucian Popa 0001,Val Tannen
+Luis E. Ortiz,Leslie Pack Kaelbling
+Luis Pérez-Breva,Massimiliano Pontil
+Luis Pérez-Breva,Tomaso A. Poggio
+Luke Hunsberger,Massimo Zancanaro
+Luke Tucker,Qian Ye
+Luke Tucker,Robert M. Arlein
+Luís Torgo,Joaquim Pinto da Costa
+Mads Noergaard,Adam W. Hoover
+Mads Noergaard,Claus B. Madsen
+Mahesh Jagannath,Samuel DeFazio
+Mahesh Saptharishi,John B. Hampshire II
+Mahesh Saptharishi,Pradeep K. Khosla
+Maja Pantic,Léon J. M. Rothkrantz
+Makoto Yokoo,Shigeo Matsubara
+Makoto Yokoo,Yuko Sakurai
+Maksim Tsvetovat,James Ying
+Maksim Tsvetovat,Katia P. Sycara
+Maksim Tsvetovat,Yian Chen
+Malcolm R. K. Ryan,Mark D. Reid
+Manoranjan Dash,Hiroshi Motoda
+Manoranjan Dash,Huan Liu 0001
+Manu Sridharan,Gerald Tesauro
+Manuel Rodríguez-Martínez,John M. McGann
+Manuel Rodríguez-Martínez,Joseph JáJá
+Manuel Rodríguez-Martínez,Nick Roussopoulos
+Manuel Rodríguez-Martínez,Stephen Kelley
+Manuel Rodríguez-Martínez,Vadim Katz
+Marc Pucci,Marco Mesiti
+Marc Pucci,Patrizia Santa
+Marc Pucci,Sunil Samtani
+Marc Sebban,Richard Nock
+Marcel Schoppers,Mark W. Maimone
+Marco Carcassoni,Edwin R. Hancock
+Marco Magnante,Marco Pecorone
+Marco Pötke,Thomas Seidl 0001
+Marco Ramoni,Paola Sebastiani
+Marco Ramoni,Paul R. Cohen
+Marcus J. Huber,David McGee
+Marcus J. Huber,Hector J. Levesque
+Marcus J. Huber,Philip R. Cohen
+Margaret E. Connell,Charles L. Viles
+Margaret E. Connell,James P. Callan
+Maria Halkidi,Michalis Vazirgiannis
+Maria Halkidi,Yannis Batistakis
+Maria L. Gini,James R. Slagle
+Marilyn A. Walker,Irene Langkilde
+Marilyn A. Walker,Jeremy H. Wright
+Mark A. Ruzon,Carlo Tomasi
+Mark B. Skouson,Zhi-Pei Liang
+Mark E. Stickel,Jérôme Thoméré
+Mark E. Stickel,Richard J. Waldinger
+Mark Moors,Håkan L. S. Younes
+Mark Moors,Sebastian Thrun
+Mark W. Craven,David Page
+Mark W. Craven,Jeremy D. Glasner
+Mark W. Craven,Joseph Bockhorst
+Mark W. Craven,Jude W. Shavlik
+Mark W. Newman,Megan Thomas
+Mark W. Newman,Rich Vuduc
+Mark W. Powell,Dmitry B. Goldgof
+Marko Bohanec,Janez Demsar
+Marko Grobelnik,Dunja Mladenic
+Markos Zaharioudakis,George Lapis
+Markos Zaharioudakis,Hamid Pirahesh
+Markos Zaharioudakis,Monica Urata
+Markos Zaharioudakis,Roberta Cochrane
+Markus M. Breunig,Jörg Sander 0001
+Markus M. Breunig,Raymond T. Ng
+Markus Weber,Max Welling
+Markus Weber,Pietro Perona
+Martin Ester,Jörg Sander 0001
+Martin Ester,Jörn Kohlhammer
+Martin Gavrilov,Dragomir Anguelov
+Martin Gavrilov,Piotr Indyk
+Martin Gavrilov,Rajeev Motwani 0001
+Martin Grohe,Leonid Libkin
+Martin Grohe,Luc Segoufin
+Martin Lauer,Martin A. Riedmiller
+Martin Schneider 0006,Bernhard Seeger
+Martin Zirkel,Klaus Elhardt
+Martin Zirkel,Rudolf Bayer
+Mary Shapcott,Peter H. Millard
+Masatoshi Yoshikawa,Haruhiko Kojima
+Masatoshi Yoshikawa,Shunsuke Uemura
+Masayuki Numao,Takao Terano
+Massimiliano Pontil,Tomaso A. Poggio
+Massimo Paolucci 0001,Constantine Domashnev
+Massimo Paolucci 0001,Katia P. Sycara
+Massimo Paolucci 0001,Martin Van Velsen
+Massimo Paolucci 0001,Sean Owens
+Mathias Broxvall,Peter Jonsson
+Matthew Carey,Shalini Sewraz
+Matthew Carey,Stefan M. Rüger
+Matthew D. Mullin,Rahul Sukthankar
+Matthew D. Schmill,David D. Jensen
+Matthew D. Schmill,Dawn J. Lawrie
+Matthew D. Schmill,James Allan
+Matthew D. Schmill,Paul Ogilvie
+Matthew D. Schmill,Paul R. Cohen
+Matthew E. Antone,Seth J. Teller
+Matthias Jarke,Christoph Quix
+Matthias Jarke,Diego Calvanese
+Matthias Jarke,Enrico Franconi
+Matthias Jarke,Erhard Rahm
+Matthias Jarke,Jörg Köller
+Matthias Jarke,Maurizio Lenzerini
+Matthias Jarke,Panos Vassiliadis
+Matthias Jarke,Spyros Ligoudistianos
+Matthias Jarke,Thomas List
+Matthias Jarke,Yannis Vassiliou
+Matthias Mitschke,Nassir Navab
+Matthias Rychetsky,John Shawe-Taylor
+Matthias Rychetsky,Manfred Glesner
+Maurizio Lenzerini,Enrico Franconi
+Maurizio Lenzerini,Moshe Y. Vardi
+Maurizio Lenzerini,Panos Vassiliadis
+Maurizio Lenzerini,Spyros Ligoudistianos
+Maurizio Lenzerini,Yannis Vassiliou
+Maurizio Panti,Alberto Giretti
+Maurizio Panti,Luca Spalazzi
+Max Welling,Pietro Perona
+Maxim Peysakhov,Vlada Galinskaya
+Maxim Peysakhov,William C. Regli
+Maxime Lhuillier,Long Quan
+Megan Thomas,Chad Carson
+Megan Thomas,Joseph M. Hellerstein
+Megan Thomas,Rich Vuduc
+Mehmet Altinel,Michael J. Franklin
+Mehmet M. Dalkilic,Edward L. Robertson
+Mei Han,Takeo Kanade
+Melanie Hilario,Alexandros Kalousis
+Michael Benedikt,Leonid Libkin
+Michael Benedikt,Luc Segoufin
+Michael Benedikt,Martin Grohe
+Michael Bowman,Cristian Levcovici
+Michael Bowman,Florin Ciucu
+Michael Bowman,Gheorghe Tecuci
+Michael Bowman,Mihai Boicu
+Michael Bowman,Ping Shyr
+Michael Collins 0001,Julia Hirschberg
+Michael Collins 0001,Steve Whittaker
+Michael E. Leventon,Olivier D. Faugeras
+Michael Erdmann,Alexander Maedche
+Michael Erdmann,Andreas Hotho
+Michael Erdmann,Rudi Studer
+Michael Erdmann,York Sure
+Michael Fuller,Ross Wilkinson
+Michael Gillmann,Achim Kraiss
+Michael Gillmann,Gerhard Weikum
+Michael Gillmann,German Shegalov
+Michael Gillmann,Jeanine Weißenfels
+Michael Gillmann,Olivier Roth
+Michael Gillmann,Wolfgang Wonner
+Michael Greiffenhagen,Dorin Comaniciu
+Michael Greiffenhagen,Heinrich Niemann
+Michael H. Loser,Bernhard Geiger
+Michael H. Loser,Russell H. Taylor
+Michael Harville,Trevor Darrell
+Michael Holder,Gavin Michael
+Michael Holder,Hector Urroz
+Michael Holder,Julian Orbach
+Michael Holder,Luke Tucker
+Michael Holder,Qian Ye
+Michael Holder,Robert M. Arlein
+Michael J. Carey 0001,Adam Bosworth
+Michael J. Carey 0001,Bennet Vance
+Michael J. Carey 0001,Berthold Reinwald
+Michael J. Carey 0001,Bruce G. Lindsay 0001
+Michael J. Carey 0001,Dan Suciu
+Michael J. Carey 0001,Eugene J. Shekita
+Michael J. Carey 0001,Hamid Pirahesh
+Michael J. Carey 0001,Jennifer Widom
+Michael J. Carey 0001,Jerry Kiernan
+Michael J. Carey 0001,Michael Stonebraker
+Michael J. Carey 0001,Serge Rielau
+Michael J. Kearns,David P. Kormann
+Michael J. Kearns,Diane J. Litman
+Michael J. Kearns,Marilyn A. Walker
+Michael J. Kearns,Peter Stone
+Michael J. Kearns,Satinder P. Singh
+Michael Mateas,Paul Vanouse
+Michael Mateas,Steffi Domike
+Michael S. Lew,Nicu Sebe
+Michael S. Lew,Thomas S. Huang
+Michael Stonebraker,Dan Suciu
+Michael Stonebraker,Jennifer Widom
+Michael Zuliani,Alan Skelley
+Michael Zuliani,Daniel C. Zilio
+Michael Zuliani,Guy M. Lohman
+Michail G. Lagoudakis,Michael L. Littman
+Michalis Vazirgiannis,Yannis Batistakis
+Michelangelo Diligenti,Frans Coetzee
+Michelangelo Diligenti,Marco Gori
+Michelangelo Diligenti,Steve Lawrence
+Michele Covell,Ali Rahimi
+Michele Covell,Michael Harville
+Michele Covell,Trevor Darrell
+Michele Melchiori,Maurizio Vincini
+Michèle Sebag,Marco Botta
+Mihael Ankerst,Martin Ester
+Mihai Boicu,Cristian Levcovici
+Mihai Boicu,Dorin Marcu
+Mihai Boicu,Florin Ciucu
+Mihai Boicu,Gheorghe Tecuci
+Mihai Boicu,Michael Bowman
+Mihai Boicu,Ping Shyr
+Mikhail J. Atallah,Sunil Prabhakar
+Mikhail Soutchanski,Sebastian Thrun
+Ming Ye,Robert M. Haralick
+Mohammed Yeasin,Yasuo Kuniyoshi
+Mohana Krishna Lakhamraju,Rajeev Rastogi
+Monica N. Nicolescu,Maja J. Mataric
+Moses Charikar,Rajeev Motwani 0001
+Moses Charikar,Vivek R. Narasayya
+Moustafa A. Hammad,Ahmed K. Elmagarmid
+Moustafa A. Hammad,Walid G. Aref
+Munir Cochinwala,Claudio Petrone
+Munir Cochinwala,Gail Lalk
+Munir Cochinwala,Marc Pucci
+Munir Cochinwala,Marco Mesiti
+Munir Cochinwala,Paolo Missier
+Munir Cochinwala,Patrizia Santa
+Munir Cochinwala,Sunil Samtani
+Munir Cochinwala,Uma Ganapathy
+Myron Flickner,Irfan A. Essa
+Nalini K. Ratha,Ruud M. Bolle
+Nanda Kambhatla,Charles Wiecha
+Nanda Kambhatla,Julie MacNaught
+Nanda Kambhatla,Nicolas Nicolov
+Nanda Kambhatla,Sylvie Levesque
+Nandini Raghavan,Matthias Schonlau
+Nandini Raghavan,Robert M. Bell
+Naomi Inoue,Kazuo Hashimoto
+Nassir Navab,Benedicte Bascle
+Nassir Navab,Bernhard Geiger
+Nassir Navab,Michael H. Loser
+Nassir Navab,Mirko Appel
+Nassir Navab,Russell H. Taylor
+Nassir Navab,Yakup Genc
+Natalya Fridman Noy,Mark A. Musen
+Nathan R. Sturtevant,Richard E. Korf
+Neal Lesh,Brian Mirtich
+Neal Lesh,David Ratajczak
+Neal Lesh,Joe Marks
+Neal Lesh,Kathy Ryall
+Nello Cristianini,Alexander J. Smola
+Nemanja Petrovic,Brendan J. Frey
+Nemanja Petrovic,Thomas S. Huang
+Ngoc Binh Nguyen,Tu Bao Ho
+Nicholas E. Matsakis,Paul A. Viola
+Nicholas R. Howe,Daniel P. Huttenlocher
+Nick Roussopoulos,John M. McGann
+Nick Roussopoulos,Joseph JáJá
+Nick Roussopoulos,Stephen Kelley
+Nick Roussopoulos,Vadim Katz
+Nicola Fanizzi,Giovanni Semeraro
+Nicola Fanizzi,Stefano Ferilli
+Nicola Stokes,Joe Carthy
+Nicola Stokes,Paula Hatch
+Nicolas Nicolov,Charles Wiecha
+Nicolas Nicolov,Julie MacNaught
+Nicolas Pasquier,Lotfi Lakhal
+Nicolas Pasquier,Yves Bastide
+Nicu Sebe,Thomas S. Huang
+Nikolaos D. Sidiropoulos,Alexandros Biliris
+Nikolaos D. Sidiropoulos,Christos Faloutsos
+Nikolaos D. Sidiropoulos,Theodore Johnson
+Nikos Pappas,Stavros Christodoulakis
+Ning An,Anand Sivasubramaniam
+Noam Shental,Daphna Weinshall
+Noam Slonim,Naftali Tishby
+Nobuhiro Yugami,Seishi Okamoto
+Nobuhiro Yugami,Yuiko Ohta
+Nuno Maria,Mário J. Silva
+Nuno Vasconcelos,Andrew Lippman
+Octavia I. Camps,Jeffrey McCandless
+Octavia I. Camps,Lee D. Coraor
+Octavian Procopiuc,Jan Vahrenhold
+Octavian Procopiuc,Jeffrey Scott Vitter
+Octavian Procopiuc,Torsten Suel
+Olcay Taner Yildiz,Ethem Alpaydin
+Olga Kapitskaia,Raymond T. Ng
+Olivier D. Faugeras,Renaud Keriven
+Olivier D. Faugeras,Ron Kikinis
+Olivier Roth,German Shegalov
+Olivier Roth,Wolfgang Wonner
+Oscar Nestares,David J. Fleet
+Oscar Nestares,David J. Heeger
+Oskar M. Skrinjar,Hemant D. Tagare
+Oskar M. Skrinjar,James S. Duncan
+Pankaj K. Agarwal,Jeff Erickson 0001
+Pankaj K. Agarwal,Lars Arge
+Panos Vassiliadis,Yannis Vassiliou
+Paola Sebastiani,Paul R. Cohen
+Paola Velardi,Constantine D. Spyropoulos
+Paola Velardi,Georgios Paliouras
+Paola Velardi,Vangelis Karkaletsis
+Paolo Atzeni,Marco Magnante
+Paolo Atzeni,Marco Pecorone
+Paolo Ciaccia,Marco Patella
+Paolo Favaro,Stefano Soatto
+Paolo Ferraris,Enrico Giunchiglia
+Paolo Merialdo,Marco Magnante
+Paolo Merialdo,Marco Pecorone
+Paolo Merialdo,Paolo Atzeni
+Pascal Fua,Koji Miyajima
+Pascal Fua,Yvan G. Leclerc
+Pascal Poncelet,Maguelonne Teisseire
+Pascale Kuntz,Fabrice Guillet
+Pascale Kuntz,Henri Briand
+Pascale Kuntz,Rémi Lehn
+Pat Langley,Sean Stromsten
+Patrick Riley 0001,Manuela M. Veloso
+Patrizia Santa,Marco Mesiti
+Paul B. Chou,Dimitrios Gunopulos
+Paul B. Chou,Edna Grossman
+Paul Cotter,Barry Smyth
+Paul Grisham,Stephen R. Jernigan
+Paul H. Morris,Nicola Muscettola
+Paul Iglinski,Benjamin Bin Yao
+Paul Iglinski,Bing Xu
+Paul Iglinski,Shu Lin 0004
+Paul Komarek,Andrew W. Moore 0001
+Paul Ogilvie,David D. Jensen
+Paul Ogilvie,James Allan
+Paul Vanouse,Steffi Domike
+Paul Watson 0001,Norman W. Paton
+Paul Watson 0001,Sandra de F. Mendes Sampaio
+Paula Hatch,Joe Carthy
+Pavel Berkhin,Edmund Freeman
+Pavel Brazdil,Carlos Soares
+Pavel Dimitrov,Carlos Phillips
+Pedro F. Felzenszwalb,Daniel P. Huttenlocher
+Pedro M. Domingos,Daniel S. Weld
+Pedro M. Domingos,Geoff Hulten
+Peter A. Boncz,Martin L. Kersten
+Peter A. Flach,Nada Lavrac
+Peter Au,Matthew Carey
+Peter Au,Shalini Sewraz
+Peter Au,Stefan M. Rüger
+Peter B. Vanderheyden,Robin Cohen
+Peter Bruza,Robert McArthur
+Peter Bruza,Simon Dennis
+Peter C. Cheeseman,David A. Maluf
+Peter C. Cheeseman,Robin D. Morris
+Peter Clark,Heather Holmback
+Peter Clark,John A. Thompson
+Peter Clark,Lisbeth Duncan
+Peter Gorniak,David Poole 0001
+Peter J. Giblin,Benjamin B. Kimia
+Peter Jansen,David A. Evans 0001
+Peter Ju,Leslie Pack Kaelbling
+Peter Ju,Yoram Singer
+Peter N. Belhumeur,David W. Jacobs
+Peter Stone,Manuela M. Veloso
+Peter Stone,Patrick Riley 0001
+Peter Tselios,Agapios N. Platis
+Peter Tselios,George A. Vouros
+Peter W. Eklund,Gerd Stumme
+Peter Z. Kunszt,Ani Thakar
+Peter Z. Kunszt,Donald R. Slutz
+Peter Z. Kunszt,Jim Gray 0001
+Peter Z. Kunszt,Robert J. Brunner
+Peter Z. Revesz,Rui Chen
+Petri Kontkanen,Henry Tirri
+Petri Kontkanen,Jussi Lahtinen
+Petri Kontkanen,Petri Myllymäki
+Petri Myllymäki,Henry Tirri
+Phil Palmer,Philip F. McLauchlan
+Philip A. Bernstein,Erhard Rahm
+Philip A. Bernstein,Laura M. Haas
+Philip A. Bernstein,Matthias Jarke
+Philip C. Woodland,Karen Sparck Jones
+Philip C. Woodland,Pierre Jourlin
+Philip C. Woodland,Sue E. Johnson
+Philip Chan,Zoran Obradovic
+Philip L. Worthington,Edwin R. Hancock
+Philip R. Cohen,Hector J. Levesque
+Philip S. Yu,Valeria Cardellini
+Philipp Koehn,Daniel Marcu
+Philipp Koehn,Kenji Yamada
+Philipp Koehn,Kevin Knight
+Philippe Besnard,Anthony Hunter
+Philippe Bonnet,Praveen Seshadri
+Philippe Pucheral,Patrick Valduriez
+Philippe Rigaux,Luc Segoufin
+Piero Fraternali,Stefano Paraboschi
+Pierre Dupont,Colin de la Higuera
+Pierre Geurts,Louis Wehenkel
+Pierre Hellier,Christian Barillot
+Pierre Hellier,Patrick Pérez
+Pierre Jourlin,Karen Sparck Jones
+Pierre Jourlin,Philip C. Woodland
+Pierre Kornprobst,Gérard G. Medioni
+Ping Shyr,Cristian Levcovici
+Ping Shyr,Florin Ciucu
+Piotr Indyk,Cheng Yang
+Piotr Indyk,Jeffrey D. Ullman
+Piotr Indyk,Nick Koudas
+Piotr Indyk,Rajeev Motwani 0001
+Prasad Deshpande,Jeffrey F. Naughton
+Praveen Seshadri,Phil Garrett
+Qi Tian 0001,Thomas S. Huang
+Qian Ye,Robert M. Arlein
+Qiang Lu,Raj Acharya
+Qiang Lu,Roger S. Gaborski
+Qiang Zhu 0001,Yu Sun 0011
+Qing Yang 0002,Bahram Parvin
+Qiong Chen,Ewa Jaslikowska
+Qiong Chen,Jing Su
+Qiong Chen,Wai Tak Theodora Yeung
+Qiu Yue Wang,Jeffrey Xu Yu
+Rachel Ben-Eliyahu-Zohary,Luigi Palopoli
+Rachel Pottinger,Alon Y. Levy
+Rachel Pottinger,Ewa Jaslikowska
+Rachel Pottinger,Igor Tatarinov
+Rachel Pottinger,Jing Su
+Rachel Pottinger,Qiong Chen
+Rachel Pottinger,Shiori Betzler
+Rachel Pottinger,Stefan Saroiu
+Rachel Pottinger,Wai Tak Theodora Yeung
+Radek Grzeszczuk,Gary R. Bradski
+Radek Grzeszczuk,Michael H. Chu
+Radu Preotiuc-Pietro,Dennis E. Shasha
+Radu Preotiuc-Pietro,Kenneth A. Ross
+Rafik Taouil,Lotfi Lakhal
+Rafik Taouil,Nicolas Pasquier
+Rafik Taouil,Yves Bastide
+Raj Acharya,Roger S. Gaborski
+Raj D. Iyer,Amit Singhal 0001
+Raj D. Iyer,David D. Lewis
+Raj D. Iyer,Robert E. Schapire
+Raj D. Iyer,Yoram Singer
+Rajeev Motwani 0001,Cheng Yang
+Rajeev Motwani 0001,Jeffrey D. Ullman
+Rajeev Motwani 0001,Vivek R. Narasayya
+Rajiv Chopra,Samuel DeFazio
+Rajni Goel,Sushil Jajodia
+Rakesh Agrawal 0001,Edward L. Wimmers
+Rakesh Agrawal 0001,Roberto J. Bayardo Jr.
+Rakesh K. Sinha,Chung-Min Chen
+Rakesh Kumar 0001,Harpreet S. Sawhney
+Ralf Hartmut Güting,Enrico Nardelli
+Ralf Hartmut Güting,Markus Schneider 0001
+Ralf Klinkenberg,Thorsten Joachims
+Ramesh C. Agarwal,Charu C. Aggarwal
+Randall W. Hill Jr.,Jonathan Gratch
+Raul Trejo,Vladik Kreinovich
+Ravi Kumar 0001,Andrew Tomkins
+Ravi Kumar 0001,Eli Upfal
+Ravi Murthy,Samuel DeFazio
+Ravi Murthy,Seema Sundara
+Raymond Reiter,Mikhail Soutchanski
+Raymond Reiter,Sebastian Thrun
+Raymond S. T. Lee,James N. K. Liu
+Raymond T. Ng,Jörg Sander 0001
+Regina Barzilay,Julia Hirschberg
+Regina Barzilay,Michael Collins 0001
+Regina Barzilay,Steve Whittaker
+Reid G. Simmons,David Apfelbaum
+Reid G. Simmons,Dieter Fox
+Reid G. Simmons,Håkan L. S. Younes
+Reid G. Simmons,Mark Moors
+Reid G. Simmons,Sebastian Thrun
+Reid G. Simmons,Wolfram Burgard
+Renaud Keriven,Ron Kikinis
+Renée J. Miller,Laura M. Haas
+Renée J. Miller,Mauricio A. Hernández
+Ricardo Aler,Daniel Borrajo
+Ricardo Aler,Pedro Isasi
+Ricardo Bezerra de Andrade e Silva,Teresa Bernarda Ludermir
+Ricardo Toledo,Jordi Vitrià
+Ricardo Toledo,Juan José Villanueva
+Ricardo Toledo,Xavier Binefa
+Ricardo Toledo,Xavier Orriols
+Ricardo Vilalta,Daniel Oblinger
+Ricco Rakotomalala,Didier Robert
+Rich Caruana,David Cohn
+Richard Campbell,John Krumm
+Richard Fikes,James Rice
+Richard Fikes,Steve Wilder
+Richard Hull 0001,Bharat Kumar
+Richard Hull 0001,François Llirbat
+Richard Hull 0001,Gang Zhou
+Richard I. Hartley,Nicolas Y. Dano
+Richard J. Cole II,Gerd Stumme
+Richard J. Cole II,Peter W. Eklund
+Richard J. White,Frank A. Bisby
+Richard S. Sutton,Satinder P. Singh
+Richard Segal,Jeffrey O. Kephart
+Richard Sidle,Hamid Pirahesh
+Richard Sidle,Roberta Cochrane
+Richard Szeliski,Shai Avidan
+Robert A. Rasch Jr.,Kenneth D. Forbus
+Robert A. Rasch Jr.,William Turmel
+Robert C. Burke,Bruce Blumberg
+Robert C. Burke,Gerald E. Schneider
+Robert E. Schapire,Amit Singhal 0001
+Robert E. Schapire,Yoram Singer
+Robert Fenk,Klaus Elhardt
+Robert Fenk,Martin Zirkel
+Robert Fenk,Rudolf Bayer
+Robert J. Hilderman,Howard J. Hamilton
+Robert Krovetz,Andries Kruger
+Robert Krovetz,Finn Årup Nielsen
+Robert L. Grossman,Xun Xue
+Robert M. Bell,Matthias Schonlau
+Robert McArthur,Simon Dennis
+Robert Menke,Rina Dechter
+Robert Moll,Andrew G. Barto
+Robert Moll,Theodore J. Perkins
+Robert Sim,Gregory Dudek
+Robert St. Amant,Luke S. Zettlemoyer
+Roberta Cochrane,Bruce G. Lindsay 0001
+Roberta Cochrane,George Lapis
+Roberta Cochrane,Hamid Pirahesh
+Roberta Cochrane,Jennifer Widom
+Roberta Cochrane,Monica Urata
+Roberto J. Bayardo Jr.,Joseph Daniel Pehoushek
+Robin R. Penner,Christopher L. Johnson
+Robin R. Penner,Erik S. Steinmetz
+Robin Y. Flatland,Charles V. Stewart
+Roelof van Zwol,Peter M. G. Apers
+Roger S. Barga,David B. Lomet
+Roger S. Barga,Sanjay Agrawal 0001
+Roger S. Barga,Thomas Baby
+Roger Weber,Klemens Böhm
+Rolf Lakämper,Ulrich Eckhardt
+Ron Avnur,Joseph M. Hellerstein
+Ron Barber,Amit Somani
+Ron Barber,Markos Zaharioudakis
+Ron Kohavi,Myra Spiliopoulou
+Ronald Parr,Daphne Koller
+Ronald Parr,Gautam Biswas
+Ronald W. Ferguson,Kenneth D. Forbus
+Ronald W. Ferguson,Robert A. Rasch Jr.
+Ronald W. Ferguson,William Turmel
+Ronen Feldman,Binyamin Rosenfeld
+Ronen Feldman,Jonathan Stoppi
+Ronen Feldman,Yair Liberzon
+Ronen Feldman,Yonatan Schler
+Ross Cutler,Larry S. Davis
+Ross D. King,Amanda Clare
+Ross D. King,Andreas Karwath
+Ross D. King,Luc Dehaspe
+Roy Goldman,Jennifer Widom
+Rudi Studer,York Sure
+Russell C. Swan,James Allan
+Ruth Sperer,Douglas W. Oard
+Ruxandra Domenig,Klaus R. Dittrich
+Ryoichi Fujino,Hiroki Arimura
+Rémi Lehn,Henri Briand
+Rémi Munos,Andrew W. Moore 0001
+Sabrina De Capitani di Vimercati,Pierangela Samarati
+Sabrina De Capitani di Vimercati,Stefano Paraboschi
+Sally A. Goldman,Yan Zhou
+Sally I. McClean,Bryan W. Scotney
+Sally I. McClean,Mary Shapcott
+Sally I. McClean,Peter H. Millard
+Salvatore J. Stolfo,Matthew Miller
+Sam Brewer,Tom Khabaza
+Samuel D. Fenster,John R. Kender
+Sandra Simon Halliburton,Richard D. White
+Sandra de F. Mendes Sampaio,Norman W. Paton
+Sanjay Agrawal 0001,Vivek R. Narasayya
+Sanjay Chawla,Shashi Shekhar
+Sanjay Chawla,Uygar Özesmi
+Sanjeev Kumar 0004,David McGee
+Sanjeev Kumar 0004,Hector J. Levesque
+Sanjeev Kumar 0004,Marcus J. Huber
+Sanjeev Kumar 0004,Philip R. Cohen
+Saori Kawasaki,Ngoc Binh Nguyen
+Saori Kawasaki,Tu Bao Ho
+Satinder P. Singh,Diane J. Litman
+Satinder P. Singh,Marilyn A. Walker
+Satinder P. Singh,Michael J. Kearns
+Satinder P. Singh,Peter Stone
+Satoshi Suzuki,Haruhiko Kojima
+Scott Konishi,Alan L. Yuille
+Scott Sanner,Christian Lebiere
+Scott Sanner,John R. Anderson
+Scott Sanner,Marsha C. Lovett
+Scott T. Leutenegger,Mario Alberto López
+Sean Owens,Martin Van Velsen
+Sebastian Mika,Takashi Onoda
+Sebastian Thrun,Dieter Fox
+Sebastian Thrun,Håkan L. S. Younes
+Sebastian Thrun,Wolfram Burgard
+Seema Sundara,Samuel DeFazio
+Seishi Okamoto,Nobuhiro Yugami
+Selim Aksoy,Robert M. Haralick
+Serge Rielau,Bennet Vance
+Sergio Flesca,Sergio Greco
+Seán Slattery,Tom M. Mitchell
+Shailendra K. Bhonsle,Ramesh C. Jain
+Shailendra K. Bhonsle,Simone Santini
+Shalini Sewraz,Stefan M. Rüger
+Shashi Shekhar,Uygar Özesmi
+Shawn Arseneau,Jeremy R. Cooperstock
+Shawn Arseneau,Wei Sun
+Shawn R. Wolfe,Stephen D. Wragg
+Sheila A. McIlraith,Richard B. Scherl
+Shinichi Morishita,Jun Sese
+Shinji Fujiwara,Aristides Gionis
+Shinji Fujiwara,Cheng Yang
+Shinji Fujiwara,Jeffrey D. Ullman
+Shinji Fujiwara,Piotr Indyk
+Shinji Fujiwara,Rajeev Motwani 0001
+Shinsaku Hiura,Kazuyuki Murase
+Shinsaku Hiura,Toshikazu Wada
+Shiori Betzler,Ewa Jaslikowska
+Shiori Betzler,Jing Su
+Shiori Betzler,Qiong Chen
+Shiori Betzler,Wai Tak Theodora Yeung
+Shlomo Geva,Lawrence Buckingham
+Shmuel Aharon,Alok Gupta
+Shmuel Aharon,Gareth Funka-Lea
+Shmuel Aharon,Richard D. White
+Shmuel Aharon,Sandra Simon Halliburton
+Shmuel Peleg,Assaf Zomet
+Shmuel Peleg,Moshe Ben-Ezra
+Shmuel Peleg,Yael Pritch
+Sholom M. Weiss,Brian F. White
+Shu Lin 0004,Benjamin Bin Yao
+Shunsuke Uemura,Haruhiko Kojima
+Silvana Castano,Alberto Corni
+Silvana Castano,Maurizio Vincini
+Silvana Castano,Michele Melchiori
+Silvia Acid,Luis M. de Campos
+Silvia Coradeschi,Alessandro Saffiotti
+Simon Baker,Steven M. Seitz
+Simon Baker,Takeo Kanade
+Simon Colton,Alan Bundy
+Simon Colton,Toby Walsh
+Simon Tong,Daphne Koller
+Simonas Saltenis,Christian S. Jensen
+Simonas Saltenis,Mario Alberto López
+Simonas Saltenis,Scott T. Leutenegger
+Simone Santini,Ramesh C. Jain
+Sin Yeung Lee,Hua-Gang Li
+Sivakumar Harinath,Robert L. Grossman
+Sivakumar Harinath,Xun Xue
+Slobodan Vucetic,Zoran Obradovic
+Song Chun Zhu,Rong Zhang
+Song Chun Zhu,Ying Nian Wu
+Sonia Bergamaschi,Alberto Corni
+Sonia Bergamaschi,Maurizio Vincini
+Sonia Bergamaschi,Michele Melchiori
+Sonia Bergamaschi,Silvana Castano
+Sophie Cluet,Christian Fiegel
+Sophie Cluet,Guy Ferran
+Sophie Cluet,Jérôme Siméon
+Sophie Cluet,Véronique Benzaken
+Soumen Chakrabarti,Sandeep Srivastava
+Spyros Ligoudistianos,Panos Vassiliadis
+Spyros Ligoudistianos,Yannis Vassiliou
+Srinivas Gutta,Jacquelyn Martino
+Srinivas Gutta,John Milanski
+Srinivas Gutta,John Zimmerman
+Srinivas Gutta,Kaushal Kurapati
+Stefan Berchtold,Christian Böhm
+Stefan Berchtold,Daniel A. Keim
+Stefan Berchtold,Jörg Sander 0001
+Stefan Decker,Alexander Maedche
+Stefan Decker,Andreas Hotho
+Stefan Decker,Michael Erdmann
+Stefan Decker,Rudi Studer
+Stefan Decker,York Sure
+Stefan Edelkamp,Stefan Schrödl
+Stefan Manegold,Martin L. Kersten
+Stefan Manegold,Peter A. Boncz
+Stefan Saroiu,Ewa Jaslikowska
+Stefan Saroiu,Igor Tatarinov
+Stefan Saroiu,Jing Su
+Stefan Saroiu,Qiong Chen
+Stefan Saroiu,Shiori Betzler
+Stefan Saroiu,Wai Tak Theodora Yeung
+Stefano Ceri,Jennifer Widom
+Stefano Ceri,Piero Fraternali
+Stefano Ceri,Roberta Cochrane
+Stefano Ceri,Stefano Paraboschi
+Stefano Ferilli,Giovanni Semeraro
+Stefano Forti 0001,Andrea Sboner
+Stefano Paraboschi,Pierangela Samarati
+Stefano Soatto,Anthony J. Yezzi
+Stefano Soatto,Paolo Favaro
+Steffen Staab,Alexander Maedche
+Steffen Staab,Andreas Hotho
+Steffen Staab,Jürgen Angele
+Steffen Staab,Michael Erdmann
+Steffen Staab,Rudi Studer
+Steffen Staab,Stefan Decker
+Steffen Staab,York Sure
+Stephanie Milchak,Michelle Sollenberger
+Stephen C. Hsu,Harpreet S. Sawhney
+Stephen C. Hsu,Rakesh Kumar 0001
+Stephen D. Bay,Michael J. Pazzani
+Stephen Kelley,Joseph JáJá
+Stephen Kelley,Vadim Katz
+Stephen Lin,Sang Wook Lee
+Stephen Muggleton,Christopher H. Bryant
+Stergios I. Roumeliotis,Maja J. Mataric
+Steve Chien,Dror Weitz
+Steve Lawrence,Andries Kruger
+Steve Lawrence,Christian W. Omlin
+Steve Lawrence,David M. Pennock
+Steve Lawrence,Finn Årup Nielsen
+Steve Lawrence,Frans Coetzee
+Steve Lawrence,Gary William Flake
+Steve Lawrence,Marco Gori
+Steve Lawrence,Robert Krovetz
+Steven A. Harp,Robert P. Goldman
+Steven C. Hsu,Harpreet S. Sawhney
+Steven C. Hsu,Rakesh Kumar 0001
+Steven Geffner,Amr El Abbadi
+Steven M. Seitz,Charles E. Thorpe
+Steven M. Seitz,Sebastian Thrun
+Steven M. Seitz,Takeo Kanade
+Steven Minton,Andrew Philpot
+Steven Minton,Craig A. Knoblock
+Steven Minton,Cyrus Shahabi
+Steven Minton,Ion Muslea
+Stijn Viaene,Bart Baesens
+Stijn Viaene,Bart De Moor
+Stijn Viaene,Dirk Van den Poel
+Stijn Viaene,Guido Dedene
+Stijn Viaene,Jan Vanthienen
+Stijn Viaene,Johan A. K. Suykens
+Stijn Viaene,Tony Van Gestel
+Stuart C. Schwartz,Michael T. Orchard
+Stéphane Bressan,Chong Leng Goh
+Stéphane Grumbach,Leonardo Tininini
+Stéphane Grumbach,Luc Segoufin
+Stéphane Grumbach,Philippe Rigaux
+Stéphane Lallich,Ricco Rakotomalala
+Stéphane Lopes,Lotfi Lakhal
+Sue E. Johnson,Karen Sparck Jones
+Sue E. Johnson,Philip C. Woodland
+Sue E. Johnson,Pierre Jourlin
+Sue M. Brandt,Andrew C. Jones
+Sue M. Brandt,Frank A. Bisby
+Sue M. Brandt,Richard J. White
+Sue M. Brandt,Suzanne M. Embury
+Sugata Ghosal,Pradeep K. Dubey
+Sunil Samtani,Marco Mesiti
+Sunil Samtani,Patrizia Santa
+Sunita Sarawagi,Gayatri Sathe
+Susan Price,Benjamin Chan
+Susan Price,Dale Kraemer
+Susan Price,Daniel Olson
+Susan T. Dumais,Hao Chen 0003
+Susumu Katayama,Hajime Kimura
+Susumu Katayama,Shigenobu Kobayashi
+Suzanne M. Embury,Frank A. Bisby
+Suzanne M. Embury,Richard J. White
+Svein Erik Bratsberg,Øystein Torbjørnsen
+Sylvia R. Zhang,Douglas Stott Parker Jr.
+Sylvie Levesque,Charles Wiecha
+Sylvie Levesque,Julie MacNaught
+Sylvie Levesque,Nicolas Nicolov
+Tadashi Horiuchi,Hiroshi Motoda
+Tadashi Horiuchi,Takashi Washio
+Tadashi Nomoto,Yuji Matsumoto 0001
+Takao Miura,Isamu Shioya
+Takao Miura,Wataru Matsumoto
+Takao Miura,Yukio Wada
+Takashi Ishikawa,Masayuki Numao
+Takashi Ishikawa,Takao Terano
+Takashi Matsuda,Hiroshi Motoda
+Takashi Matsuda,Tadashi Horiuchi
+Takashi Matsuda,Takashi Washio
+Takashi Matsuyama,Kazuyuki Murase
+Takashi Matsuyama,Shinsaku Hiura
+Takashi Matsuyama,Toshikazu Wada
+Takashi Okada,Mayumi Oyama
+Takashi Washio,Hiroshi Motoda
+Takashi Washio,Yuji Niwa
+Takayoshi Shoudai,Hiroaki Ueda
+Takayoshi Shoudai,Kenichi Takahashi
+Takayoshi Shoudai,Tomoyuki Uchida
+Takayuki Yoshizumi,Toru Ishida 0001
+Takeo Kanade,Jeffrey F. Cohn
+Takeo Kanade,Mark Holler
+Takuji Takahashi,Hiroshi Kawasaki
+Takuji Takahashi,Katsushi Ikeuchi
+Takuji Takahashi,Masao Sakauchi
+Tanveer Fathima Syeda-Mahmood,Arnon Amir
+Tanveer Fathima Syeda-Mahmood,Brian Blanchard
+Tanveer Fathima Syeda-Mahmood,Dragutin Petkovic
+Tanveer Fathima Syeda-Mahmood,Dulce B. Ponceleon
+Tapio Elomaa,Juho Rousu
+Teddy Turmeaux,Christel Vrain
+Terrance E. Boult,Frans Coetzee
+Terry R. Payne,Peter Edwards
+Tessa A. Lau,Daniel S. Weld
+Tessa A. Lau,Pedro M. Domingos
+Tetsuhiro Miyahara,Hiroaki Ueda
+Tetsuhiro Miyahara,Kenichi Takahashi
+Tetsuhiro Miyahara,Takayoshi Shoudai
+Tetsuhiro Miyahara,Tomoyuki Uchida
+Theodore J. Perkins,Andrew G. Barto
+Theodore Johnson,Alexandros Biliris
+Theodore Johnson,Christos Faloutsos
+Theodore Johnson,Raymond T. Ng
+Theodoros Evgeniou,Luis Pérez-Breva
+Theodoros Evgeniou,Massimiliano Pontil
+Theodoros Evgeniou,Tomaso A. Poggio
+Thomas Baby,Sanjay Agrawal 0001
+Thomas Christensen,Adam W. Hoover
+Thomas Christensen,Claus B. Madsen
+Thomas Christensen,Mads Noergaard
+Thomas Eiter,Hans Tompits
+Thomas Eiter,Stefan Woltran
+Thomas G. Dietterich,Bill Sudyka
+Thomas J. Graser,Paul Grisham
+Thomas J. Graser,Stephen R. Jernigan
+Thomas List,Jörg Köller
+Thomas M. Mann,Siegfried Handschuh
+Thomas Mostek,Cara Meverden
+Thomas Mostek,Kenneth D. Forbus
+Thomas O'Donnell,Alok Gupta
+Thomas O'Donnell,Gareth Funka-Lea
+Thomas O'Donnell,Richard D. White
+Thomas O'Donnell,Sandra Simon Halliburton
+Thomas O'Donnell,Shmuel Aharon
+Thomas R. Shultz,François Rivest
+Thomas S. Huang,Brendan J. Frey
+Thomas S. Huang,Roy Wang
+Thomas Stöhr,Erhard Rahm
+Thomas Stöhr,Holger Märtens
+Tim Fiez,Zoran Obradovic
+Tim Oates,Matthew D. Schmill
+Tim Oates,Paul R. Cohen
+Tim Van Allen,Russell Greiner
+Timothy J. Mills,David Pye
+Timothy J. Mills,David Sinclair
+Timothy J. Mills,Kenneth R. Wood
+Tino Lourens,Hiroaki Kitano
+Tino Lourens,Hiroshi G. Okuno
+Tobias Scheffer,Stefan Wrobel
+Todd D. Millstein,Alon Y. Levy
+Todd D. Millstein,Marc Friedman
+Tom Barclay,Donald R. Slutz
+Tom Barclay,Jim Gray 0001
+Tom Brijs,Bart Goethals
+Tom Brijs,Geert Wets
+Tom Brijs,Gilbert Swinnen
+Tom Brijs,Koen Vanhoof
+Tom Duckett,Ulrich Nehmzow
+Tomoyuki Uchida,Hiroaki Ueda
+Tomoyuki Uchida,Kenichi Takahashi
+Tony Fountain,Bill Sudyka
+Tony Fountain,Thomas G. Dietterich
+Tony Van Gestel,Bart De Moor
+Tony Van Gestel,Dirk Van den Poel
+Tony Van Gestel,Guido Dedene
+Tony Van Gestel,Jan Vanthienen
+Tony Van Gestel,Johan A. K. Suykens
+Torben Bach Pedersen,Arie Shoshani
+Torben Bach Pedersen,Christian S. Jensen
+Torben Bach Pedersen,Curtis E. Dyreson
+Torsten Suel,Jan Vahrenhold
+Torsten Suel,Jeffrey Scott Vitter
+Toshikazu Wada,Kazuyuki Murase
+Tova Milo,Dan Suciu
+Tova Milo,Victor Vianu
+Trong Dung Nguyen,Hiroshi Shimodaira
+Trong Dung Nguyen,Tu Bao Ho
+Tsutomu Horikoshi,Haruhiko Kojima
+Tsutomu Horikoshi,Satoshi Suzuki
+Tu Bao Ho,Hiroshi Shimodaira
+Tudor Teusan,Gilles Nachouki
+Tudor Teusan,Henri Briand
+Tudor Teusan,Jacques Philippe
+Tuomas Sandholm,Subhash Suri
+Ulf Hermjakob,Daniel Marcu
+Ulf Hermjakob,Kenji Yamada
+Ulf Hermjakob,Kevin Knight
+Ulf Hermjakob,Philipp Koehn
+Ulrich Germann,Daniel Marcu
+Ulrich Germann,Kenji Yamada
+Ulrich Germann,Kevin Knight
+Ulrich Germann,Philipp Koehn
+Ulrich Germann,Ulf Hermjakob
+Ulrich Güntzer,Werner Kießling
+Uma Ganapathy,Gail Lalk
+Uma Ganapathy,Paolo Missier
+Un Yong Nahm,Raymond J. Mooney
+Uri Lerner,Daphne Koller
+Uri Lerner,Gautam Biswas
+Uri Lerner,Ronald Parr
+Urszula Chajewska,Daphne Koller
+Urszula Chajewska,Ronald Parr
+Uwe Egly,Hans Tompits
+Uwe Egly,Stefan Woltran
+Uwe Egly,Thomas Eiter
+Uwe Röhm,Klemens Böhm
+Vadim Katz,Joseph JáJá
+Vadim N. Smelyansky,David A. Maluf
+Vadim N. Smelyansky,Peter C. Cheeseman
+Vadim N. Smelyansky,Robin D. Morris
+Valérie Issarny,Patrick Valduriez
+Vangelis Karkaletsis,Constantine D. Spyropoulos
+Vasileios Hatzivassiloglou,Luis Gravano
+Venkatesh Ganti,Johannes Gehrke
+Victor Lavrenko,David D. Jensen
+Victor Lavrenko,Dawn J. Lawrie
+Victor Lavrenko,Hubert Jin
+Victor Lavrenko,James Allan
+Victor Lavrenko,Matthew D. Schmill
+Victor Lavrenko,Paul Ogilvie
+Vijay S. Iyengar,Tong Zhang 0001
+Vinay K. Chaudhri,Jérôme Thoméré
+Vinay K. Chaudhri,Mark E. Stickel
+Vinay K. Chaudhri,Richard J. Waldinger
+Vincent Oria,Benjamin Bin Yao
+Vincent Oria,Bing Xu
+Vincent Oria,Paul Iglinski
+Vincent Oria,Shu Lin 0004
+Vittorio Castelli,Chung-Sheng Li
+Vittorio Castelli,John R. Smith
+Vlada Galinskaya,William C. Regli
+Vladimir Estivill-Castro,Michael E. Houle
+Vladimir Pavlovic,Ashutosh Garg
+Vladimir Pavlovic,James M. Rehg
+Vladimir Pavlovic,Thomas S. Huang
+Vladimir Zadorozhny,Laura Bright
+Vladimir Zadorozhny,Tolga Urhan
+Volker Markl,Klaus Elhardt
+Volker Markl,Martin Zirkel
+Volker Markl,Robert Fenk
+Volker Markl,Rudolf Bayer
+Véronique Benzaken,Christian Fiegel
+Véronique Benzaken,Guy Ferran
+Véronique Hoste,Erik F. Tjong Kim Sang
+Véronique Hoste,Steven Gillis
+Véronique Hoste,Walter Daelemans
+Wai Gen Yee,Michael J. Donahoo
+Walid G. Aref,Ahmed K. Elmagarmid
+Walter Daelemans,Erik F. Tjong Kim Sang
+Walter Daelemans,Steven Gillis
+Wataru Matsumoto,Isamu Shioya
+Wataru Matsumoto,Yukio Wada
+Wei Fan 0001,Matthew Miller
+Wei Fan 0001,Salvatore J. Stolfo
+Wei Fan 0001,Wenke Lee
+Wei Han,Henrique Paques
+Wei Han,Wei Tang 0005
+Wei Sun,Jeremy R. Cooperstock
+Wei Wang 0010,Jiong Yang
+Wei Wang 0010,Philip S. Yu
+Wen Jin,Ye Fan
+Wen-Yi Zhao,Rama Chellappa
+Wenke Lee,Matthew Miller
+Wenke Lee,Salvatore J. Stolfo
+Werner Dreyer,Klaus R. Dittrich
+Wes Cowley,Dimitris Plexousakis
+Wesley W. Chu,Dominique M. Hanssens
+William A. Wallace,Thomas R. Willemain
+William D. Smart,Leslie Pack Kaelbling
+William E. Walsh,Michael P. Wellman
+William M. Campbell,Kari Torkkola
+William R. Hersh,Andrew Turpin
+William R. Hersh,Benjamin Chan
+William R. Hersh,Dale Kraemer
+William R. Hersh,Daniel Olson
+William R. Hersh,Susan Price
+William Turmel,Kenneth D. Forbus
+William W. Cohen,David A. McAllester
+William W. Cohen,Henry A. Kautz
+Witold Litwin,Thomas J. E. Schwarz
+Wolfgang Lehner,Hamid Pirahesh
+Wolfgang Lehner,Richard Sidle
+Wolfgang Lehner,Roberta Cochrane
+Wolfgang Müller 0001,David McG. Squire
+Wolfgang Wonner,Gerhard Weikum
+Wolfram Burgard,Dieter Fox
+Wolfram Burgard,Håkan L. S. Younes
+Wolfram Burgard,Mark Moors
+Wolfram Burgard,Sebastian Thrun
+Wynne Hsu,Bing Liu 0001
+Xavier Binefa,Jordi Vitrià
+Xavier Binefa,Juan José Villanueva
+Xavier Orriols,Jordi Vitrià
+Xavier Orriols,Juan José Villanueva
+Xavier Orriols,Xavier Binefa
+Xiang Gao,Frans Coetzee
+Xiang Gao,Terrance E. Boult
+Xing Chen,James Davis 0001
+Xing Chen,Philipp Slusallek
+Xiong Wang,Bruce A. Shapiro
+Xiong Wang,Dennis E. Shasha
+Yael Pritch,Moshe Ben-Ezra
+Yair Liberzon,Binyamin Rosenfeld
+Yair Liberzon,Jonathan Stoppi
+Yair Liberzon,Yonatan Schler
+Yakup Genc,Mirko Appel
+Yang Song,Pietro Perona
+Yannis Manolopoulos,Michael Vassilakopoulos
+Yannis Manolopoulos,Yannis Theodoridis
+Yannis Papakonstantinou,Pavel Velikhov
+Yannis Papakonstantinou,Victor Vianu
+Yannis Theodoridis,Michael Vassilakopoulos
+Yaron Caspi,Michal Irani
+Yaser Al-Onaizan,Daniel Marcu
+Yaser Al-Onaizan,Kenji Yamada
+Yaser Al-Onaizan,Kevin Knight
+Yaser Al-Onaizan,Philipp Koehn
+Yaser Al-Onaizan,Ulf Hermjakob
+Yaser Al-Onaizan,Ulrich Germann
+Yasushi Sakurai,Haruhiko Kojima
+Yasushi Sakurai,Masatoshi Yoshikawa
+Yasushi Sakurai,Shunsuke Uemura
+Ye Zhang,Chandra Kambhamettu
+Yi-Cheng Huang,Bart Selman
+Yi-Cheng Huang,Henry A. Kautz
+Yian Chen,James Ying
+Ying Wu 0001,Qi Tian 0001
+Ying Wu 0001,Thomas S. Huang
+Ying Zhu,Michael T. Orchard
+Ying Zhu,Stuart C. Schwartz
+Yoav Shoham,Moshe Tennenholtz
+Yoav Y. Schechner,Joseph Shamir
+Yoav Y. Schechner,Nahum Kiryati
+Yonatan Schler,Jonathan Stoppi
+Yonatan Wexler,Amnon Shashua
+Yong Rui,Thomas S. Huang
+Yoram Gdalyahu,Daphna Weinshall
+Yoram Gdalyahu,Noam Shental
+Yoram Singer,Amit Singhal 0001
+Yossi Matias,Jeffrey Scott Vitter
+Yossi Matias,Min Wang 0001
+Yuiko Ohta,Seishi Okamoto
+Yuko Sakurai,Shigeo Matsubara
+Yuri Boykov,Daniel P. Huttenlocher
+Yusuf Tambag,Arif Tumer
+Yusuf Tambag,Catriel Beeri
+Yvan G. Leclerc,Koji Miyajima
+Yvan G. Leclerc,Pascal Fua
+Yves Bastide,Lotfi Lakhal
+Yves Dufournaud,Cordelia Schmid
+Yves Dufournaud,Radu Horaud
+Zachary G. Ives,Alon Y. Levy
+Zachary G. Ives,Ewa Jaslikowska
+Zachary G. Ives,Igor Tatarinov
+Zachary G. Ives,Jing Su
+Zachary G. Ives,Qiong Chen
+Zachary G. Ives,Rachel Pottinger
+Zachary G. Ives,Shiori Betzler
+Zachary G. Ives,Stefan Saroiu
+Zachary G. Ives,Wai Tak Theodora Yeung
+Zbigniew W. Ras,Alicja Wieczorkowska
+Zdravko Markov,Ivo Marinchev
+Zhang Yi 0001,Ada Wai-Chee Fu
+Zhang Yi 0001,Chun Hing Cai
+Zhe Wu,Benjamin W. Wah
+Ziv Bar-Yossef,Alexander C. Berg
+Ziv Bar-Yossef,Dror Weitz
+Ziv Bar-Yossef,Steve Chien
+Ömer Egecioglu,Hakan Ferhatosmanoglu

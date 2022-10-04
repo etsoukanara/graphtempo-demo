@@ -1,0 +1,509 @@
+userID,gender,age,occupation,varying
+5081,F,18-24,college/grad student,3.8
+5082,M,35-44,academic/educator,3.8
+5083,M,25-34,college/grad student,3.7
+5084,M,18-24,college/grad student,3.1
+5085,M,56+,technician/engineer,4.4
+5086,M,25-34,academic/educator,4.0
+5087,F,25-34,doctor/health care,3.6
+5088,M,25-34,technician/engineer,4.2
+5089,F,35-44,self-employed,3.6
+5090,F,35-44,unemployed,4.2
+5091,M,25-34,technician/engineer,4.5
+5092,M,56+,sales/marketing,3.8
+5093,M,50-55,executive/managerial,3.8
+5094,M,18-24,K-12 student,4.4
+5095,F,35-44,academic/educator,4.5
+5096,M,25-34,lawyer,3.3
+5097,M,56+,self-employed,3.8
+5098,M,50-55,executive/managerial,3.2
+5099,M,18-24,other,3.9
+5100,M,50-55,doctor/health care,4.5
+5101,M,25-34,other,2.5
+5102,M,25-34,programmer,4.6
+5103,F,35-44,self-employed,4.3
+5104,M,35-44,writer,4.2
+5105,M,50-55,executive/managerial,3.1
+5106,F,35-44,academic/educator,3.9
+5107,F,45-49,other,3.2
+5108,F,25-34,homemaker,3.4
+5109,F,45-49,doctor/health care,3.8
+5110,M,35-44,scientist,4.3
+5111,M,35-44,artist,3.6
+5112,M,35-44,retired,3.1
+5113,M,25-34,other,3.1
+5114,F,Under 18,K-12 student,4.3
+5115,M,56+,programmer,4.4
+5116,M,35-44,doctor/health care,4.3
+5117,F,25-34,other,2.8
+5118,M,Under 18,K-12 student,3.1
+5119,F,25-34,other,3.2
+5120,M,50-55,executive/managerial,3.8
+5121,M,25-34,executive/managerial,3.5
+5122,M,25-34,other,4.5
+5123,M,50-55,programmer,3.3
+5124,M,35-44,artist,3.5
+5125,M,45-49,other,3.6
+5126,M,25-34,lawyer,4.0
+5127,M,45-49,customer service,3.2
+5128,M,50-55,executive/managerial,3.6
+5129,M,45-49,technician/engineer,3.8
+5130,F,50-55,academic/educator,4.4
+5131,F,25-34,academic/educator,3.4
+5132,M,35-44,executive/managerial,3.4
+5133,M,18-24,lawyer,3.1
+5134,M,25-34,technician/engineer,3.7
+5135,M,35-44,executive/managerial,3.9
+5136,M,25-34,programmer,3.7
+5137,M,18-24,tradesman/craftsman,3.9
+5138,M,25-34,technician/engineer,3.3
+5139,M,50-55,self-employed,3.5
+5140,M,25-34,doctor/health care,3.6
+5141,M,18-24,technician/engineer,4.0
+5142,M,25-34,academic/educator,3.6
+5143,M,18-24,college/grad student,3.2
+5144,F,50-55,other,3.8
+5145,M,35-44,executive/managerial,3.2
+5146,M,56+,academic/educator,3.5
+5147,M,18-24,other,3.6
+5148,M,25-34,writer,3.9
+5149,M,35-44,academic/educator,4.0
+5150,M,25-34,clerical/admin,3.7
+5151,M,18-24,unemployed,2.8
+5152,F,25-34,college/grad student,3.0
+5153,M,25-34,executive/managerial,3.2
+5154,M,25-34,self-employed,4.2
+5155,M,25-34,self-employed,2.9
+5156,M,18-24,sales/marketing,4.2
+5157,M,35-44,academic/educator,4.3
+5158,F,18-24,college/grad student,3.9
+5159,M,35-44,executive/managerial,3.0
+5160,F,18-24,college/grad student,4.1
+5161,M,25-34,college/grad student,3.1
+5162,M,25-34,technician/engineer,3.5
+5163,M,45-49,doctor/health care,3.8
+5164,F,35-44,technician/engineer,4.3
+5165,M,35-44,doctor/health care,4.5
+5166,M,50-55,doctor/health care,4.3
+5167,M,18-24,scientist,4.2
+5168,M,35-44,executive/managerial,4.4
+5169,F,50-55,college/grad student,3.7
+5170,M,18-24,college/grad student,4.2
+5171,M,56+,technician/engineer,3.9
+5173,M,Under 18,K-12 student,3.6
+5174,M,45-49,academic/educator,4.0
+5175,F,35-44,homemaker,4.0
+5176,M,Under 18,K-12 student,3.5
+5177,M,45-49,sales/marketing,3.5
+5178,M,50-55,other,3.6
+5179,M,25-34,programmer,3.6
+5180,M,35-44,lawyer,4.2
+5181,M,25-34,executive/managerial,4.0
+5182,F,35-44,executive/managerial,3.8
+5183,F,18-24,writer,3.6
+5184,M,18-24,writer,4.1
+5185,F,35-44,college/grad student,4.0
+5186,M,35-44,programmer,3.7
+5187,M,18-24,self-employed,3.5
+5188,F,35-44,homemaker,3.9
+5189,F,45-49,executive/managerial,3.6
+5190,F,35-44,other,3.9
+5191,F,25-34,college/grad student,3.7
+5192,M,25-34,executive/managerial,3.7
+5193,M,35-44,programmer,3.7
+5194,M,25-34,executive/managerial,3.4
+5195,M,35-44,executive/managerial,4.2
+5196,M,56+,executive/managerial,3.2
+5197,F,56+,clerical/admin,3.5
+5198,F,18-24,college/grad student,2.9
+5199,F,25-34,academic/educator,3.5
+5200,F,35-44,scientist,4.0
+5201,M,50-55,executive/managerial,3.4
+5202,M,18-24,college/grad student,3.4
+5203,F,45-49,doctor/health care,4.0
+5204,M,50-55,retired,4.1
+5205,M,25-34,academic/educator,3.3
+5206,M,35-44,executive/managerial,4.0
+5207,M,25-34,other,3.9
+5208,M,25-34,college/grad student,4.0
+5209,M,50-55,academic/educator,3.9
+5210,F,35-44,technician/engineer,3.9
+5211,M,25-34,academic/educator,3.7
+5212,M,18-24,artist,4.6
+5213,M,18-24,other,3.3
+5214,F,35-44,homemaker,2.4
+5215,F,56+,doctor/health care,4.4
+5216,M,18-24,artist,3.3
+5217,M,25-34,technician/engineer,3.4
+5218,M,18-24,other,4.2
+5219,M,18-24,college/grad student,3.9
+5220,M,25-34,executive/managerial,3.4
+5221,F,56+,academic/educator,4.2
+5222,M,25-34,programmer,3.2
+5223,M,56+,K-12 student,3.3
+5224,M,35-44,academic/educator,2.9
+5225,M,18-24,college/grad student,3.6
+5226,M,35-44,other,3.8
+5227,M,18-24,K-12 student,3.2
+5228,M,Under 18,other,3.8
+5229,M,25-34,other,4.1
+5230,M,25-34,programmer,3.7
+5231,M,35-44,executive/managerial,3.9
+5232,M,25-34,college/grad student,3.4
+5233,M,25-34,customer service,4.1
+5234,F,25-34,other,3.9
+5235,M,25-34,college/grad student,4.1
+5236,M,25-34,sales/marketing,3.6
+5237,M,25-34,executive/managerial,3.4
+5238,F,50-55,self-employed,3.5
+5239,M,35-44,executive/managerial,3.8
+5240,F,25-34,other,3.9
+5241,F,25-34,college/grad student,3.4
+5242,M,25-34,academic/educator,3.1
+5243,M,Under 18,K-12 student,3.3
+5244,M,18-24,college/grad student,3.8
+5245,F,45-49,academic/educator,3.9
+5246,F,18-24,other,3.8
+5247,F,Under 18,K-12 student,3.0
+5248,F,45-49,sales/marketing,3.5
+5249,F,45-49,sales/marketing,3.3
+5250,M,50-55,doctor/health care,3.5
+5251,F,25-34,technician/engineer,3.4
+5252,M,25-34,writer,4.2
+5253,F,56+,retired,3.8
+5254,M,18-24,college/grad student,3.6
+5255,M,Under 18,K-12 student,4.7
+5256,M,25-34,self-employed,3.3
+5257,F,25-34,artist,4.1
+5258,M,35-44,college/grad student,4.0
+5259,M,25-34,doctor/health care,4.1
+5260,M,35-44,executive/managerial,3.8
+5261,M,35-44,programmer,3.3
+5262,F,25-34,sales/marketing,2.9
+5263,M,35-44,executive/managerial,3.6
+5264,M,18-24,college/grad student,3.7
+5265,M,45-49,academic/educator,3.9
+5266,M,35-44,academic/educator,4.1
+5267,M,35-44,executive/managerial,3.5
+5268,F,25-34,artist,3.1
+5269,M,18-24,other,3.3
+5270,M,25-34,programmer,3.8
+5271,F,25-34,other,3.6
+5272,M,25-34,executive/managerial,3.0
+5273,M,56+,writer,4.0
+5274,M,25-34,other,3.4
+5275,M,25-34,technician/engineer,4.1
+5276,F,25-34,college/grad student,3.6
+5277,M,25-34,writer,3.7
+5278,F,25-34,executive/managerial,2.6
+5279,F,25-34,sales/marketing,3.8
+5280,M,18-24,college/grad student,3.6
+5281,M,25-34,artist,3.8
+5282,F,18-24,college/grad student,3.2
+5283,M,18-24,artist,3.6
+5284,M,25-34,self-employed,3.8
+5285,M,18-24,college/grad student,3.8
+5286,M,45-49,self-employed,3.9
+5287,M,25-34,farmer,3.6
+5288,M,56+,retired,3.7
+5289,M,45-49,artist,4.0
+5290,F,18-24,college/grad student,4.1
+5291,M,45-49,academic/educator,4.0
+5292,M,25-34,other,3.5
+5293,M,25-34,programmer,3.8
+5294,M,25-34,artist,4.1
+5295,M,35-44,executive/managerial,3.6
+5296,F,Under 18,other,3.9
+5297,M,25-34,programmer,4.1
+5298,M,35-44,technician/engineer,3.1
+5299,M,25-34,artist,2.8
+5300,M,25-34,writer,4.1
+5301,M,25-34,technician/engineer,3.4
+5302,F,Under 18,K-12 student,3.9
+5303,F,56+,doctor/health care,4.0
+5304,F,35-44,homemaker,3.7
+5305,F,18-24,college/grad student,3.9
+5306,F,25-34,technician/engineer,3.3
+5307,M,25-34,customer service,3.7
+5308,M,56+,executive/managerial,3.6
+5309,M,25-34,other,3.9
+5310,F,56+,academic/educator,4.0
+5311,M,50-55,other,3.3
+5312,M,25-34,academic/educator,3.9
+5313,M,56+,other,4.1
+5314,F,25-34,other,3.6
+5315,M,25-34,programmer,4.0
+5316,M,18-24,college/grad student,3.9
+5317,F,25-34,other,4.2
+5318,M,18-24,technician/engineer,3.6
+5319,M,18-24,technician/engineer,3.8
+5320,F,18-24,customer service,2.7
+5321,M,25-34,college/grad student,3.1
+5322,M,35-44,technician/engineer,4.0
+5323,M,25-34,writer,3.7
+5324,M,25-34,executive/managerial,4.0
+5325,F,50-55,executive/managerial,3.4
+5326,M,25-34,artist,2.4
+5327,M,25-34,executive/managerial,3.8
+5328,F,25-34,college/grad student,3.6
+5329,F,25-34,customer service,4.1
+5330,F,25-34,other,3.3
+5331,M,35-44,sales/marketing,3.3
+5332,M,18-24,college/grad student,4.4
+5333,F,25-34,executive/managerial,3.7
+5334,F,56+,retired,1.9
+5335,M,25-34,sales/marketing,4.0
+5336,M,56+,executive/managerial,4.4
+5337,F,35-44,clerical/admin,4.2
+5338,M,25-34,technician/engineer,3.8
+5339,M,18-24,technician/engineer,3.8
+5340,F,50-55,clerical/admin,3.6
+5341,F,25-34,clerical/admin,3.7
+5342,F,35-44,executive/managerial,3.8
+5343,F,25-34,homemaker,4.4
+5344,F,50-55,academic/educator,3.6
+5345,F,25-34,technician/engineer,3.6
+5346,F,25-34,clerical/admin,3.9
+5347,M,25-34,doctor/health care,3.1
+5348,M,18-24,customer service,3.4
+5349,F,50-55,artist,4.1
+5350,M,18-24,customer service,2.9
+5351,F,45-49,academic/educator,3.9
+5352,F,35-44,customer service,3.7
+5353,M,25-34,doctor/health care,3.8
+5354,F,45-49,clerical/admin,3.7
+5355,M,56+,other,3.5
+5356,M,45-49,other,3.5
+5357,F,18-24,writer,3.9
+5358,M,35-44,executive/managerial,4.0
+5359,M,18-24,self-employed,3.9
+5360,M,18-24,programmer,3.4
+5361,F,50-55,self-employed,3.6
+5362,M,35-44,retired,3.1
+5363,M,56+,retired,4.3
+5364,F,25-34,clerical/admin,3.9
+5365,M,18-24,programmer,3.8
+5366,M,18-24,programmer,3.5
+5367,M,18-24,college/grad student,2.6
+5368,F,25-34,technician/engineer,3.2
+5369,M,25-34,scientist,3.7
+5370,M,25-34,programmer,2.6
+5371,M,25-34,lawyer,4.1
+5372,M,25-34,college/grad student,4.0
+5373,M,18-24,programmer,4.0
+5374,M,35-44,executive/managerial,3.7
+5375,M,25-34,other,4.5
+5376,M,25-34,technician/engineer,3.8
+5377,F,18-24,clerical/admin,3.7
+5378,M,35-44,tradesman/craftsman,3.7
+5379,M,25-34,executive/managerial,3.8
+5380,M,18-24,college/grad student,3.0
+5381,M,25-34,sales/marketing,4.0
+5382,M,18-24,college/grad student,4.0
+5383,M,35-44,academic/educator,4.0
+5384,F,25-34,clerical/admin,4.4
+5385,M,25-34,programmer,4.0
+5386,M,25-34,sales/marketing,3.8
+5387,F,25-34,academic/educator,3.6
+5388,F,18-24,college/grad student,4.0
+5389,M,45-49,executive/managerial,3.4
+5390,M,Under 18,other,3.9
+5391,M,25-34,executive/managerial,3.4
+5392,M,50-55,academic/educator,4.1
+5393,M,35-44,executive/managerial,3.2
+5394,M,18-24,other,3.9
+5395,M,50-55,academic/educator,3.8
+5396,M,25-34,doctor/health care,4.1
+5397,M,18-24,other,3.6
+5398,M,56+,technician/engineer,4.0
+5399,M,25-34,academic/educator,4.0
+5400,F,18-24,college/grad student,3.7
+5401,F,18-24,academic/educator,4.1
+5402,F,25-34,other,3.6
+5403,M,Under 18,K-12 student,3.5
+5404,M,25-34,other,3.8
+5405,F,50-55,executive/managerial,3.5
+5406,F,35-44,other,3.4
+5407,F,35-44,technician/engineer,4.2
+5408,M,25-34,writer,4.1
+5409,M,45-49,academic/educator,3.2
+5410,F,45-49,artist,3.5
+5411,F,Under 18,unemployed,2.4
+5412,M,25-34,programmer,3.9
+5413,M,35-44,academic/educator,4.1
+5414,M,Under 18,K-12 student,3.8
+5415,F,25-34,executive/managerial,3.5
+5416,F,25-34,customer service,4.2
+5417,M,18-24,technician/engineer,3.2
+5418,F,25-34,other,3.6
+5419,F,18-24,programmer,3.8
+5420,F,Under 18,unemployed,2.7
+5421,M,35-44,technician/engineer,3.9
+5422,M,50-55,executive/managerial,3.7
+5423,F,50-55,customer service,4.0
+5424,F,35-44,artist,3.6
+5425,M,18-24,college/grad student,3.8
+5426,M,25-34,sales/marketing,3.4
+5427,M,35-44,unemployed,4.6
+5428,F,25-34,doctor/health care,3.9
+5429,F,25-34,academic/educator,3.9
+5430,F,45-49,academic/educator,3.8
+5431,M,56+,academic/educator,4.0
+5432,M,56+,retired,4.0
+5433,F,35-44,technician/engineer,3.0
+5434,F,25-34,executive/managerial,4.0
+5435,M,45-49,tradesman/craftsman,4.2
+5436,M,18-24,college/grad student,3.6
+5437,M,25-34,lawyer,3.7
+5438,M,25-34,sales/marketing,3.5
+5439,M,56+,retired,3.9
+5440,F,45-49,artist,4.3
+5441,M,50-55,executive/managerial,3.8
+5442,M,25-34,executive/managerial,4.0
+5443,M,25-34,programmer,4.1
+5444,F,18-24,college/grad student,3.0
+5445,M,25-34,other,3.8
+5446,F,50-55,academic/educator,4.4
+5447,M,45-49,artist,4.3
+5448,M,45-49,unemployed,3.4
+5449,M,18-24,programmer,4.1
+5450,M,18-24,programmer,3.5
+5451,F,25-34,academic/educator,4.2
+5452,M,35-44,doctor/health care,3.3
+5453,M,18-24,college/grad student,3.8
+5454,M,35-44,executive/managerial,4.2
+5455,F,18-24,technician/engineer,3.6
+5456,M,35-44,academic/educator,3.6
+5457,M,18-24,programmer,3.6
+5458,F,18-24,artist,4.1
+5459,F,Under 18,K-12 student,4.0
+5460,M,18-24,college/grad student,4.4
+5461,M,50-55,other,4.1
+5462,M,25-34,technician/engineer,3.9
+5463,M,35-44,other,3.8
+5464,M,35-44,executive/managerial,4.2
+5465,F,25-34,other,3.3
+5466,M,25-34,programmer,4.1
+5467,M,35-44,other,3.6
+5468,M,25-34,programmer,4.0
+5469,M,35-44,programmer,4.2
+5470,M,56+,executive/managerial,4.0
+5471,M,18-24,executive/managerial,3.8
+5472,M,35-44,academic/educator,2.9
+5473,M,25-34,academic/educator,4.1
+5474,M,25-34,programmer,3.6
+5475,M,25-34,college/grad student,4.2
+5476,F,35-44,other,4.2
+5477,M,35-44,academic/educator,3.6
+5478,M,35-44,executive/managerial,3.7
+5479,M,35-44,academic/educator,3.6
+5480,F,25-34,sales/marketing,3.4
+5481,M,45-49,programmer,3.4
+5482,M,18-24,executive/managerial,3.9
+5483,F,25-34,doctor/health care,3.9
+5484,M,45-49,technician/engineer,4.2
+5485,M,25-34,college/grad student,3.8
+5486,M,25-34,other,4.1
+5487,M,25-34,technician/engineer,4.3
+5488,M,25-34,scientist,3.2
+5489,M,18-24,executive/managerial,4.1
+5490,M,45-49,technician/engineer,3.2
+5491,M,18-24,executive/managerial,3.5
+5492,M,18-24,college/grad student,3.4
+5493,M,35-44,programmer,3.0
+5494,F,35-44,technician/engineer,4.0
+5502,M,25-34,artist,3.6
+5503,F,25-34,homemaker,3.9
+5511,M,45-49,academic/educator,4.5
+5518,M,50-55,technician/engineer,4.5
+5519,M,35-44,scientist,3.3
+5520,M,45-49,academic/educator,4.0
+5521,F,25-34,doctor/health care,3.6
+5522,M,25-34,sales/marketing,3.8
+5530,F,18-24,college/grad student,3.0
+5534,M,45-49,self-employed,4.3
+5536,M,25-34,self-employed,2.7
+5539,F,25-34,writer,3.7
+5543,M,25-34,technician/engineer,3.7
+5545,F,35-44,self-employed,4.5
+5555,M,Under 18,K-12 student,3.2
+5557,M,35-44,sales/marketing,3.8
+5558,M,Under 18,K-12 student,1.8
+5566,M,35-44,executive/managerial,3.7
+5569,F,18-24,academic/educator,2.8
+5576,M,25-34,college/grad student,4.0
+5580,M,45-49,executive/managerial,3.9
+5585,M,25-34,college/grad student,3.8
+5590,F,45-49,programmer,3.4
+5591,M,18-24,other,4.4
+5593,M,50-55,self-employed,4.3
+5598,M,18-24,college/grad student,4.3
+5600,F,45-49,other,3.9
+5604,M,35-44,scientist,3.5
+5616,M,45-49,academic/educator,4.1
+5620,M,35-44,sales/marketing,4.2
+5621,M,25-34,executive/managerial,2.7
+5623,M,25-34,lawyer,5.0
+5626,M,56+,self-employed,3.9
+5636,M,25-34,executive/managerial,2.9
+5637,M,Under 18,K-12 student,4.0
+5643,F,35-44,academic/educator,3.0
+5644,F,18-24,college/grad student,4.0
+5650,F,35-44,programmer,3.1
+5653,M,50-55,academic/educator,3.5
+5654,M,25-34,college/grad student,4.0
+5664,M,18-24,college/grad student,5.0
+5668,F,25-34,clerical/admin,5.0
+5675,M,35-44,sales/marketing,3.5
+5677,M,25-34,academic/educator,3.7
+5682,M,18-24,other,3.0
+5683,F,18-24,homemaker,3.5
+5689,M,25-34,other,3.6
+5701,M,25-34,executive/managerial,4.3
+5706,M,18-24,technician/engineer,3.4
+5709,M,18-24,college/grad student,3.8
+5716,M,Under 18,K-12 student,3.8
+5733,M,25-34,college/grad student,4.5
+5734,F,25-34,sales/marketing,4.4
+5736,M,25-34,academic/educator,3.8
+5737,M,45-49,scientist,3.4
+5744,F,25-34,college/grad student,3.8
+5748,M,25-34,other,4.0
+5750,M,18-24,academic/educator,3.9
+5759,F,25-34,academic/educator,3.6
+5763,F,25-34,academic/educator,3.4
+5767,M,25-34,artist,3.7
+5769,M,45-49,sales/marketing,3.5
+5776,M,18-24,programmer,3.8
+5782,F,35-44,other,4.0
+5785,F,25-34,executive/managerial,4.1
+5788,M,25-34,other,4.0
+5811,M,18-24,college/grad student,3.5
+5812,F,25-34,executive/managerial,3.5
+5825,F,25-34,college/grad student,3.4
+5831,M,25-34,academic/educator,4.0
+5841,F,35-44,executive/managerial,4.1
+5846,M,45-49,self-employed,4.2
+5861,F,50-55,academic/educator,3.8
+5871,F,25-34,college/grad student,4.0
+5874,M,25-34,college/grad student,5.0
+5875,M,25-34,college/grad student,4.0
+5880,M,25-34,academic/educator,2.9
+5889,M,50-55,writer,3.8
+5908,M,25-34,college/grad student,4.1
+5923,M,25-34,executive/managerial,3.0
+5948,M,56+,retired,3.8
+5956,F,18-24,college/grad student,3.0
+5957,M,18-24,writer,3.5
+5969,M,45-49,retired,3.6
+5972,F,25-34,writer,3.3
+5985,F,18-24,college/grad student,3.7
+5988,M,25-34,scientist,3.0
+5996,F,25-34,other,3.0
+6000,M,45-49,technician/engineer,4.0
+6001,F,25-34,executive/managerial,3.9
+6002,M,50-55,other,4.1
+6003,F,45-49,technician/engineer,4.5
+6011,M,35-44,scientist,5.0
+6016,M,45-49,academic/educator,2.7
+6040,M,25-34,doctor/health care,4.0
