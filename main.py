@@ -341,7 +341,7 @@ with st.container():
 	st.write(attributes_sel, 'domain: ', len(nodes_per_attr_value_dct))
 	st.write('Number of nodes in the network: ', len(nodes))
 
-palette = ['#9fbfdf','#ff6633','#79d279','#072a4d','#006600','#bf80ff','#264d73','#ffb366','#808000','#c2d6d6',\
+palette = ['#9fbfdf','#ff6633','#79d279','#0f5aa6','#006600','#bf80ff','#264d73','#ffb366','#808000','#c2d6d6',\
 			'#ffaa00','#808080','#cccccc','#d46e3b','#ff00ff','#00e600','#ff5050','#8cd9b3','#66ffcc','#802b00',\
 			'#194d33','#ffaa00','#664400','#33004d','#660066','#006666','#669999','#bf4080','#73264d','#bbbb77',\
 			'#004080','#bf4040','#0077b3']
