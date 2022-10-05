@@ -122,9 +122,11 @@ def read_data(edgesdf,time_var,time_invar,timepoint):
 		num_of_nodes = 100
 	if len(nodes_G0)>num_of_nodes:
 		# call sampler
+		sampling_flag = True
 		sampler = SnowBallSampler(num_of_nodes)
 		sampled_graph = sampler.sample(G0)
 	else:
+		sampling_flag = False
 		sampled_graph = copy.deepcopy(G0)
 
 	sampled_edges_initial = [(num_node_map[i[0]],num_node_map[i[1]]) for i in list(sampled_graph.edges)]
@@ -140,7 +142,7 @@ def read_data(edgesdf,time_var,time_invar,timepoint):
 	if not isinstance(time_var,list):
 		sampled_attrs['varying'] = time_var.loc[:,timepoint]
 	sampled_attrs = sampled_attrs.reset_index()
-	return(sampled_edges,sampled_nodes,sampled_attrs)
+	return(sampled_edges,sampled_nodes,sampled_attrs,sampling_flag)
 
 def create_Graph(aggregation,color_palette,flag):
 	idx_nodes = aggregation[0].index.tolist()
@@ -328,7 +330,7 @@ with st.sidebar:
 	st.title('Graph')
 	time_sel = st.select_slider('Which time point?', options=period)
 	attributes_sel = st.selectbox('Choose partition (attribute)',stc+varying)
-	edges,nodes,attr = read_data(edges_df,time_variant_attr,time_invariant_attr,time_sel)
+	edges,nodes,attr,sampling_flag = read_data(edges_df,time_variant_attr,time_invariant_attr,time_sel)
 	attr = attr.astype(str)
 	attr.columns = ['UserID']+stc+varying
 	if attributes_sel:
@@ -336,9 +338,15 @@ with st.sidebar:
 
 
 with st.container():
+	if sampling_flag == True:
+		sampling = True
+	else:
+		sampling = False
 	st.title('Graph Overview')
-	st.subheader('Explore graph over time and attribute dimensions.')
+	st.subheader('Graph view over time and attribute dimensions.')
+	st.write('Graph instance on time point', time_sel, 'and ', attributes_sel, ' attribute.')
 	st.write(attributes_sel, 'domain: ', len(nodes_per_attr_value_dct))
+	st.write('Sampling: ', sampling)
 	st.write('Number of nodes in the network: ', len(nodes))
 
 palette = ['#9fbfdf','#ff6633','#79d279','#0f5aa6','#006600','#bf80ff','#264d73','#ffb366','#808000','#c2d6d6',\
@@ -425,7 +433,8 @@ with st.container():
 			st.success('Done!')
 
 			st.title('Aggregation Output')
-			st.write(agg_type, 'aggregation ', operator.lower(), 'graph on ', (time_left, time_right), 'for ', ", ".join(attributes), ' attribute(s).')
+			st.subheader('A global view of the graph as filtered by the time operator and grouped on one or more attributes.')
+			st.write(agg_type, 'aggregation ', operator.lower(), 'graph on ', '[', ", ".join(time_left), '], ', '[', ", ".join(time_right), ']', ' intervals for ', ", ".join(attributes), ' attribute(s).')
 
 			settings = {}
 			if operator == 'Difference':
@@ -615,7 +624,7 @@ with st.sidebar:
 			        try:
 			        	inx_pairs.append(agg_inx[1].loc[attr_values][0])
 			        except:
-			        	continue#
+			        	continue
 		# Growth limits
 		elif event == 'Growth':
 			diff_pairs_G = []
@@ -798,17 +807,16 @@ with st.sidebar:
 
 if submitted_expl and attributes_expl:
 	with st.container():
-		try:
-			if submitted_expl and result_lst:
-				with st.spinner('Wait for it...'):
-					time.sleep(3)
-					st.success('Done!')
-				st.title('Exploration Output')
-				if len(attr_values) == 2:
-					st.write('Derived intervals on ', event.lower(), ' _event_ for at least ', k, 'interaction(s) and edge type: ', attr_values, '.')
-				else:
-					st.write('Derived intervals on ', event.lower(), ' _event_ for at least ', k, 'interaction(s) and edge type: ', (attr_values[:int(len(attr_values)/2)], attr_values[int(len(attr_values)/2):]), '.')
-				st.plotly_chart(fig, use_container_width=True)
-		except:
+		#try:
+		if submitted_expl and result_lst:
+			with st.spinner('Wait for it...'):
+				time.sleep(3)
+				st.success('Done!')
+			st.title('Exploration Output')
+			st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
+			st.write('Derived intervals on ', event.lower(), ' _event_ for at least ', k, 'interaction(s) and edge type: ((', ", ".join(attr_values[:int(len(attr_values)/2)]), '), ', '(', ", ".join(attr_values[int(len(attr_values)/2):]), ')).')
+			st.plotly_chart(fig, use_container_width=True)
+		#except:
+		else:
 			st.title('Exploration Output')
 			st.write('There are no results for ', int(k), 'interaction(s) ', ':neutral_face:')
