@@ -409,13 +409,13 @@ with st.sidebar:
 	#col_time_left, col_time_right = st.columns(2)
 	#with col_time_left:
 		#time_left = st.multiselect("Left Interval", period)
-	time_left_start,time_left_stop = st.select_slider("Left Interval (range)", options=period,value=(period[0],period[3]))
+	time_left_start,time_left_stop = st.select_slider("Left Interval (range)", options=period,value=(period[0],period[2]))
 	time_left = period[period.index(time_left_start):period.index(time_left_stop)+1]
 	time_left = [str(i) for i in time_left]
 	st.write('Selected left interval: [', ", ".join(time_left), ']')
 	#with col_time_right:
 		#time_right = st.multiselect("Right Interval", [i for i in period if i not in time_left])
-	time_right_start,time_right_stop = st.select_slider("Right Interval (range)", options=period,value=(period[4],period[6]))
+	time_right_start,time_right_stop = st.select_slider("Right Interval (range)", options=period,value=(period[3],period[5]))
 	time_right = period[period.index(time_right_start):period.index(time_right_stop)+1]
 	time_right = [str(i) for i in time_right]
 	st.write('Selected right interval: [', ", ".join(time_right), ']')
