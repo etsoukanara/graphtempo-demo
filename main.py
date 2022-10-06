@@ -418,7 +418,7 @@ with st.sidebar:
 	time_right_start,time_right_stop = st.select_slider("Right Interval (range)", options=period,value=(period[0],period[3]))
 	time_right = period[period.index(time_right_start):period.index(time_right_stop)+1]
 	time_right = [str(i) for i in time_right]
-	st.write('Selected left interval: [', ", ".join(time_right), ']')
+	st.write('Selected right interval: [', ", ".join(time_right), ']')
 	operator = st.selectbox('Operator',['Union','Intersection','Difference','Evolution'])
 	attributes = st.multiselect("Attributes", stc+varying)
 	agg_type = st.selectbox('Type',['Non-Distinct','Distinct'])
