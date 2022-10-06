@@ -411,10 +411,14 @@ with st.sidebar:
 		#time_left = st.multiselect("Left Interval", period)
 	time_left_start,time_left_stop = st.select_slider("Left Interval (range)", options=period,value=(period[0],period[3]))
 	time_left = period[period.index(time_left_start):period.index(time_left_stop)+1]
+	time_left = [str(i) for i in time_left]
+	st.write('Selected left interval: [', ", ".join(time_left), ']')
 	#with col_time_right:
 		#time_right = st.multiselect("Right Interval", [i for i in period if i not in time_left])
 	time_right_start,time_right_stop = st.select_slider("Right Interval (range)", options=period,value=(period[0],period[3]))
 	time_right = period[period.index(time_right_start):period.index(time_right_stop)+1]
+	time_right = [str(i) for i in time_right]
+	st.write('Selected left interval: [', ", ".join(time_right), ']')
 	operator = st.selectbox('Operator',['Union','Intersection','Difference','Evolution'])
 	attributes = st.multiselect("Attributes", stc+varying)
 	agg_type = st.selectbox('Type',['Non-Distinct','Distinct'])
@@ -697,27 +701,30 @@ with st.sidebar:
 					shrinkage_max = agg_diff_S[1].loc[attr_values][0]
 				except:
 					pass
-		try:
-			if event == 'Stability':
+		#try:
+		if event == 'Stability':
+			if inx_pairs:
 				k_limits = [1,int(max(inx_pairs))]
-			elif event == 'Growth':
+			else:
+				st.error('Invalid attribute values.')
+				k_limits = [0]
+		elif event == 'Growth':
+			if diff_pairs_G:
 				k_limits = [int(min(diff_pairs_G)),int(max(diff_pairs_G))]
-			elif event == 'Shrinkage':
+			else:
+				st.error('Invalid attribute values.')
+				k_limits = [0]
+		elif event == 'Shrinkage':
+			if diff_pairs_S:
 				k_limits = [int(min(diff_pairs_S)),shrinkage_max]
-
-			k = st.number_input('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])#, value=k_limits[0])
+			else:
+				st.error('Invalid attribute values.')
+				k_limits = [0]
+		if k_limits != [0]:
+			k = st.number_input('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
 			st.write('The current number is ', int(k))
 			submitted_expl = st.button('Explore')
-			# if submitted_expl and k!=0:
-			# 	if event == 'Stability':
-			# 		result,myagg = Stability_Intersection_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,attrtype,stc_attrs,attr_values)
-			# 	if event == 'Growth':
-			# 		result,myagg = Growth_Union_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,attrtype,stc_attrs,attr_values)
-			# 	if event == 'Shrinkage':
-			# 		result,myagg = Shrink_Union_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
-			# 		#result,myagg = Shrink_Union_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,attrtype,stc_attrs,attr_values)
-			# 		result = result[::-1]
-			if submitted_expl and k!=0:
+			if submitted_expl:
 				if attrtype=='Static':
 					if event == 'Stability':
 						result,myagg = Stability_Intersection_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
@@ -802,8 +809,7 @@ with st.sidebar:
 				)
 			#fig.update_traces(textposition="bottom right", line_color="#6666ff", marker_size=15)
 			#fig.show()
-		except:
-			st.error('Invalid attribute values.')
+
 
 if submitted_expl and attributes_expl:
 	with st.container():
@@ -814,9 +820,11 @@ if submitted_expl and attributes_expl:
 				st.success('Done!')
 			st.title('Exploration Output')
 			st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
+			attr_values = tuple([str(i) for i in attr_values])
 			st.write('Derived intervals on ', event.lower(), ' _event_ for at least ', k, 'interaction(s) and edge type: ((', ", ".join(attr_values[:int(len(attr_values)/2)]), '), ', '(', ", ".join(attr_values[int(len(attr_values)/2):]), ')).')
+			#st.write(attr_values)
 			st.plotly_chart(fig, use_container_width=True)
 		#except:
-		else:
+		elif submitted_expl and not result_lst:
 			st.title('Exploration Output')
 			st.write('There are no results for ', int(k), 'interaction(s) ', ':neutral_face:')
