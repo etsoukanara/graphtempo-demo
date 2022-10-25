@@ -273,558 +273,668 @@ def create_Graph(aggregation,color_palette,flag):
 	                      edges=edges_agg_graph, 
 	                      config=config)
 
-# st.sidebar.title("What to do")
-# app_mode = st.sidebar.selectbox("Choose the app mode",
-#     ["Show instructions","Run the app"])
-# if app_mode == "Show instructions":
-#     st.sidebar.success('To continue select "Run the app".')
+st.sidebar.title("GraphTempo")
+app_mode = st.sidebar.selectbox("Choose mode",
+    ["Show instructions", "Graph Overview", "Graph Aggregation", "Graph Exploration"])
 
-# elif app_mode == "Run the app":
-with st.sidebar:
-	#Choose Dataset
-	st.title('Dataset')
-	dataset = st.selectbox('Choose dataset',['DBLP','MovieLens','Primary School'])
-	if dataset == 'DBLP':
-		stc = ['Gender']
-		varying = ['#Publications']
-		edges_df = pd.read_csv('datasets/dblp_dataset/edges.csv', sep=' ', index_col=[0,1])
-		nodes_df = pd.read_csv('datasets/dblp_dataset/nodes.csv', sep=' ', index_col=0)
-		time_variant_attr = pd.read_csv('datasets/dblp_dataset/time_variant_attr.csv', sep=' ', index_col=0)
-		time_invariant_attr = pd.read_csv('datasets/dblp_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
-		time_invariant_attr.rename(columns={'0': 'gender'}, inplace=True)
-		nodes_df.index.names = ['userID']
-		time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
-	elif dataset == 'MovieLens':
-		stc = ['Gender','Age','Occupation']
-		varying = ['Rating']
-		edges_df = pd.read_csv('datasets/movielens_dataset/edges.csv', sep=' ', index_col=[0,1])
-		nodes_df = pd.read_csv('datasets/movielens_dataset//nodes.csv', sep=' ', index_col=0)
-		time_variant_attr = pd.read_csv('datasets/movielens_dataset/time_variant_attr.csv', sep=' ', index_col=0)
-		time_invariant_attr = pd.read_csv('datasets/movielens_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
-	elif dataset == 'Primary School':
-		stc = ['Gender','Class']
-		edges_df = pd.read_csv('datasets/school_dataset/edges.csv', sep=' ', index_col=[0,1])
-		nodes_df = pd.read_csv('datasets/school_dataset//nodes.csv', sep=' ', index_col=0)
-		time_invariant_attr = pd.read_csv('datasets/school_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
-		time_variant_attr = []
-		varying = []
-	period = list(edges_df.columns)
-
-	with st.expander('Load your dataset'):
-		uploaded_files = st.file_uploader("Choose a CSV file", type='csv', accept_multiple_files=True)
-		for uploaded_file in uploaded_files:
-			if uploaded_file.name == 'edges.csv':
-				edges_df = pd.read_csv(uploaded_file, sep=' ', index_col=[0,1])
-			if uploaded_file.name == 'nodes.csv':
-				nodes_df = pd.read_csv(uploaded_file, sep=' ', index_col=0)
-			if uploaded_file.name == 'time_variant_attr.csv':
-				time_variant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
-			if uploaded_file.name == 'time_invariant_attr.csv':
-				time_invariant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+if app_mode == "Show instructions":
+    st.sidebar.success('To continue select "Graph Overview".')
+    with st.container():
+    	i=100
+    	st.title('Aggregation and Exploration for Evolving Graphs')
+    	st.subheader('Implementation of the paper GraphTempo: An aggregation framework for evolving graphs')
+    	st.write('We provide three real-world datasets for testing the functions of aggregation and exploration. Alternatively, the user can upload his own dataset providing it follows the appropriate format. Main functions are:')
+    	st.write('**Graph Overview**: provides a view of the initial graph on the selected time point and attribute. When nodes in the graph are more than', i, ', we sample the graph by applying the Snowball Sampling algorithm.')
+    	st.write('**Graph Aggregation**: facilitates aggregation on specific periods of time for one or more node attributes. The available temporal operators form a different temporal graph based on the semantics of each operator. The user can choose between two types of aggregation.')
+    	st.write('**Graph Exploration**: discovers interesting intervals of the graph as to a specific event. The user can choose the type of the edge by selecting the values of the attributes interested and the number of the preferred interactions.')
+    	st.write('👈 To continue select "Graph Overview".')
 	
-			period = list(edges_df.columns)
-			stc = list(time_invariant_attr.columns)
-			varying = ['varying']
-	#if not edges_df.empty and not time_invariant_attr.empty:
-	# View graph
-	st.title('Graph')
-	time_sel = st.select_slider('Which time point?', options=period)
-	attributes_sel = st.selectbox('Choose partition (attribute)',stc+varying)
-	edges,nodes,attr,sampling_flag = read_data(edges_df,time_variant_attr,time_invariant_attr,time_sel)
-	attr = attr.astype(str)
-	attr.columns = ['UserID']+stc+varying
-	if attributes_sel:
-		nodes_per_attr_value_dct = attr.groupby(attributes_sel)['UserID'].apply(list).to_dict()
+
+elif app_mode == "Graph Overview":
+	with st.sidebar:
+		#Choose Dataset
+		st.title('Dataset')
+		dataset = st.selectbox('Choose dataset',['DBLP','MovieLens','Primary School'])
+		if dataset == 'DBLP':
+			stc = ['Gender']
+			varying = ['#Publications']
+			edges_df = pd.read_csv('datasets/dblp_dataset/edges.csv', sep=' ', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets/dblp_dataset/nodes.csv', sep=' ', index_col=0)
+			time_variant_attr = pd.read_csv('datasets/dblp_dataset/time_variant_attr.csv', sep=' ', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets/dblp_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			time_invariant_attr.rename(columns={'0': 'gender'}, inplace=True)
+			nodes_df.index.names = ['userID']
+			time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
+		elif dataset == 'MovieLens':
+			stc = ['Gender','Age','Occupation']
+			varying = ['Rating']
+			edges_df = pd.read_csv('datasets/movielens_dataset/edges.csv', sep=' ', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets/movielens_dataset//nodes.csv', sep=' ', index_col=0)
+			time_variant_attr = pd.read_csv('datasets/movielens_dataset/time_variant_attr.csv', sep=' ', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets/movielens_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+		elif dataset == 'Primary School':
+			stc = ['Gender','Class']
+			edges_df = pd.read_csv('datasets/school_dataset/edges.csv', sep=' ', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets/school_dataset//nodes.csv', sep=' ', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets/school_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			time_variant_attr = []
+			varying = []
+		period = list(edges_df.columns)
+
+		with st.expander('Load your dataset'):
+			uploaded_files = st.file_uploader("Choose a CSV file", type='csv', accept_multiple_files=True)
+			for uploaded_file in uploaded_files:
+				if uploaded_file.name == 'edges.csv':
+					edges_df = pd.read_csv(uploaded_file, sep=' ', index_col=[0,1])
+				if uploaded_file.name == 'nodes.csv':
+					nodes_df = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+				if uploaded_file.name == 'time_variant_attr.csv':
+					time_variant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+				if uploaded_file.name == 'time_invariant_attr.csv':
+					time_invariant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+		
+				period = list(edges_df.columns)
+				stc = list(time_invariant_attr.columns)
+				varying = ['varying']
+
+		# View graph
+		st.title('Graph')
+		time_sel = st.select_slider('Which time point?', options=period)
+		attributes_sel = st.selectbox('Choose partition (attribute)',stc+varying)
+		edges,nodes,attr,sampling_flag = read_data(edges_df,time_variant_attr,time_invariant_attr,time_sel)
+		attr = attr.astype(str)
+		attr.columns = ['UserID']+stc+varying
+		if attributes_sel:
+			nodes_per_attr_value_dct = attr.groupby(attributes_sel)['UserID'].apply(list).to_dict()
 
 
-with st.container():
-	if sampling_flag == True:
-		sampling = True
-	else:
-		sampling = False
-	st.title('Graph Overview')
-	st.subheader('Graph view over time and attribute dimensions.')
-	st.write('Graph instance on time point', time_sel, 'and ', attributes_sel, ' attribute.')
-	st.write(attributes_sel, 'domain: ', len(nodes_per_attr_value_dct))
-	st.write('Sampling: ', sampling)
-	st.write('Number of nodes in the network: ', len(nodes))
+	with st.container():
+		if sampling_flag == True:
+			sampling = True
+		else:
+			sampling = False
+		st.title('Graph Overview')
+		st.subheader('Graph view over time and attribute dimensions.')
+		st.write('Graph instance on time point', time_sel, 'and ', attributes_sel, ' attribute.')
+		st.write(attributes_sel, 'domain: ', len(nodes_per_attr_value_dct))
+		st.write('Sampling: ', sampling)
+		st.write('Number of nodes in the network: ', len(nodes))
 
-palette = ['#9fbfdf','#ff6633','#79d279','#0f5aa6','#006600','#bf80ff','#264d73','#ffb366','#808000','#c2d6d6',\
+	palette = ['#9fbfdf','#ff6633','#79d279','#0f5aa6','#006600','#bf80ff','#264d73','#ffb366','#808000','#c2d6d6',\
+				'#ffaa00','#808080','#cccccc','#d46e3b','#ff00ff','#00e600','#ff5050','#8cd9b3','#66ffcc','#802b00',\
+				'#194d33','#ffaa00','#664400','#33004d','#660066','#006666','#669999','#bf4080','#73264d','#bbbb77',\
+				'#004080','#bf4040','#0077b3']
+
+	nodes_graph = []
+	inx = 0
+	for key,val in nodes_per_attr_value_dct.items():
+		for node in val:
+			nodes_graph.append(Node(id=node,
+						  #size=15,
+						  title=node,
+	    				  label=key,
+	                      symbolType='dot',
+	                      font={'enabled':True,'color':palette[inx]},
+	                      physics=False,
+	                      color={'border':'black','background':palette[inx]}))
+		inx += 1
+
+	edges_graph = []
+	for edge in edges:
+	        edges_graph.append(
+	            Edge(source=edge[0],
+	                 target=edge[1], 
+	                 smooth= {'enabled':True,'type':'dynamic'},
+	                 font={'color':'black'},
+	                 #length=300,
+	                 color='black')
+	        )
+
+	config = Config(width=1000, 
+	                height=500,
+	                #graphviz_layout='fdp',
+	                #graphviz_config={"rankdir": rankdir, "ranksep": ranksep, "nodesep": nodesep},
+	                directed=True,
+	                enabled=True,
+	                #initiallyActive=True,
+	                nodeHighlightBehavior=True, 
+	                highlightColor="#F7A7A6",
+	                collapsible=True,
+	                node={'labelProperty':'label'},
+	                link={'labelProperty': 'label', 'renderLabel': True},
+	                maxZoom=2,
+	                minZoom=0.1,
+	                staticGraphWithDragAndDrop=False,
+	                staticGraph=False,
+	                initialZoom=1
+	                )
+
+	return_value = agraph(nodes=nodes_graph, 
+	                      edges=edges_graph, 
+	                      config=config)
+
+# Aggregation
+elif app_mode == "Graph Aggregation":
+	with st.sidebar:
+		#Choose Dataset
+		st.title('Dataset')
+		dataset = st.selectbox('Choose dataset',['DBLP','MovieLens','Primary School'])
+		if dataset == 'DBLP':
+			stc = ['Gender']
+			varying = ['#Publications']
+			edges_df = pd.read_csv('datasets/dblp_dataset/edges.csv', sep=' ', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets/dblp_dataset/nodes.csv', sep=' ', index_col=0)
+			time_variant_attr = pd.read_csv('datasets/dblp_dataset/time_variant_attr.csv', sep=' ', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets/dblp_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			time_invariant_attr.rename(columns={'0': 'gender'}, inplace=True)
+			nodes_df.index.names = ['userID']
+			time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
+		elif dataset == 'MovieLens':
+			stc = ['Gender','Age','Occupation']
+			varying = ['Rating']
+			edges_df = pd.read_csv('datasets/movielens_dataset/edges.csv', sep=' ', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets/movielens_dataset//nodes.csv', sep=' ', index_col=0)
+			time_variant_attr = pd.read_csv('datasets/movielens_dataset/time_variant_attr.csv', sep=' ', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets/movielens_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+		elif dataset == 'Primary School':
+			stc = ['Gender','Class']
+			edges_df = pd.read_csv('datasets/school_dataset/edges.csv', sep=' ', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets/school_dataset//nodes.csv', sep=' ', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets/school_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			time_variant_attr = []
+			varying = []
+		period = list(edges_df.columns)
+
+		with st.expander('Load your dataset'):
+			uploaded_files = st.file_uploader("Choose a CSV file", type='csv', accept_multiple_files=True)
+			for uploaded_file in uploaded_files:
+				if uploaded_file.name == 'edges.csv':
+					edges_df = pd.read_csv(uploaded_file, sep=' ', index_col=[0,1])
+				if uploaded_file.name == 'nodes.csv':
+					nodes_df = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+				if uploaded_file.name == 'time_variant_attr.csv':
+					time_variant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+				if uploaded_file.name == 'time_invariant_attr.csv':
+					time_invariant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+		
+				period = list(edges_df.columns)
+				stc = list(time_invariant_attr.columns)
+				varying = ['varying']
+	palette = ['#9fbfdf','#ff6633','#79d279','#0f5aa6','#006600','#bf80ff','#264d73','#ffb366','#808000','#c2d6d6',\
 			'#ffaa00','#808080','#cccccc','#d46e3b','#ff00ff','#00e600','#ff5050','#8cd9b3','#66ffcc','#802b00',\
 			'#194d33','#ffaa00','#664400','#33004d','#660066','#006666','#669999','#bf4080','#73264d','#bbbb77',\
 			'#004080','#bf4040','#0077b3']
+	with st.sidebar:
+		#with st.expander('Set up Aggregation'):
+		st.title('Set up Aggregation')
+		#col_time_left, col_time_right = st.columns(2)
+		#with col_time_left:
+			#time_left = st.multiselect("Left Interval", period)
+		time_left_start,time_left_stop = st.select_slider("Left Interval (range)", options=period,value=(period[0],period[2]))
+		time_left = period[period.index(time_left_start):period.index(time_left_stop)+1]
+		time_left = [str(i) for i in time_left]
+		st.write('Selected left interval: [', time_left[0], ',', time_left[-1], ']')
+		#with col_time_right:
+			#time_right = st.multiselect("Right Interval", [i for i in period if i not in time_left])
+		time_right_start,time_right_stop = st.select_slider("Right Interval (range)", options=period,value=(period[3],period[5]))
+		time_right = period[period.index(time_right_start):period.index(time_right_stop)+1]
+		time_right = [str(i) for i in time_right]
+		st.write('Selected right interval: [', time_right[0], ',', time_right[-1], ']')
+		operator = st.selectbox('Operator',['Union','Intersection','Difference','Evolution'])
+		attributes = st.multiselect("Attributes", stc+varying)
+		agg_type = st.selectbox('Type',['Non-Distinct','Distinct'])
+		submitted = st.button('Aggregate')
+		if submitted and (not time_left or not time_right or not operator or not attributes or not agg_type):
+			st.error('Required fields missing.')#, icon="🚨")
+		if submitted and time_left and time_right and operator and attributes and agg_type:
+			if list(set(time_left).intersection(time_right)):
+				st.error('Overlapping intervals.')
 
-nodes_graph = []
-inx = 0
-for key,val in nodes_per_attr_value_dct.items():
-	for node in val:
-		nodes_graph.append(Node(id=node,
-					  #size=15,
-					  title=node,
-    				  label=key,
-                      symbolType='dot',
-                      font={'enabled':True,'color':palette[inx]},
-                      physics=False,
-                      color={'border':'black','background':palette[inx]}))
-	inx += 1
+	with st.container():
+		if time_left and time_right and operator and attributes and agg_type and submitted:
+			if not list(set(time_left).intersection(time_right)):
+				with st.spinner('Wait for it...'):
+				    time.sleep(3)
 
-edges_graph = []
-for edge in edges:
-        edges_graph.append(
-            Edge(source=edge[0],
-                 target=edge[1], 
-                 smooth= {'enabled':True,'type':'dynamic'},
-                 font={'color':'black'},
-                 #length=300,
-                 color='black')
-        )
+				st.title('Aggregation Output')
+				st.subheader('A global view of the graph as filtered by the time operator and grouped on one or more attributes.')
+				st.write(agg_type, 'aggregation ', operator.lower(), 'graph on ', '[', time_left[0], ',', time_left[-1], '], ', '[', time_right[0], ',', time_right[-1], ']', ' intervals for ', ", ".join(attributes), ' attribute(s).')
 
-config = Config(width=1000, 
-                height=500,
-                #graphviz_layout='fdp',
-                #graphviz_config={"rankdir": rankdir, "ranksep": ranksep, "nodesep": nodesep},
-                directed=True,
-                enabled=True,
-                #initiallyActive=True,
-                nodeHighlightBehavior=True, 
-                highlightColor="#F7A7A6",
-                collapsible=True,
-                node={'labelProperty':'label'},
-                link={'labelProperty': 'label', 'renderLabel': True},
-                maxZoom=2,
-                minZoom=0.1,
-                staticGraphWithDragAndDrop=False,
-                staticGraph=False,
-                initialZoom=1
-                )
+				settings = {}
+				if operator == 'Difference':
+					settings['operator'] = 'Diff'
+				else:
+					settings['operator'] = operator
+				if agg_type == 'Non-Distinct':
+					settings['type'] = 'All'
+				elif agg_type == 'Distinct':
+					settings['type'] = 'Dist'
+				settings['left'] = time_left
+				settings['right'] = time_right
+				settings['left'] = [i.lower() for i in settings['left']]
+				settings['right'] = [i.lower() for i in settings['right']]
+				settings['static'] = [i.lower() for i in attributes if i not in varying]
 
-return_value = agraph(nodes=nodes_graph, 
-                      edges=edges_graph, 
-                      config=config)
+				if settings['operator'] == 'Union' or settings['operator'] == 'Intersection':
+					interval = settings['left']+settings['right']
+					if any(i in stc for i in attributes) and not any(i in varying for i in attributes):
+						res, tia = eval(settings['operator'] + '_Static')(nodes_df,edges_df,time_invariant_attr,interval)
+						agg = eval('Aggregate_Static_' + settings['type'])(res,tia,settings['static'])
+					elif any(i in varying for i in attributes) and not any(i in stc for i in attributes):
+						res, tva = eval(settings['operator'] + '_Variant')(nodes_df,edges_df,time_variant_attr,interval)
+						agg = eval('Aggregate_Variant_' + settings['type'])(res,tva,interval)
+					elif any(i in stc for i in attributes) and any(i in varying for i in attributes):
+						res, tia, tva = eval(settings['operator'] + '_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,interval)
+						agg = eval('Aggregate_Mix_' + settings['type'])(res,tva,tia,settings['static'],interval)
 
-# Aggregation
-with st.sidebar:
-	#with st.expander('Set up Aggregation'):
-	st.title('Set up Aggregation')
-	#col_time_left, col_time_right = st.columns(2)
-	#with col_time_left:
-		#time_left = st.multiselect("Left Interval", period)
-	time_left_start,time_left_stop = st.select_slider("Left Interval (range)", options=period,value=(period[0],period[2]))
-	time_left = period[period.index(time_left_start):period.index(time_left_stop)+1]
-	time_left = [str(i) for i in time_left]
-	st.write('Selected left interval: [', ", ".join(time_left), ']')
-	#with col_time_right:
-		#time_right = st.multiselect("Right Interval", [i for i in period if i not in time_left])
-	time_right_start,time_right_stop = st.select_slider("Right Interval (range)", options=period,value=(period[3],period[5]))
-	time_right = period[period.index(time_right_start):period.index(time_right_stop)+1]
-	time_right = [str(i) for i in time_right]
-	st.write('Selected right interval: [', ", ".join(time_right), ']')
-	operator = st.selectbox('Operator',['Union','Intersection','Difference','Evolution'])
-	attributes = st.multiselect("Attributes", stc+varying)
-	agg_type = st.selectbox('Type',['Non-Distinct','Distinct'])
-	submitted = st.button('Aggregate')
-	if submitted and (not time_left or not time_right or not operator or not attributes or not agg_type):
-		st.error('Required fields missing.')#, icon="🚨")
-	if submitted and time_left and time_right and operator and attributes and agg_type:
-		if list(set(time_left).intersection(time_right)):
-			st.error('Overlapping intervals.')
-
-with st.container():
-	if time_left and time_right and operator and attributes and agg_type and submitted:
-		if not list(set(time_left).intersection(time_right)):
-			with st.spinner('Wait for it...'):
-			    time.sleep(3)
-			st.success('Done!')
-
-			st.title('Aggregation Output')
-			st.subheader('A global view of the graph as filtered by the time operator and grouped on one or more attributes.')
-			st.write(agg_type, 'aggregation ', operator.lower(), 'graph on ', '[', ", ".join(time_left), '], ', '[', ", ".join(time_right), ']', ' intervals for ', ", ".join(attributes), ' attribute(s).')
-
-			settings = {}
-			if operator == 'Difference':
-				settings['operator'] = 'Diff'
-			else:
-				settings['operator'] = operator
-			if agg_type == 'Non-Distinct':
-				settings['type'] = 'All'
-			elif agg_type == 'Distinct':
-				settings['type'] = 'Dist'
-			settings['left'] = time_left
-			settings['right'] = time_right
-			settings['left'] = [i.lower() for i in settings['left']]
-			settings['right'] = [i.lower() for i in settings['right']]
-			settings['static'] = [i.lower() for i in attributes if i not in varying]
-
-			if settings['operator'] == 'Union' or settings['operator'] == 'Intersection':
-				interval = settings['left']+settings['right']
-				if any(i in stc for i in attributes) and not any(i in varying for i in attributes):
-					res, tia = eval(settings['operator'] + '_Static')(nodes_df,edges_df,time_invariant_attr,interval)
-					agg = eval('Aggregate_Static_' + settings['type'])(res,tia,settings['static'])
-				elif any(i in varying for i in attributes) and not any(i in stc for i in attributes):
-					res, tva = eval(settings['operator'] + '_Variant')(nodes_df,edges_df,time_variant_attr,interval)
-					agg = eval('Aggregate_Variant_' + settings['type'])(res,tva,interval)
-				elif any(i in stc for i in attributes) and any(i in varying for i in attributes):
-					res, tia, tva = eval(settings['operator'] + '_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,interval)
-					agg = eval('Aggregate_Mix_' + settings['type'])(res,tva,tia,settings['static'],interval)
-
-				try:
-					create_Graph(agg,palette,0)
-				except:
-					st.write('There is no', operator.lower(), 'aggregate graph for the specified intervals', ':neutral_face:')
-
-			elif settings['operator'] == 'Diff':
-				interval_diffL = settings['left']
-				interval_diffR = settings['right']
-				if any(i in stc for i in attributes) and not any(i in varying for i in attributes):
-					res, tia = eval(settings['operator'] + '_Static')(nodes_df,edges_df,time_invariant_attr,interval_diffL,interval_diffR)
-					agg_tmp = eval('Aggregate_Static_' + settings['type'])(res,tia,settings['static'])
-					agg = eval(settings['operator'] + '_Post_Agg_Static')(agg_tmp,settings['static'])
-				elif any(i in varying for i in attributes) and not any(i in stc for i in attributes):
-					res, tva = eval(settings['operator'] + '_Variant')(nodes_df,edges_df,time_variant_attr,interval_diffL,interval_diffR)
-					agg_tmp = eval('Aggregate_Variant_' + settings['type'])(res,tva,interval_diffL)
-					agg = eval(settings['operator'] + '_Post_Agg_Variant')(agg_tmp)
-				elif any(i in stc for i in attributes) and any(i in varying for i in attributes):
-					res, tia, tva = eval(settings['operator'] + '_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,interval_diffL,interval_diffR)
-					agg_tmp = eval('Aggregate_Mix_' + settings['type'])(res,tva,tia,settings['static'],interval_diffL)
-					agg = eval(settings['operator'] + '_Post_Agg_Mix')(agg_tmp,settings['static'])
-
-				try:
-					create_Graph(agg,palette,0)
-				except:
-					st.write('There is no', operator.lower(), 'aggregate graph for the specified intervals', ':neutral_face:')
-
-			elif settings['operator'] == 'Evolution':
-				interval = settings['left']+settings['right']
-				interval_diffL = settings['left']
-				interval_diffR = settings['right']	
-				if any(i in stc for i in attributes) and not any(i in varying for i in attributes):
-					res, tia = eval('Intersection_Static')(nodes_df,edges_df,time_invariant_attr,interval)
-					agg_stable = eval('Aggregate_Static_' + settings['type'])(res,tia,settings['static'])
-					res, tia = eval('Diff_Static')(nodes_df,edges_df,time_invariant_attr,interval_diffL,interval_diffR)
-					agg_tmp = eval('Aggregate_Static_' + settings['type'])(res,tia,settings['static'])
-					agg_del = eval('Diff_Post_Agg_Static')(agg_tmp,settings['static'])
-					res, tia = eval('Diff_Static')(nodes_df,edges_df,time_invariant_attr,interval_diffR,interval_diffL)
-					agg_tmp = eval('Aggregate_Static_' + settings['type'])(res,tia,settings['static'])
-					agg_new = eval('Diff_Post_Agg_Static')(agg_tmp,settings['static'])
-				elif any(i in varying for i in attributes) and not any(i in stc for i in attributes):
-					res, tva = eval('Intersection_Variant')(nodes_df,edges_df,time_variant_attr,interval)
-					agg_stable = eval('Aggregate_Variant_' + settings['type'])(res,tva,interval)
-					res, tva = eval('Diff_Variant')(nodes_df,edges_df,time_variant_attr,interval_diffL,interval_diffR)
-					agg_tmp = eval('Aggregate_Variant_' + settings['type'])(res,tva,interval_diffL)
-					agg_del = eval('Diff_Post_Agg_Variant')(agg_tmp)
-					res, tva = eval('Diff_Variant')(nodes_df,edges_df,time_variant_attr,interval_diffR,interval_diffL)
-					agg_tmp = eval('Aggregate_Variant_' + settings['type'])(res,tva,interval_diffR)
-					agg_new = eval('Diff_Post_Agg_Variant')(agg_tmp)
-				elif any(i in stc for i in attributes) and any(i in varying for i in attributes):
-					res, tia, tva = eval('Intersection_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,interval)
-					agg_stable = eval('Aggregate_Mix_' + settings['type'])(res,tva,tia,settings['static'],interval)
-					res, tia, tva = eval('Diff_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,interval_diffL,interval_diffR)
-					agg_tmp = eval('Aggregate_Mix_' + settings['type'])(res,tva,tia,settings['static'],interval_diffL)
-					agg_del = eval('Diff_Post_Agg_Mix')(agg_tmp,settings['static'])
-					res, tia, tva = eval('Diff_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,interval_diffR,interval_diffL)
-					agg_tmp = eval('Aggregate_Mix_' + settings['type'])(res,tva,tia,settings['static'],interval_diffR)
-					agg_new = eval('Diff_Post_Agg_Mix')(agg_tmp,settings['static'])
-
-				agg_list = [agg_stable,agg_del,agg_new]
-
-				tab1,tab2,tab3 = st.tabs(['Stable','Deleted','New'])
-				with tab1:
 					try:
-						create_Graph(agg_list[0],palette,0)
+						create_Graph(agg,palette,0)
 					except:
-						st.write('There is no stable aggregate graph for the specified intervals', ':neutral_face:')
-				with tab2:
+						st.write('There is no', operator.lower(), 'aggregate graph for the specified intervals', ':neutral_face:')
+
+				elif settings['operator'] == 'Diff':
+					interval_diffL = settings['left']
+					interval_diffR = settings['right']
+					if any(i in stc for i in attributes) and not any(i in varying for i in attributes):
+						res, tia = eval(settings['operator'] + '_Static')(nodes_df,edges_df,time_invariant_attr,interval_diffL,interval_diffR)
+						agg_tmp = eval('Aggregate_Static_' + settings['type'])(res,tia,settings['static'])
+						agg = eval(settings['operator'] + '_Post_Agg_Static')(agg_tmp,settings['static'])
+					elif any(i in varying for i in attributes) and not any(i in stc for i in attributes):
+						res, tva = eval(settings['operator'] + '_Variant')(nodes_df,edges_df,time_variant_attr,interval_diffL,interval_diffR)
+						agg_tmp = eval('Aggregate_Variant_' + settings['type'])(res,tva,interval_diffL)
+						agg = eval(settings['operator'] + '_Post_Agg_Variant')(agg_tmp)
+					elif any(i in stc for i in attributes) and any(i in varying for i in attributes):
+						res, tia, tva = eval(settings['operator'] + '_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,interval_diffL,interval_diffR)
+						agg_tmp = eval('Aggregate_Mix_' + settings['type'])(res,tva,tia,settings['static'],interval_diffL)
+						agg = eval(settings['operator'] + '_Post_Agg_Mix')(agg_tmp,settings['static'])
+
 					try:
-						create_Graph(agg_list[1],palette,1)
+						create_Graph(agg,palette,0)
 					except:
-						st.write('There is no deleted aggregate graph for the specified intervals', ':neutral_face:')
-				with tab3:
-					try:
-						create_Graph(agg_list[2],palette,2)
-					except:
-						st.write('There is no new aggregate graph for the specified intervals', ':neutral_face:')
+						st.write('There is no', operator.lower(), 'aggregate graph for the specified intervals', ':neutral_face:')
+
+				elif settings['operator'] == 'Evolution':
+					interval = settings['left']+settings['right']
+					interval_diffL = settings['left']
+					interval_diffR = settings['right']	
+					if any(i in stc for i in attributes) and not any(i in varying for i in attributes):
+						res, tia = eval('Intersection_Static')(nodes_df,edges_df,time_invariant_attr,interval)
+						agg_stable = eval('Aggregate_Static_' + settings['type'])(res,tia,settings['static'])
+						res, tia = eval('Diff_Static')(nodes_df,edges_df,time_invariant_attr,interval_diffL,interval_diffR)
+						agg_tmp = eval('Aggregate_Static_' + settings['type'])(res,tia,settings['static'])
+						agg_del = eval('Diff_Post_Agg_Static')(agg_tmp,settings['static'])
+						res, tia = eval('Diff_Static')(nodes_df,edges_df,time_invariant_attr,interval_diffR,interval_diffL)
+						agg_tmp = eval('Aggregate_Static_' + settings['type'])(res,tia,settings['static'])
+						agg_new = eval('Diff_Post_Agg_Static')(agg_tmp,settings['static'])
+					elif any(i in varying for i in attributes) and not any(i in stc for i in attributes):
+						res, tva = eval('Intersection_Variant')(nodes_df,edges_df,time_variant_attr,interval)
+						agg_stable = eval('Aggregate_Variant_' + settings['type'])(res,tva,interval)
+						res, tva = eval('Diff_Variant')(nodes_df,edges_df,time_variant_attr,interval_diffL,interval_diffR)
+						agg_tmp = eval('Aggregate_Variant_' + settings['type'])(res,tva,interval_diffL)
+						agg_del = eval('Diff_Post_Agg_Variant')(agg_tmp)
+						res, tva = eval('Diff_Variant')(nodes_df,edges_df,time_variant_attr,interval_diffR,interval_diffL)
+						agg_tmp = eval('Aggregate_Variant_' + settings['type'])(res,tva,interval_diffR)
+						agg_new = eval('Diff_Post_Agg_Variant')(agg_tmp)
+					elif any(i in stc for i in attributes) and any(i in varying for i in attributes):
+						res, tia, tva = eval('Intersection_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,interval)
+						agg_stable = eval('Aggregate_Mix_' + settings['type'])(res,tva,tia,settings['static'],interval)
+						res, tia, tva = eval('Diff_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,interval_diffL,interval_diffR)
+						agg_tmp = eval('Aggregate_Mix_' + settings['type'])(res,tva,tia,settings['static'],interval_diffL)
+						agg_del = eval('Diff_Post_Agg_Mix')(agg_tmp,settings['static'])
+						res, tia, tva = eval('Diff_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,interval_diffR,interval_diffL)
+						agg_tmp = eval('Aggregate_Mix_' + settings['type'])(res,tva,tia,settings['static'],interval_diffR)
+						agg_new = eval('Diff_Post_Agg_Mix')(agg_tmp,settings['static'])
+
+					agg_list = [agg_stable,agg_del,agg_new]
+
+					tab1,tab2,tab3 = st.tabs(['Stable','Deleted','New'])
+					with tab1:
+						try:
+							create_Graph(agg_list[0],palette,0)
+						except:
+							st.write('There is no stable aggregate graph for the specified intervals', ':neutral_face:')
+					with tab2:
+						try:
+							create_Graph(agg_list[1],palette,1)
+						except:
+							st.write('There is no deleted aggregate graph for the specified intervals', ':neutral_face:')
+					with tab3:
+						try:
+							create_Graph(agg_list[2],palette,2)
+						except:
+							st.write('There is no new aggregate graph for the specified intervals', ':neutral_face:')
 
 
 # Exploration
-submitted_expl = []
-#k_limits = [0]
-with st.sidebar:
-	st.title('Set up Exploration')
-	event = st.selectbox('Event',['Stability','Growth','Shrinkage'])
-	if not isinstance(time_variant_attr,list):
-		var_domain = sorted(list(np.unique(time_variant_attr.values.flatten())))
-	stc_domain = sorted(list(np.unique(time_invariant_attr.values.flatten())))
+elif app_mode == "Graph Exploration":
+	with st.sidebar:
+		#Choose Dataset
+		st.title('Dataset')
+		dataset = st.selectbox('Choose dataset',['DBLP','MovieLens','Primary School'])
+		if dataset == 'DBLP':
+			stc = ['Gender']
+			varying = ['#Publications']
+			edges_df = pd.read_csv('datasets/dblp_dataset/edges.csv', sep=' ', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets/dblp_dataset/nodes.csv', sep=' ', index_col=0)
+			time_variant_attr = pd.read_csv('datasets/dblp_dataset/time_variant_attr.csv', sep=' ', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets/dblp_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			time_invariant_attr.rename(columns={'0': 'gender'}, inplace=True)
+			nodes_df.index.names = ['userID']
+			time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
+		elif dataset == 'MovieLens':
+			stc = ['Gender','Age','Occupation']
+			varying = ['Rating']
+			edges_df = pd.read_csv('datasets/movielens_dataset/edges.csv', sep=' ', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets/movielens_dataset//nodes.csv', sep=' ', index_col=0)
+			time_variant_attr = pd.read_csv('datasets/movielens_dataset/time_variant_attr.csv', sep=' ', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets/movielens_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+		elif dataset == 'Primary School':
+			stc = ['Gender','Class']
+			edges_df = pd.read_csv('datasets/school_dataset/edges.csv', sep=' ', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets/school_dataset//nodes.csv', sep=' ', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets/school_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			time_variant_attr = []
+			varying = []
+		period = list(edges_df.columns)
 
-	attributes_expl = st.multiselect("Attributes", stc+varying, key='attr_expl')
-	stc_attrs = []
-	var_attrs = []
-	for i in attributes_expl:
-		if i in stc:
-			stc_attrs.append(i)
-		else:
-			var_attrs.append(i)
+		with st.expander('Load your dataset'):
+			uploaded_files = st.file_uploader("Choose a CSV file", type='csv', accept_multiple_files=True)
+			for uploaded_file in uploaded_files:
+				if uploaded_file.name == 'edges.csv':
+					edges_df = pd.read_csv(uploaded_file, sep=' ', index_col=[0,1])
+				if uploaded_file.name == 'nodes.csv':
+					nodes_df = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+				if uploaded_file.name == 'time_variant_attr.csv':
+					time_variant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+				if uploaded_file.name == 'time_invariant_attr.csv':
+					time_invariant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+		
+				period = list(edges_df.columns)
+				stc = list(time_invariant_attr.columns)
+				varying = ['varying']
+	palette = ['#9fbfdf','#ff6633','#79d279','#0f5aa6','#006600','#bf80ff','#264d73','#ffb366','#808000','#c2d6d6',\
+			'#ffaa00','#808080','#cccccc','#d46e3b','#ff00ff','#00e600','#ff5050','#8cd9b3','#66ffcc','#802b00',\
+			'#194d33','#ffaa00','#664400','#33004d','#660066','#006666','#669999','#bf4080','#73264d','#bbbb77',\
+			'#004080','#bf4040','#0077b3']
+	submitted_expl = []
+	#k_limits = [0]
+	with st.sidebar:
+		st.title('Set up Exploration')
+		event = st.selectbox('Event',['Stability','Growth','Shrinkage'])
+		if not isinstance(time_variant_attr,list):
+			var_domain = sorted(list(np.unique(time_variant_attr.values.flatten())))
+		stc_domain = sorted(list(np.unique(time_invariant_attr.values.flatten())))
 
-	if stc_attrs and not var_attrs:
-		attrtype = 'Static'
-	elif not stc_attrs and var_attrs:
-		attrtype = 'Variant'
-	elif stc_attrs and var_attrs:
-		attrtype = 'Mix'
+		attributes_expl = st.multiselect("Attributes", stc+varying, key='attr_expl')
+		stc_attrs = []
+		var_attrs = []
+		for i in attributes_expl:
+			if i in stc:
+				stc_attrs.append(i)
+			else:
+				var_attrs.append(i)
 
-	col1,col2 = st.columns(2)
-	with col1:
-		with st.expander('Start Node Value(s)'):
-			start_node = []
-			if var_attrs:
-				start_val = st.selectbox(var_attrs[0], sorted([j for j in list(np.unique(time_variant_attr.values.flatten())) if j!=0]), key=i+'str_2')
-				start_val = float(start_val)
-				start_node.append(start_val)
-			if stc_attrs:
-				for i in stc_attrs:
-					start_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'str')
+		if stc_attrs and not var_attrs:
+			attrtype = 'Static'
+		elif not stc_attrs and var_attrs:
+			attrtype = 'Variant'
+		elif stc_attrs and var_attrs:
+			attrtype = 'Mix'
+
+		col1,col2 = st.columns(2)
+		with col1:
+			with st.expander('Start Node Value(s)'):
+				start_node = []
+				if var_attrs:
+					start_val = st.selectbox(var_attrs[0], sorted([j for j in list(np.unique(time_variant_attr.values.flatten())) if j!=0]), key=i+'str_2')
+					start_val = float(start_val)
 					start_node.append(start_val)
-	with col2:
-		with st.expander('End Node Value(s)'):
-			end_node = []
-			if var_attrs:
-				end_val = st.selectbox(var_attrs[0], sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0]), key=i+'stp_2')
-				end_val = float(end_val)
-				end_node.append(end_val)
-			if stc_attrs:
-				for i in stc_attrs:
-					end_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'stp')
+				if stc_attrs:
+					for i in stc_attrs:
+						start_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'str')
+						start_node.append(start_val)
+		with col2:
+			with st.expander('End Node Value(s)'):
+				end_node = []
+				if var_attrs:
+					end_val = st.selectbox(var_attrs[0], sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0]), key=i+'stp_2')
+					end_val = float(end_val)
 					end_node.append(end_val)
+				if stc_attrs:
+					for i in stc_attrs:
+						end_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'stp')
+						end_node.append(end_val)
 
-	attr_values = tuple(start_node+end_node)
-	stc_attrs = [i.lower() for i in stc_attrs]
-	period_expl = [i.lower() for i in period]
+		attr_values = tuple(start_node+end_node)
+		stc_attrs = [i.lower() for i in stc_attrs]
+		period_expl = [i.lower() for i in period]
 
-	# Set limits
-	if attributes_expl and attr_values:
-		intvl_pairs = [[i,period_expl[period_expl.index(i)+1]] for i in period_expl[:-1]]
-		# Stability limits
-		if event == 'Stability':
-		    inx_pairs = []
-		    if attrtype == 'Static':
-			    for i in intvl_pairs:
-			        inx,tia_inx = Intersection_Static(nodes_df,edges_df,time_invariant_attr,i)
-			        agg_inx = Aggregate_Static_Dist(inx,tia_inx,stc_attrs)
-			        try:
-			        	inx_pairs.append(agg_inx[1].loc[attr_values][0])
-			        except:
-			        	continue
-		    elif attrtype == 'Variant':
-		    	for i in intvl_pairs:
-			        inx,tva_inx = Intersection_Variant(nodes_df,edges_df,time_variant_attr,i)
-			        agg_inx = Aggregate_Variant_Dist(inx,tva_inx,i)
-			        try:
-			        	inx_pairs.append(agg_inx[1].loc[attr_values][0])
-			        except:
-			        	continue
-		    elif attrtype == 'Mix':
-		    	for i in intvl_pairs:
-			        inx,tia_inx,tva_inx = Intersection_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,i)
-			        agg_inx = Aggregate_Mix_Dist(inx,tva_inx,tia_inx,stc_attrs,i)
-			        try:
-			        	inx_pairs.append(agg_inx[1].loc[attr_values][0])
-			        except:
-			        	continue
-		# Growth limits
-		elif event == 'Growth':
-			diff_pairs_G = []
-			if attrtype == 'Static':
-				for i in intvl_pairs:
-					diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,[i[1]],[i[0]])
-					agg_diff_G = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
-					try:
-						diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
-					except:
-						continue
-			elif attrtype == 'Variant':
-				for i in intvl_pairs:
-					diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,[i[1]],[i[0]])
-					agg_diff_G = Aggregate_Variant_Dist(diff,tva_diff,[i[1]])
-					try:
-						diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
-					except:
-						continue
-			elif attrtype == 'Mix':
-				for i in intvl_pairs:
-					diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,[i[1]],[i[0]])
-					agg_diff_G = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,[i[1]])
-					try:
-						diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
-					except:
-						continue
-		# Shrinkage limits
-		elif event == 'Shrinkage':
-			diff_pairs_S = []
-			if attrtype == 'Static':
-				for i in intvl_pairs:
-					diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,[i[0]],[i[1]])
+		# Set limits
+		if attributes_expl and attr_values:
+			intvl_pairs = [[i,period_expl[period_expl.index(i)+1]] for i in period_expl[:-1]]
+			# Stability limits
+			if event == 'Stability':
+			    inx_pairs = []
+			    if attrtype == 'Static':
+				    for i in intvl_pairs:
+				        inx,tia_inx = Intersection_Static(nodes_df,edges_df,time_invariant_attr,i)
+				        agg_inx = Aggregate_Static_Dist(inx,tia_inx,stc_attrs)
+				        try:
+				        	inx_pairs.append(agg_inx[1].loc[attr_values][0])
+				        except:
+				        	continue
+			    elif attrtype == 'Variant':
+			    	for i in intvl_pairs:
+				        inx,tva_inx = Intersection_Variant(nodes_df,edges_df,time_variant_attr,i)
+				        agg_inx = Aggregate_Variant_Dist(inx,tva_inx,i)
+				        try:
+				        	inx_pairs.append(agg_inx[1].loc[attr_values][0])
+				        except:
+				        	continue
+			    elif attrtype == 'Mix':
+			    	for i in intvl_pairs:
+				        inx,tia_inx,tva_inx = Intersection_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,i)
+				        agg_inx = Aggregate_Mix_Dist(inx,tva_inx,tia_inx,stc_attrs,i)
+				        try:
+				        	inx_pairs.append(agg_inx[1].loc[attr_values][0])
+				        except:
+				        	continue
+			# Growth limits
+			elif event == 'Growth':
+				diff_pairs_G = []
+				if attrtype == 'Static':
+					for i in intvl_pairs:
+						diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,[i[1]],[i[0]])
+						agg_diff_G = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
+						try:
+							diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
+						except:
+							continue
+				elif attrtype == 'Variant':
+					for i in intvl_pairs:
+						diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,[i[1]],[i[0]])
+						agg_diff_G = Aggregate_Variant_Dist(diff,tva_diff,[i[1]])
+						try:
+							diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
+						except:
+							continue
+				elif attrtype == 'Mix':
+					for i in intvl_pairs:
+						diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,[i[1]],[i[0]])
+						agg_diff_G = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,[i[1]])
+						try:
+							diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
+						except:
+							continue
+			# Shrinkage limits
+			elif event == 'Shrinkage':
+				diff_pairs_S = []
+				if attrtype == 'Static':
+					for i in intvl_pairs:
+						diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,[i[0]],[i[1]])
+						agg_diff_S = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
+						try:
+							diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
+						except:
+							continue
+					diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,i[:-1],[i[-1]])
 					agg_diff_S = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
 					try:
-						diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
+						shrinkage_max = agg_diff_S[1].loc[attr_values][0]
 					except:
-						continue
-				diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,i[:-1],[i[-1]])
-				agg_diff_S = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
-				try:
-					shrinkage_max = agg_diff_S[1].loc[attr_values][0]
-				except:
-					pass
-			elif attrtype == 'Variant':
-				for i in intvl_pairs:
-					diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,[i[0]],[i[1]])
-					agg_diff_S = Aggregate_Variant_Dist(diff,tva_diff,[i[0]])
+						pass
+				elif attrtype == 'Variant':
+					for i in intvl_pairs:
+						diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,[i[0]],[i[1]])
+						agg_diff_S = Aggregate_Variant_Dist(diff,tva_diff,[i[0]])
+						try:
+							diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
+						except:
+							continue
+					diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,i[:-1],[i[-1]])
+					agg_diff_S = Aggregate_Variant_Dist(diff,tva_diff,i[:-1])
 					try:
-						diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
+						shrinkage_max = agg_diff_S[1].loc[attr_values][0]
 					except:
-						continue
-				diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,i[:-1],[i[-1]])
-				agg_diff_S = Aggregate_Variant_Dist(diff,tva_diff,i[:-1])
-				try:
-					shrinkage_max = agg_diff_S[1].loc[attr_values][0]
-				except:
-					pass
-			elif attrtype == 'Mix':
-				for i in intvl_pairs:
-					diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,[i[0]],[i[1]])
-					agg_diff_S = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,[i[0]])
+						pass
+				elif attrtype == 'Mix':
+					for i in intvl_pairs:
+						diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,[i[0]],[i[1]])
+						agg_diff_S = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,[i[0]])
+						try:
+							diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
+						except:
+							continue
+					diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,i[:-1],[i[-1]])
+					agg_diff_S = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,i[:-1])
 					try:
-						diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
+						shrinkage_max = agg_diff_S[1].loc[attr_values][0]
 					except:
-						continue
-				diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,i[:-1],[i[-1]])
-				agg_diff_S = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,i[:-1])
-				try:
-					shrinkage_max = agg_diff_S[1].loc[attr_values][0]
-				except:
-					pass
-		#try:
-		if event == 'Stability':
-			if inx_pairs:
-				k_limits = [1,int(max(inx_pairs))]
-			else:
-				st.error('Invalid attribute values.')
-				k_limits = [0]
-		elif event == 'Growth':
-			if diff_pairs_G:
-				k_limits = [int(min(diff_pairs_G)),int(max(diff_pairs_G))]
-			else:
-				st.error('Invalid attribute values.')
-				k_limits = [0]
-		elif event == 'Shrinkage':
-			if diff_pairs_S:
-				k_limits = [int(min(diff_pairs_S)),shrinkage_max]
-			else:
-				st.error('Invalid attribute values.')
-				k_limits = [0]
-		if k_limits != [0]:
-			k = st.number_input('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
-			st.write('The current number is ', int(k))
-			submitted_expl = st.button('Explore')
-			if submitted_expl:
-				if attrtype=='Static':
-					if event == 'Stability':
-						result,myagg = Stability_Intersection_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
-						result = result[::-1]
-					elif event == 'Growth':
-						result,myagg = Growth_Union_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
-						result = result[::-1]
-					elif event == 'Shrinkage':
-						result,myagg = Shrink_Union_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
-						result = result[::-1]
-				elif attrtype=='Variant':
-					if event == 'Stability':
-						result,myagg = Stability_Intersection_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
-						result = result[::-1]
-					elif event == 'Growth':
-						result,myagg = Growth_Union_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
-						result = result[::-1]
-					elif event == 'Shrinkage':
-						result,myagg = Shrink_Union_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
-						result = result[::-1]
-				elif attrtype=='Mix':
-					if event == 'Stability':
-						result,myagg = Stability_Intersection_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
-						result = result[::-1]
-					elif event == 'Growth':
-						result,myagg = Growth_Union_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
-						result = result[::-1]
-					elif event == 'Shrinkage':
-						result,myagg = Shrink_Union_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
-						result = result[::-1]
+						pass
+			#try:
+			if event == 'Stability':
+				if inx_pairs:
+					k_limits = [1,int(max(inx_pairs))]
+				else:
+					st.error('Invalid attribute values.')
+					k_limits = [0]
+			elif event == 'Growth':
+				if diff_pairs_G:
+					k_limits = [int(min(diff_pairs_G)),int(max(diff_pairs_G))]
+				else:
+					st.error('Invalid attribute values.')
+					k_limits = [0]
+			elif event == 'Shrinkage':
+				if diff_pairs_S:
+					k_limits = [int(min(diff_pairs_S)),shrinkage_max]
+				else:
+					st.error('Invalid attribute values.')
+					k_limits = [0]
+			if k_limits != [0]:
+				#k = st.number_input('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
+				k = st.slider('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
+				st.write('The current number is ', int(k))
+				submitted_expl = st.button('Explore')
+				if submitted_expl:
+					if attrtype=='Static':
+						if event == 'Stability':
+							result,myagg = Stability_Intersection_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
+							result = result[::-1]
+						elif event == 'Growth':
+							result,myagg = Growth_Union_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
+							result = result[::-1]
+						elif event == 'Shrinkage':
+							result,myagg = Shrink_Union_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
+							result = result[::-1]
+					elif attrtype=='Variant':
+						if event == 'Stability':
+							result,myagg = Stability_Intersection_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
+							result = result[::-1]
+						elif event == 'Growth':
+							result,myagg = Growth_Union_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
+							result = result[::-1]
+						elif event == 'Shrinkage':
+							result,myagg = Shrink_Union_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
+							result = result[::-1]
+					elif attrtype=='Mix':
+						if event == 'Stability':
+							result,myagg = Stability_Intersection_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
+							result = result[::-1]
+						elif event == 'Growth':
+							result,myagg = Growth_Union_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
+							result = result[::-1]
+						elif event == 'Shrinkage':
+							result,myagg = Shrink_Union_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
+							result = result[::-1]
 
-				result_lst = []
-				for lst in result:
-					for i in lst[0]:
-						tmp = [i,lst[1][0]]
-						result_lst.append(tmp)
+					result_lst = []
+					for lst in result:
+						for i in lst[0]:
+							tmp = [i,lst[1][0]]
+							result_lst.append(tmp)
 
-				# map str to num
-				str_num = {}
-				for i in range(len(period_expl)):
-					str_num[period_expl[i]] = i
+					# map str to num
+					str_num = {}
+					for i in range(len(period_expl)):
+						str_num[period_expl[i]] = i
 
-				# map num to str
-				num_str = {}
-				for i in range(len(period_expl)):
-					num_str[i] = period_expl[i]
+					# map num to str
+					num_str = {}
+					for i in range(len(period_expl)):
+						num_str[i] = period_expl[i]
 
-				# convert time points to strings
-				result_lst = [[str_num[i],str_num[j]] for i,j in result_lst]
+					# convert time points to strings
+					result_lst = [[str_num[i],str_num[j]] for i,j in result_lst]
 
-				result_df = pd.DataFrame(result_lst)
-				df_cols = ['Interval','Point of Reference']
-				result_df.columns = df_cols
-				result_df_grouped = [i[1].values.tolist() for i in result_df.groupby('Point of Reference')]
-				result_df_grouped = [[i[0],i[-1]] if len(i)>2 else i for i in result_df_grouped]
-				result_df_grouped = [i for sublst in result_df_grouped for i in sublst]
-				# # return to str
-				result_df = pd.DataFrame(result_df_grouped)
-				result_df.columns = df_cols
-				
-				x = result_df['Interval'].tolist()
-				x_str = [num_str[i].upper() for i in x]
-				y = result_df['Point of Reference'].tolist()
-				y_str = [num_str[i].upper() for i in y]
-				fig = px.line(result_df, x="Interval", y="Point of Reference", color='Point of Reference', markers=True)
-				fig.update_traces(textposition="bottom right")#, line_color="#6666ff")
-				fig.update_layout(
-				    xaxis = dict(
-				        tickmode = 'array',
-				        # tickvals = x,
-				        # ticktext = x_str
-				        tickvals = [i for i in range(len(period_expl))],
-				        ticktext = [i.upper() for i in period_expl]
-				    ),
-				    yaxis = dict(
-				        tickmode = 'array',
-				        # tickvals = y,
-				        # ticktext = y_str
-				        tickvals = [i for i in range(len(period_expl))],
-				        ticktext = [i.upper() for i in period_expl]
-				    )
-				)
-			#fig.update_traces(textposition="bottom right", line_color="#6666ff", marker_size=15)
-			#fig.show()
+					result_df = pd.DataFrame(result_lst)
+					df_cols = ['Interval','Point of Reference']
+					result_df.columns = df_cols
+					result_df_grouped = [i[1].values.tolist() for i in result_df.groupby('Point of Reference')]
+					result_df_grouped = [[i[0],i[-1]] if len(i)>2 else i for i in result_df_grouped]
+					result_df_grouped = [i for sublst in result_df_grouped for i in sublst]
+					# # return to str
+					result_df = pd.DataFrame(result_df_grouped)
+					result_df.columns = df_cols
+					
+					x = result_df['Interval'].tolist()
+					x_str = [num_str[i].upper() for i in x]
+					y = result_df['Point of Reference'].tolist()
+					y_str = [num_str[i].upper() for i in y]
+					fig = px.line(result_df, x="Interval", y="Point of Reference", color='Point of Reference', markers=True)
+					fig.update_traces(textposition="bottom right")#, line_color="#6666ff")
+					fig.update_layout(
+					    xaxis = dict(
+					        tickmode = 'array',
+					        # tickvals = x,
+					        # ticktext = x_str
+					        tickvals = [i for i in range(len(period_expl))],
+					        ticktext = [i.upper() for i in period_expl]
+					    ),
+					    yaxis = dict(
+					        tickmode = 'array',
+					        # tickvals = y,
+					        # ticktext = y_str
+					        tickvals = [i for i in range(len(period_expl))],
+					        ticktext = [i.upper() for i in period_expl]
+					    )
+					)
+				#fig.update_traces(textposition="bottom right", line_color="#6666ff", marker_size=15)
+				#fig.show()
 
 
-if submitted_expl and attributes_expl:
-	with st.container():
-		#try:
-		if submitted_expl and result_lst:
-			with st.spinner('Wait for it...'):
-				time.sleep(3)
-				st.success('Done!')
-			st.title('Exploration Output')
-			st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
-			attr_values = tuple([str(i) for i in attr_values])
-			st.write('Derived intervals on ', event.lower(), ' _event_ for at least ', k, 'interaction(s) and edge type: ((', ", ".join(attr_values[:int(len(attr_values)/2)]), '), ', '(', ", ".join(attr_values[int(len(attr_values)/2):]), ')).')
-			#st.write(attr_values)
-			st.plotly_chart(fig, use_container_width=True)
-		#except:
-		elif submitted_expl and not result_lst:
-			st.title('Exploration Output')
-			st.write('There are no results for ', int(k), 'interaction(s) ', ':neutral_face:')
+	if submitted_expl and attributes_expl:
+		with st.container():
+			#try:
+			if submitted_expl and result_lst:
+				with st.spinner('Wait for it...'):
+					time.sleep(3)
+				st.title('Exploration Output')
+				st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
+				attr_values = tuple([str(i) for i in attr_values])
+				st.write('Derived intervals on ', event.lower(), ' _event_ for at least ', k, 'interaction(s) and edge type: ((', ", ".join(attr_values[:int(len(attr_values)/2)]), '), ', '(', ", ".join(attr_values[int(len(attr_values)/2):]), ')).')
+				#st.write(attr_values)
+				st.plotly_chart(fig, use_container_width=True)
+			#except:
+			elif submitted_expl and not result_lst:
+				st.title('Exploration Output')
+				st.write('There are no results for ', int(k), 'interaction(s) ', ':neutral_face:')
