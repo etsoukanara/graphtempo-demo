@@ -309,13 +309,13 @@ elif app_mode == "Graph Overview":
 			stc = ['Gender','Age','Occupation']
 			varying = ['Rating']
 			edges_df = pd.read_csv('datasets/movielens_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/movielens_dataset//nodes.csv', sep=' ', index_col=0)
+			nodes_df = pd.read_csv('datasets/movielens_dataset/nodes.csv', sep=' ', index_col=0)
 			time_variant_attr = pd.read_csv('datasets/movielens_dataset/time_variant_attr.csv', sep=' ', index_col=0)
 			time_invariant_attr = pd.read_csv('datasets/movielens_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
 		elif dataset == 'Primary School':
 			stc = ['Gender','Class']
 			edges_df = pd.read_csv('datasets/school_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/school_dataset//nodes.csv', sep=' ', index_col=0)
+			nodes_df = pd.read_csv('datasets/school_dataset/nodes.csv', sep=' ', index_col=0)
 			time_invariant_attr = pd.read_csv('datasets/school_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
 			time_variant_attr = []
 			varying = []
