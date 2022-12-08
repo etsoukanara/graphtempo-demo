@@ -883,6 +883,7 @@ elif app_mode == "Graph Exploration":
 					k = st.slider('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
 					st.write('The current number is ', int(k))
 				else:
+					k=k_limits[0]
 					st.write('There is only', k_limits[0], 'interaction to explore.')
 				submitted_expl = st.button('Explore')
 				if submitted_expl:
