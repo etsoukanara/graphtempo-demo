@@ -281,12 +281,12 @@ if app_mode == "Show instructions":
     st.sidebar.success('To continue select "Graph Overview".')
     with st.container():
     	i=100
-    	st.title('Aggregation and Exploration for Evolving Graphs')
-    	st.subheader('Implementation of the paper GraphTempo: An aggregation framework for evolving graphs')
+    	st.subheader('Aggregation and Exploration for Evolving Graphs')
+    	#st.subheader('Implementation of the paper GraphTempo: An aggregation framework for evolving graphs')
     	st.write('We provide three real-world datasets for testing the tasks of aggregation and exploration. Alternatively, the user can upload his/her own dataset providing it follows the appropriate format. The main functions are:')
     	st.write('**Graph Overview**: provides a view of the original graph on the selected time point and attribute. When nodes in the graph are more than', i, ', we sample the graph by applying the Snowball Sampling algorithm.')
     	st.write('**Graph Aggregation**: facilitates aggregation on specific periods of time for one or more node attributes. The available temporal operators form a different temporal graph based on the semantics of each operator. The user can choose between two types of aggregation.')
-    	st.write('**Graph Exploration**: discovers interesting intervals of the graph as to a specific event. The user can choose the type of the edge by selecting the values of the attributes interested and the number of the preferred interactions.')
+    	st.write('**Graph Exploration**: discovers intervals in the graph as to important events. The user can choose the preferred event, the type of the edge by selecting the values of the attributes interested and the number of the preferred interactions.')
     	st.write('👈 To continue select "Graph Overview".')
 	
 
@@ -338,80 +338,85 @@ elif app_mode == "Graph Overview":
 				varying = ['varying']
 
 		# View graph
-		st.title('Graph')
-		time_sel = st.select_slider('Which time point?', options=period)
-		attributes_sel = st.selectbox('Choose partition (attribute)',stc+varying)
+		st.title('Set up Overview')
+		time_sel = st.select_slider('Time point', options=period)
+		attributes_sel = st.selectbox('Attribute',stc+varying)
 		edges,nodes,attr,sampling_flag = read_data(edges_df,time_variant_attr,time_invariant_attr,time_sel)
 		attr = attr.astype(str)
 		attr.columns = ['UserID']+stc+varying
 		if attributes_sel:
 			nodes_per_attr_value_dct = attr.groupby(attributes_sel)['UserID'].apply(list).to_dict()
-
+		submitted_view = st.button('View')
 
 	with st.container():
-		if sampling_flag == True:
-			sampling = True
-		else:
-			sampling = False
-		st.title('Graph Overview')
-		st.subheader('Graph view over time and attribute dimensions.')
-		st.write('Graph instance on time point', time_sel, 'and ', attributes_sel, ' attribute.')
-		st.write(attributes_sel, 'domain: ', len(nodes_per_attr_value_dct))
-		st.write('Sampling: ', sampling)
-		st.write('Number of nodes in the network: ', len(nodes))
+		if time_sel and attributes_sel and submitted_view:
+			with st.spinner('Wait for it...'):
+				time.sleep(3)
 
-	palette = ['#9fbfdf','#ff6633','#79d279','#0f5aa6','#006600','#bf80ff','#264d73','#ffb366','#808000','#c2d6d6',\
-				'#ffaa00','#808080','#cccccc','#d46e3b','#ff00ff','#00e600','#ff5050','#8cd9b3','#66ffcc','#802b00',\
-				'#194d33','#ffaa00','#664400','#33004d','#660066','#006666','#669999','#bf4080','#73264d','#bbbb77',\
-				'#004080','#bf4040','#0077b3']
+			if sampling_flag == True:
+				sampling = True
+			else:
+				sampling = False
+			st.subheader('Graph Overview')
+			#st.subheader('Graph view over time and attribute dimensions.')
+			st.write('Graph instance on time point', time_sel, 'and ', attributes_sel, ' attribute.')
+			st.write('Number of ', attributes_sel, 'values: ', len(nodes_per_attr_value_dct))
+			st.write('Sampling: ', sampling)
+			st.write('Number of nodes in the network: ', len(nodes))
 
-	nodes_graph = []
-	inx = 0
-	for key,val in nodes_per_attr_value_dct.items():
-		for node in val:
-			nodes_graph.append(Node(id=node,
-						  #size=15,
-						  title=node,
-	    				  label=key,
-	                      symbolType='dot',
-	                      font={'enabled':True,'color':palette[inx]},
-	                      physics=False,
-	                      color={'border':'black','background':palette[inx]}))
-		inx += 1
+			palette = ['#9fbfdf','#ff6633','#79d279','#0f5aa6','#006600','#bf80ff','#264d73','#ffb366','#808000','#c2d6d6',\
+						'#ffaa00','#808080','#cccccc','#d46e3b','#ff00ff','#00e600','#ff5050','#8cd9b3','#66ffcc','#802b00',\
+						'#194d33','#ffaa00','#664400','#33004d','#660066','#006666','#669999','#bf4080','#73264d','#bbbb77',\
+						'#004080','#bf4040','#0077b3']
 
-	edges_graph = []
-	for edge in edges:
-	        edges_graph.append(
-	            Edge(source=edge[0],
-	                 target=edge[1], 
-	                 smooth= {'enabled':True,'type':'dynamic'},
-	                 font={'color':'black'},
-	                 #length=300,
-	                 color='black')
-	        )
+			nodes_graph = []
+			inx = 0
+			for key,val in nodes_per_attr_value_dct.items():
+				for node in val:
+					nodes_graph.append(Node(id=node,
+								  #size=15,
+								  title=node,
+			    				  label=key,
+			                      symbolType='dot',
+			                      font={'enabled':True,'color':palette[inx]},
+			                      physics=False,
+			                      color={'border':'black','background':palette[inx]}))
+				inx += 1
 
-	config = Config(width=1000, 
-	                height=500,
-	                #graphviz_layout='fdp',
-	                #graphviz_config={"rankdir": rankdir, "ranksep": ranksep, "nodesep": nodesep},
-	                directed=True,
-	                enabled=True,
-	                #initiallyActive=True,
-	                nodeHighlightBehavior=True, 
-	                highlightColor="#F7A7A6",
-	                collapsible=True,
-	                node={'labelProperty':'label'},
-	                link={'labelProperty': 'label', 'renderLabel': True},
-	                maxZoom=2,
-	                minZoom=0.1,
-	                staticGraphWithDragAndDrop=False,
-	                staticGraph=False,
-	                initialZoom=1
-	                )
+			edges_graph = []
+			for edge in edges:
+			        edges_graph.append(
+			            Edge(source=edge[0],
+			                 target=edge[1], 
+			                 smooth= {'enabled':True,'type':'dynamic'},
+			                 font={'color':'black'},
+			                 #length=300,
+			                 color='black')
+			        )
 
-	return_value = agraph(nodes=nodes_graph, 
-	                      edges=edges_graph, 
-	                      config=config)
+			config = Config(width=1000, 
+			                height=500,
+			                #graphviz_layout='fdp',
+			                #graphviz_config={"rankdir": rankdir, "ranksep": ranksep, "nodesep": nodesep},
+			                directed=True,
+			                enabled=True,
+			                #initiallyActive=True,
+			                nodeHighlightBehavior=True, 
+			                highlightColor="#F7A7A6",
+			                collapsible=True,
+			                node={'labelProperty':'label'},
+			                link={'labelProperty': 'label', 'renderLabel': True},
+			                maxZoom=2,
+			                minZoom=0.1,
+			                staticGraphWithDragAndDrop=False,
+			                staticGraph=False,
+			                initialZoom=1
+			                )
+
+			return_value = agraph(nodes=nodes_graph, 
+			                      edges=edges_graph, 
+			                      config=config)
+
 
 # Aggregation
 elif app_mode == "Graph Aggregation":
@@ -470,28 +475,68 @@ elif app_mode == "Graph Aggregation":
 		#col_time_left, col_time_right = st.columns(2)
 		#with col_time_left:
 			#time_left = st.multiselect("Left Interval", period)
-		time_left_start,time_left_stop = st.select_slider("Left Interval (range)", options=period,value=(period[0],period[2]))
-		time_left = period[period.index(time_left_start):period.index(time_left_stop)+1]
-		time_left = [str(i) for i in time_left]
-		st.write('Selected left interval: [', time_left[0], ',', time_left[-1], ']')
-		#with col_time_right:
-			#time_right = st.multiselect("Right Interval", [i for i in period if i not in time_left])
-		time_right_start,time_right_stop = st.select_slider("Right Interval (range)", options=period,value=(period[3],period[5]))
-		time_right = period[period.index(time_right_start):period.index(time_right_stop)+1]
-		time_right = [str(i) for i in time_right]
-		st.write('Selected right interval: [', time_right[0], ',', time_right[-1], ']')
-		operator = st.selectbox('Operator',['Union','Intersection','Difference','Evolution'])
+
+		interval_or_tp = st.selectbox('Time dimension',['Interval','Time Point'])
+		if interval_or_tp == 'Interval':
+			time_left_start,time_left_stop = st.select_slider("Left Interval", options=period,value=(period[0],period[2]))
+			time_left = period[period.index(time_left_start):period.index(time_left_stop)+1]
+			time_left = [str(i) for i in time_left]
+			st.write('Selected left interval: [', time_left[0], ',', time_left[-1], ']')
+			#with col_time_right:
+				#time_right = st.multiselect("Right Interval", [i for i in period if i not in time_left])
+			time_right_start,time_right_stop = st.select_slider("Right Interval", options=period,value=(period[3],period[5]))
+			time_right = period[period.index(time_right_start):period.index(time_right_stop)+1]
+			time_right = [str(i) for i in time_right]
+			st.write('Selected right interval: [', time_right[0], ',', time_right[-1], ']')
+			operator = st.selectbox('Operator',['Union','Intersection','Difference','Evolution'])
+			agg_type = st.selectbox('Type',['Non-Distinct','Distinct'])
+			timepoint = False
+
+		elif interval_or_tp == 'Time Point':
+			timepoint = st.selectbox('Time point',period)
+			time_left = False
+			time_right = False
+			operator = False
+			agg_type = False
+
+
 		attributes = st.multiselect("Attributes", stc+varying)
-		agg_type = st.selectbox('Type',['Non-Distinct','Distinct'])
 		submitted = st.button('Aggregate')
-		if submitted and (not time_left or not time_right or not operator or not attributes or not agg_type):
-			st.error('Required fields missing.')#, icon="🚨")
-		if submitted and time_left and time_right and operator and attributes and agg_type:
-			if list(set(time_left).intersection(time_right)):
-				st.error('Overlapping intervals.')
+		if interval_or_tp == 'Interval':
+			if submitted and (not time_left or not time_right or not operator or not attributes or not agg_type):
+				st.error('Required fields missing.')#, icon="🚨")
+			elif submitted and time_left and time_right and operator and attributes and agg_type:
+				if list(set(time_left).intersection(time_right)):
+					st.error('Overlapping intervals.')
+		elif interval_or_tp == 'Time Point':
+			if submitted and (not timepoint or not attributes):
+				st.error('Required fields missing.')#, icon="🚨")
 
 	with st.container():
-		if time_left and time_right and operator and attributes and agg_type and submitted:
+		if timepoint and attributes and submitted:
+			with st.spinner('Wait for it...'):
+				time.sleep(3)
+
+			st.subheader('Aggregation Output')
+			#st.subheader('A global view of the graph as filtered by the time operator and grouped on one or more attributes.')
+			st.write('Aggregation graph on time point ', timepoint , ' for ', ", ".join(attributes), ' attribute(s).')
+
+
+			if any(i in stc for i in attributes) and not any(i in varying for i in attributes):
+				res, tia = eval('Union_Static')(nodes_df,edges_df,time_invariant_attr,[timepoint])
+				agg = eval('Aggregate_Static_Dist')(res,tia,[i.lower() for i in attributes if i not in varying])
+				create_Graph(agg,palette,0)
+			elif any(i in varying for i in attributes) and not any(i in stc for i in attributes):
+				res, tva = eval('Union_Variant')(nodes_df,edges_df,time_variant_attr,[timepoint])
+				agg = eval('Aggregate_Variant_All')(res,tva,[timepoint])
+				create_Graph(agg,palette,0)
+			elif any(i in stc for i in attributes) and any(i in varying for i in attributes):
+				res, tia, tva = eval('Union_Mix')(nodes_df,edges_df,time_invariant_attr,time_variant_attr,[timepoint])
+				agg = eval('Aggregate_Mix_All')(res,tva,tia,[i.lower() for i in attributes if i not in varying],[timepoint])
+				create_Graph(agg,palette,0)
+			
+
+		elif time_left and time_right and operator and attributes and agg_type and submitted:
 			if not list(set(time_left).intersection(time_right)):
 				with st.spinner('Wait for it...'):
 				    time.sleep(3)
@@ -681,6 +726,8 @@ elif app_mode == "Graph Exploration":
 		elif stc_attrs and var_attrs:
 			attrtype = 'Mix'
 
+		if attributes_expl:
+			st.markdown(f'<p style="color:#373737;font-size:14px;">{"Edge attributes"}</p>', unsafe_allow_html=True)
 		col1,col2 = st.columns(2)
 		with col1:
 			with st.expander('Start Node Value(s)'):
@@ -832,8 +879,11 @@ elif app_mode == "Graph Exploration":
 					k_limits = [0]
 			if k_limits != [0]:
 				#k = st.number_input('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
-				k = st.slider('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
-				st.write('The current number is ', int(k))
+				if k_limits[0] != k_limits[1]:
+					k = st.slider('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
+					st.write('The current number is ', int(k))
+				else:
+					st.write('There is only', k_limits[0], 'interaction to explore.')
 				submitted_expl = st.button('Explore')
 				if submitted_expl:
 					if attrtype=='Static':
@@ -867,6 +917,7 @@ elif app_mode == "Graph Exploration":
 							result,myagg = Shrink_Union_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
 							result = result[::-1]
 
+
 					result_lst = []
 					for lst in result:
 						for i in lst[0]:
@@ -890,18 +941,19 @@ elif app_mode == "Graph Exploration":
 					df_cols = ['Interval','Point of Reference']
 					result_df.columns = df_cols
 					result_df_grouped = [i[1].values.tolist() for i in result_df.groupby('Point of Reference')]
-					result_df_grouped = [[i[0],i[-1]] if len(i)>2 else i for i in result_df_grouped]
+					#result_df_grouped = [[i[0],i[-1]] if len(i)>2 else i for i in result_df_grouped]
+					result_df_grouped = [[i[0],i[-1]] for i in result_df_grouped]
 					result_df_grouped = [i for sublst in result_df_grouped for i in sublst]
 					# # return to str
 					result_df = pd.DataFrame(result_df_grouped)
 					result_df.columns = df_cols
 					
 					x = result_df['Interval'].tolist()
-					x_str = [num_str[i].upper() for i in x]
+					#x_str = [num_str[i].upper() for i in x]
 					y = result_df['Point of Reference'].tolist()
-					y_str = [num_str[i].upper() for i in y]
+					#y_str = [num_str[i].upper() for i in y]
 					fig = px.line(result_df, x="Interval", y="Point of Reference", color='Point of Reference', markers=True)
-					fig.update_traces(textposition="bottom right")#, line_color="#6666ff")
+					fig.update_traces(textposition="bottom right", marker_size=12, line=dict(width=2.5), line_color="#4169E1")
 					fig.update_layout(
 					    xaxis = dict(
 					        tickmode = 'array',
@@ -916,10 +968,12 @@ elif app_mode == "Graph Exploration":
 					        # ticktext = y_str
 					        tickvals = [i for i in range(len(period_expl))],
 					        ticktext = [i.upper() for i in period_expl]
-					    )
+					    ),
+					    showlegend=False, font_size=20, width=750, height=600
 					)
-				#fig.update_traces(textposition="bottom right", line_color="#6666ff", marker_size=15)
-				#fig.show()
+					
+				# #fig.update_traces(textposition="bottom right", line_color="#6666ff", marker_size=15)
+				# #fig.show()
 
 
 	if submitted_expl and attributes_expl:
@@ -928,8 +982,8 @@ elif app_mode == "Graph Exploration":
 			if submitted_expl and result_lst:
 				with st.spinner('Wait for it...'):
 					time.sleep(3)
-				st.title('Exploration Output')
-				st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
+				st.subheader('Exploration Output')
+				#st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
 				attr_values = tuple([str(i) for i in attr_values])
 				st.write('Derived intervals on ', event.lower(), ' _event_ for at least ', k, 'interaction(s) and edge type: ((', ", ".join(attr_values[:int(len(attr_values)/2)]), '), ', '(', ", ".join(attr_values[int(len(attr_values)/2):]), ')).')
 				#st.write(attr_values)
