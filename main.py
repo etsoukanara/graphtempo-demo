@@ -273,7 +273,7 @@ def create_Graph(aggregation,color_palette,flag):
 	                      edges=edges_agg_graph, 
 	                      config=config)
 
-st.sidebar.title("GraphTempo")
+st.sidebar.title("TempoGRAPHer")
 app_mode = st.sidebar.selectbox("Choose mode",
     ["Show instructions", "Graph Overview", "Graph Aggregation", "Graph Exploration"])
 
