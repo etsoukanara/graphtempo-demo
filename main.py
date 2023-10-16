@@ -760,277 +760,276 @@ elif app_mode == "Graph Exploration":
 			period_expl = [i.lower() for i in period]
 
             # Set limits
-            if attributes_expl and attr_values:
-                intvl_pairs = [[i,period_expl[period_expl.index(i)+1]] for i in period_expl[:-1]]
-                # Stability limits
-                if event == 'Stability':
-                    inx_pairs = []
-                    if attrtype == 'Static':
-                        for i in intvl_pairs:
-                            inx,tia_inx = Intersection_Static(nodes_df,edges_df,time_invariant_attr,i)
-                            agg_inx = Aggregate_Static_Dist(inx,tia_inx,stc_attrs)
-                            try:
-                                inx_pairs.append(agg_inx[1].loc[attr_values][0])
-                            except:
-                                continue
-                    elif attrtype == 'Variant':
-                        for i in intvl_pairs:
-                            inx,tva_inx = Intersection_Variant(nodes_df,edges_df,time_variant_attr,i)
-                            agg_inx = Aggregate_Variant_Dist(inx,tva_inx,i)
-                            try:
-                                inx_pairs.append(agg_inx[1].loc[attr_values][0])
-                            except:
-                                continue
-                    elif attrtype == 'Mix':
-                        for i in intvl_pairs:
-                            inx,tia_inx,tva_inx = Intersection_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,i)
-                            agg_inx = Aggregate_Mix_Dist(inx,tva_inx,tia_inx,stc_attrs,i)
-                            try:
-                                inx_pairs.append(agg_inx[1].loc[attr_values][0])
-                            except:
-                                continue
-                # Growth limits
-                elif event == 'Growth':
-                    diff_pairs_G = []
-                    if attrtype == 'Static':
-                        for i in intvl_pairs:
-                            diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,[i[1]],[i[0]])
-                            agg_diff_G = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
-                            try:
-                                diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
-                            except:
-                                continue
-                    elif attrtype == 'Variant':
-                        for i in intvl_pairs:
-                            diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,[i[1]],[i[0]])
-                            agg_diff_G = Aggregate_Variant_Dist(diff,tva_diff,[i[1]])
-                            try:
-                                diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
-                            except:
-                                continue
-                    elif attrtype == 'Mix':
-                        for i in intvl_pairs:
-                            diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,[i[1]],[i[0]])
-                            agg_diff_G = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,[i[1]])
-                            try:
-                                diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
-                            except:
-                                continue
-                # Shrinkage limits
-                elif event == 'Shrinkage':
-                    diff_pairs_S = []
-                    if attrtype == 'Static':
-                        for i in intvl_pairs:
-                            diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,[i[0]],[i[1]])
-                            agg_diff_S = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
-                            try:
-                                diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
-                            except:
-                                continue
-                        diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,i[:-1],[i[-1]])
-                        agg_diff_S = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
-                        try:
-                            shrinkage_max = agg_diff_S[1].loc[attr_values][0]
-                        except:
-                            pass
-                    elif attrtype == 'Variant':
-                        for i in intvl_pairs:
-                            diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,[i[0]],[i[1]])
-                            agg_diff_S = Aggregate_Variant_Dist(diff,tva_diff,[i[0]])
-                            try:
-                                diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
-                            except:
-                                continue
-                        diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,i[:-1],[i[-1]])
-                        agg_diff_S = Aggregate_Variant_Dist(diff,tva_diff,i[:-1])
-                        try:
-                            shrinkage_max = agg_diff_S[1].loc[attr_values][0]
-                        except:
-                            pass
-                    elif attrtype == 'Mix':
-                        for i in intvl_pairs:
-                            diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,[i[0]],[i[1]])
-                            agg_diff_S = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,[i[0]])
-                            try:
-                                diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
-                            except:
-                                continue
-                        diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,i[:-1],[i[-1]])
-                        agg_diff_S = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,i[:-1])
-                        try:
-                            shrinkage_max = agg_diff_S[1].loc[attr_values][0]
-                        except:
-                            pass
-                #try:
-                if event == 'Stability':
-                    if inx_pairs:
-                        k_limits = [1,int(max(inx_pairs))]
-                    else:
-                        st.error('Invalid attribute values.')
-                        k_limits = [0]
-                elif event == 'Growth':
-                    if diff_pairs_G:
-                        k_limits = [int(min(diff_pairs_G)),int(max(diff_pairs_G))]
-                    else:
-                        st.error('Invalid attribute values.')
-                        k_limits = [0]
-                elif event == 'Shrinkage':
-                    if diff_pairs_S:
-                        k_limits = [int(min(diff_pairs_S)),shrinkage_max]
-                    else:
-                        st.error('Invalid attribute values.')
-                        k_limits = [0]
-                if k_limits != [0]:
-                    #k = st.number_input('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
-                    if k_limits[0] != k_limits[1]:
-                        k = st.slider('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
-                        st.write('The current number is ', int(k))
-                    else:
-                        k=k_limits[0]
-                        st.write('There is only', k_limits[0], 'interaction to explore.')
-                    submitted_expl = st.button('Explore')
-                    if submitted_expl:
-                        if attrtype=='Static':
-                            if event == 'Stability':
-                                result,myagg = Stability_Intersection_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
-                                result = result[::-1]
-                            elif event == 'Growth':
-                                result,myagg = Growth_Union_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
-                                result = result[::-1]
-                            elif event == 'Shrinkage':
-                                result,myagg = Shrink_Union_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
-                                result = result[::-1]
-                        elif attrtype=='Variant':
-                            if event == 'Stability':
-                                result,myagg = Stability_Intersection_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
-                                result = result[::-1]
-                            elif event == 'Growth':
-                                result,myagg = Growth_Union_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
-                                result = result[::-1]
-                            elif event == 'Shrinkage':
-                                result,myagg = Shrink_Union_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
-                                result = result[::-1]
-                        elif attrtype=='Mix':
-                            if event == 'Stability':
-                                result,myagg = Stability_Intersection_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
-                                result = result[::-1]
-                            elif event == 'Growth':
-                                result,myagg = Growth_Union_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
-                                result = result[::-1]
-                            elif event == 'Shrinkage':
-                                result,myagg = Shrink_Union_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
-                                result = result[::-1]
+			if attributes_expl and attr_values:
+				intvl_pairs = [[i,period_expl[period_expl.index(i)+1]] for i in period_expl[:-1]]
+				# Stability limits
+				if event == 'Stability':
+					inx_pairs = []
+					if attrtype == 'Static':
+						for i in intvl_pairs:
+							inx,tia_inx = Intersection_Static(nodes_df,edges_df,time_invariant_attr,i)
+							agg_inx = Aggregate_Static_Dist(inx,tia_inx,stc_attrs)
+							try:
+								inx_pairs.append(agg_inx[1].loc[attr_values][0])
+							except:
+								continue
+					elif attrtype == 'Variant':
+						for i in intvl_pairs:
+							inx,tva_inx = Intersection_Variant(nodes_df,edges_df,time_variant_attr,i)
+							agg_inx = Aggregate_Variant_Dist(inx,tva_inx,i)
+							try:
+								inx_pairs.append(agg_inx[1].loc[attr_values][0])
+							except:
+								continue
+					elif attrtype == 'Mix':
+						for i in intvl_pairs:
+							inx,tia_inx,tva_inx = Intersection_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,i)
+							agg_inx = Aggregate_Mix_Dist(inx,tva_inx,tia_inx,stc_attrs,i)
+							try:
+								inx_pairs.append(agg_inx[1].loc[attr_values][0])
+							except:
+								continue
+				# Growth limits
+				elif event == 'Growth':
+					diff_pairs_G = []
+					if attrtype == 'Static':
+						for i in intvl_pairs:
+							diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,[i[1]],[i[0]])
+							agg_diff_G = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
+							try:
+								diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
+							except:
+								continue
+					elif attrtype == 'Variant':
+						for i in intvl_pairs:
+							diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,[i[1]],[i[0]])
+							agg_diff_G = Aggregate_Variant_Dist(diff,tva_diff,[i[1]])
+							try:
+								diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
+							except:
+								continue
+					elif attrtype == 'Mix':
+						for i in intvl_pairs:
+							diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,[i[1]],[i[0]])
+							agg_diff_G = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,[i[1]])
+							try:
+								diff_pairs_G.append(agg_diff_G[1].loc[attr_values][0])
+							except:
+								continue
+				# Shrinkage limits
+				elif event == 'Shrinkage':
+					diff_pairs_S = []
+					if attrtype == 'Static':
+						for i in intvl_pairs:
+							diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,[i[0]],[i[1]])
+							agg_diff_S = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
+							try:
+								diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
+							except:
+								continue
+						diff,tia_diff = Diff_Static(nodes_df,edges_df,time_invariant_attr,i[:-1],[i[-1]])
+						agg_diff_S = Aggregate_Static_Dist(diff,tia_diff,stc_attrs)
+						try:
+							shrinkage_max = agg_diff_S[1].loc[attr_values][0]
+						except:
+							pass
+					elif attrtype == 'Variant':
+						for i in intvl_pairs:
+							diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,[i[0]],[i[1]])
+							agg_diff_S = Aggregate_Variant_Dist(diff,tva_diff,[i[0]])
+							try:
+								diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
+							except:
+								continue
+						diff,tva_diff = Diff_Variant(nodes_df,edges_df,time_variant_attr,i[:-1],[i[-1]])
+						agg_diff_S = Aggregate_Variant_Dist(diff,tva_diff,i[:-1])
+						try:
+							shrinkage_max = agg_diff_S[1].loc[attr_values][0]
+						except:
+							pass
+					elif attrtype == 'Mix':
+						for i in intvl_pairs:
+							diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,[i[0]],[i[1]])
+							agg_diff_S = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,[i[0]])
+							try:
+								diff_pairs_S.append(agg_diff_S[1].loc[attr_values][0])
+							except:
+								continue
+						diff,tia_diff,tva_diff = Diff_Mix(nodes_df,edges_df,time_invariant_attr,time_variant_attr,i[:-1],[i[-1]])
+						agg_diff_S = Aggregate_Mix_Dist(diff,tva_diff,tia_diff,stc_attrs,i[:-1])
+						try:
+							shrinkage_max = agg_diff_S[1].loc[attr_values][0]
+						except:
+							pass
+				#try:
+				if event == 'Stability':
+					if inx_pairs:
+						k_limits = [1,int(max(inx_pairs))]
+					else:
+						st.error('Invalid attribute values.')
+						k_limits = [0]
+				elif event == 'Growth':
+					if diff_pairs_G:
+						k_limits = [int(min(diff_pairs_G)),int(max(diff_pairs_G))]
+					else:
+						st.error('Invalid attribute values.')
+						k_limits = [0]
+				elif event == 'Shrinkage':
+					if diff_pairs_S:
+						k_limits = [int(min(diff_pairs_S)),shrinkage_max]
+					else:
+						st.error('Invalid attribute values.')
+						k_limits = [0]
+				if k_limits != [0]:
+					#k = st.number_input('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
+					if k_limits[0] != k_limits[1]:
+						k = st.slider('Number of interactions', min_value=k_limits[0], max_value=k_limits[-1])
+						st.write('The current number is ', int(k))
+					else:
+						k=k_limits[0]
+						st.write('There is only', k_limits[0], 'interaction to explore.')
+					submitted_expl = st.button('Explore')
+					if submitted_expl:
+						if attrtype=='Static':
+							if event == 'Stability':
+								result,myagg = Stability_Intersection_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
+								result = result[::-1]
+							elif event == 'Growth':
+								result,myagg = Growth_Union_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
+								result = result[::-1]
+							elif event == 'Shrinkage':
+								result,myagg = Shrink_Union_Static_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,stc_attrs,attr_values)
+								result = result[::-1]
+						elif attrtype=='Variant':
+							if event == 'Stability':
+								result,myagg = Stability_Intersection_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
+								result = result[::-1]
+							elif event == 'Growth':
+								result,myagg = Growth_Union_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
+								result = result[::-1]
+							elif event == 'Shrinkage':
+								result,myagg = Shrink_Union_Variant_a(k,period_expl,nodes_df,edges_df,time_variant_attr,attr_values)
+								result = result[::-1]
+						elif attrtype=='Mix':
+							if event == 'Stability':
+								result,myagg = Stability_Intersection_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
+								result = result[::-1]
+							elif event == 'Growth':
+								result,myagg = Growth_Union_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
+								result = result[::-1]
+							elif event == 'Shrinkage':
+								result,myagg = Shrink_Union_Mix_a(k,period_expl,nodes_df,edges_df,time_invariant_attr,time_variant_attr,stc_attrs,attr_values)
+								result = result[::-1]
 
 
-                        result_lst = []
-                        for lst in result:
-                            for i in lst[0]:
-                                tmp = [i,lst[1][0]]
-                                result_lst.append(tmp)
+						result_lst = []
+						for lst in result:
+							for i in lst[0]:
+								tmp = [i,lst[1][0]]
+								result_lst.append(tmp)
 
-                        # map str to num
-                        str_num = {}
-                        for i in range(len(period_expl)):
-                            str_num[period_expl[i]] = i
+						# map str to num
+						str_num = {}
+						for i in range(len(period_expl)):
+							str_num[period_expl[i]] = i
 
-                        # map num to str
-                        num_str = {}
-                        for i in range(len(period_expl)):
-                            num_str[i] = period_expl[i]
+						# map num to str
+						num_str = {}
+						for i in range(len(period_expl)):
+							num_str[i] = period_expl[i]
 
-                        # convert time points to strings
-                        result_lst = [[str_num[i],str_num[j]] for i,j in result_lst]
+						# convert time points to strings
+						result_lst = [[str_num[i],str_num[j]] for i,j in result_lst]
 
-                        result_df = pd.DataFrame(result_lst)
-                        df_cols = ['Interval','Point of Reference']
-                        result_df.columns = df_cols
-                        result_df_grouped = [i[1].values.tolist() for i in result_df.groupby('Point of Reference')]
-                        #result_df_grouped = [[i[0],i[-1]] if len(i)>2 else i for i in result_df_grouped]
-                        result_df_grouped = [[i[0],i[-1]] for i in result_df_grouped]
-                        result_df_grouped = [i for sublst in result_df_grouped for i in sublst]
-                        # # return to str
-                        result_df = pd.DataFrame(result_df_grouped)
-                        result_df.columns = df_cols
-                        
-                        x = result_df['Interval'].tolist()
-                        #x_str = [num_str[i].upper() for i in x]
-                        y = result_df['Point of Reference'].tolist()
-                        #y_str = [num_str[i].upper() for i in y]
-                        fig = px.line(result_df, x="Interval", y="Point of Reference", color='Point of Reference', markers=True)
-                        fig.update_traces(textposition="bottom right", marker_size=12, line=dict(width=2.5), line_color="#4169E1")
-                        fig.update_layout(
-                            xaxis = dict(
-                                tickmode = 'array',
-                                # tickvals = x,
-                                # ticktext = x_str
-                                tickvals = [i for i in range(len(period_expl))],
-                                ticktext = [i.upper() for i in period_expl]
-                            ),
-                            yaxis = dict(
-                                tickmode = 'array',
-                                # tickvals = y,
-                                # ticktext = y_str
-                                tickvals = [i for i in range(len(period_expl))],
-                                ticktext = [i.upper() for i in period_expl]
-                            ),
-                            showlegend=False, font_size=20, width=750, height=600
-                        )
-                        
-                    # #fig.update_traces(textposition="bottom right", line_color="#6666ff", marker_size=15)
-                    # #fig.show()
+						result_df = pd.DataFrame(result_lst)
+						df_cols = ['Interval','Point of Reference']
+						result_df.columns = df_cols
+						result_df_grouped = [i[1].values.tolist() for i in result_df.groupby('Point of Reference')]
+						#result_df_grouped = [[i[0],i[-1]] if len(i)>2 else i for i in result_df_grouped]
+						result_df_grouped = [[i[0],i[-1]] for i in result_df_grouped]
+						result_df_grouped = [i for sublst in result_df_grouped for i in sublst]
+						# # return to str
+						result_df = pd.DataFrame(result_df_grouped)
+						result_df.columns = df_cols
+						x = result_df['Interval'].tolist()
+						#x_str = [num_str[i].upper() for i in x]
+						y = result_df['Point of Reference'].tolist()
+						#y_str = [num_str[i].upper() for i in y]
+						fig = px.line(result_df, x="Interval", y="Point of Reference", color='Point of Reference', markers=True)
+						fig.update_traces(textposition="bottom right", marker_size=12, line=dict(width=2.5), line_color="#4169E1")
+						fig.update_layout(
+							xaxis = dict(
+								tickmode = 'array',
+								# tickvals = x,
+								# ticktext = x_str
+								tickvals = [i for i in range(len(period_expl))],
+								ticktext = [i.upper() for i in period_expl]
+							),
+							yaxis = dict(
+								tickmode = 'array',
+								# tickvals = y,
+								# ticktext = y_str
+								tickvals = [i for i in range(len(period_expl))],
+								ticktext = [i.upper() for i in period_expl]
+							),
+							showlegend=False, font_size=20, width=750, height=600
+						)
 
-        elif expl_type == 'Skyline-based':
-            event = st.selectbox('Event',['Stability','Growth','Shrinkage'])
-            if not isinstance(time_variant_attr,list):
-                var_domain = sorted(list(np.unique(time_variant_attr.values.flatten())))
-            stc_domain = sorted(list(np.unique(time_invariant_attr.values.flatten())))
+					# #fig.update_traces(textposition="bottom right", line_color="#6666ff", marker_size=15)
+					# #fig.show()
 
-            attributes_expl = st.multiselect("Attributes", stc+varying, key='attr_expl')
-            stc_attrs = []
-            var_attrs = []
-            for i in attributes_expl:
-                if i in stc:
-                    stc_attrs.append(i)
-                else:
-                    var_attrs.append(i)
+		elif expl_type == 'Skyline-based':
+			event = st.selectbox('Event',['Stability','Growth','Shrinkage'])
+			if not isinstance(time_variant_attr,list):
+				var_domain = sorted(list(np.unique(time_variant_attr.values.flatten())))
+			stc_domain = sorted(list(np.unique(time_invariant_attr.values.flatten())))
 
-            if stc_attrs and not var_attrs:
-                attrtype = 'Static'
-            elif not stc_attrs and var_attrs:
-                attrtype = 'Variant'
-            elif stc_attrs and var_attrs:
-                attrtype = 'Mix'
+			attributes_expl = st.multiselect("Attributes", stc+varying, key='attr_expl')
+			stc_attrs = []
+			var_attrs = []
+			for i in attributes_expl:
+				if i in stc:
+					stc_attrs.append(i)
+				else:
+					var_attrs.append(i)
 
-            if attributes_expl:
-                st.markdown(f'<p style="color:#373737;font-size:14px;">{"Edge attributes"}</p>', unsafe_allow_html=True)
-            col1,col2 = st.columns(2)
-            with col1:
-                with st.expander('Start Node Value(s)'):
-                    start_node = []
-                    if var_attrs:
-                        start_val = st.selectbox(var_attrs[0], sorted([j for j in list(np.unique(time_variant_attr.values.flatten())) if j!=0]), key=i+'str_2')
-                        start_val = float(start_val)
-                        start_node.append(start_val)
-                    if stc_attrs:
-                        for i in stc_attrs:
-                            start_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'str')
-                            start_node.append(start_val)
-            with col2:
-                with st.expander('End Node Value(s)'):
-                    end_node = []
-                    if var_attrs:
-                        end_val = st.selectbox(var_attrs[0], sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0]), key=i+'stp_2')
-                        end_val = float(end_val)
-                        end_node.append(end_val)
-                    if stc_attrs:
-                        for i in stc_attrs:
-                            end_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'stp')
-                            end_node.append(end_val)
+			if stc_attrs and not var_attrs:
+				attrtype = 'Static'
+			elif not stc_attrs and var_attrs:
+				attrtype = 'Variant'
+			elif stc_attrs and var_attrs:
+				attrtype = 'Mix'
 
-            attr_values = tuple(start_node+end_node)
-            stc_attrs = [i.lower() for i in stc_attrs]
-            if event and attr_values and stc_attrs:
-                submitted_expl_sky = st.button('Explore')
+			if attributes_expl:
+				st.markdown(f'<p style="color:#373737;font-size:14px;">{"Edge attributes"}</p>', unsafe_allow_html=True)
+			col1,col2 = st.columns(2)
+			with col1:
+				with st.expander('Start Node Value(s)'):
+					start_node = []
+					if var_attrs:
+						start_val = st.selectbox(var_attrs[0], sorted([j for j in list(np.unique(time_variant_attr.values.flatten())) if j!=0]), key=i+'str_2')
+						start_val = float(start_val)
+						start_node.append(start_val)
+					if stc_attrs:
+						for i in stc_attrs:
+							start_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'str')
+							start_node.append(start_val)
+			with col2:
+				with st.expander('End Node Value(s)'):
+					end_node = []
+					if var_attrs:
+						end_val = st.selectbox(var_attrs[0], sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0]), key=i+'stp_2')
+						end_val = float(end_val)
+						end_node.append(end_val)
+					if stc_attrs:
+						for i in stc_attrs:
+							end_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'stp')
+							end_node.append(end_val)
+
+			attr_values = tuple(start_node+end_node)
+			stc_attrs = [i.lower() for i in stc_attrs]
+			if event and attr_values and stc_attrs:
+				submitted_expl_sky = st.button('Explore')
 
 	if submitted_expl and attributes_expl:
 		with st.container():
