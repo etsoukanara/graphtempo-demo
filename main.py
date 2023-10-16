@@ -1006,26 +1006,26 @@ elif app_mode == "Graph Exploration":
 					start_node = []
 					if var_attrs:
 						var_lst = sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0])
-						start_val = st.selectbox(var_attrs[0], var_lst, key = [i for i in var_lst])
+						start_val = st.selectbox(var_attrs[0], var_lst, key = [i+'v' for i in var_lst])
 						start_val = float(start_val)
 						start_node.append(start_val)
 					if stc_attrs:
 						for i in stc_attrs:
 							stc_lst = sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten())))
-							start_val = st.selectbox(i, stc_lst, key = [i for i in stc_lst])
+							start_val = st.selectbox(i, stc_lst, key = [i+'s' for i in stc_lst])
 							start_node.append(start_val)
 			with col2:
 				with st.expander('End Node Value(s)'):
 					end_node = []
 					if var_attrs:
 						var_lst = sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0])
-						end_val = st.selectbox(var_attrs[0], var_lst, key=[i for i in var_lst])
+						end_val = st.selectbox(var_attrs[0], var_lst, key=[i+'v' for i in var_lst])
 						end_val = float(end_val)
 						end_node.append(end_val)
 					if stc_attrs:
 						for i in stc_attrs:
 							stc_lst = sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten())))
-							end_val = st.selectbox(i, stc_lst, key=[i for i in stc_lst])
+							end_val = st.selectbox(i, stc_lst, key=[i+'s' for i in stc_lst])
 							end_node.append(end_val)
 
 			attr_values = tuple(start_node+end_node)
