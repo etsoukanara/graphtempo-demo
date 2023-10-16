@@ -1025,6 +1025,8 @@ elif app_mode == "Graph Exploration":
 
 			attr_values_sky = tuple(start_node+end_node)
 			stc_attrs_sky = [i.lower() for i in stc_attrs_sky]
+			print(stc_attrs_sky)
+			print(var_attrs_sky)
 			if event and attr_values_sky and (stc_attrs_sky or var_attrs_sky):
 				submitted_expl_sky = st.button('Explore')
 				if event == 'Stability':
