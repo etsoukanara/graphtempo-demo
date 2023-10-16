@@ -6,6 +6,7 @@ import sys
 sys.path.insert(1, 'graphtempo')
 from graphtempo import *
 from exploration import *
+from sky_exploration import *
 import time
 from PIL import Image
 import plotly.express as px
@@ -984,7 +985,7 @@ elif app_mode == "Graph Exploration":
 				var_domain = sorted(list(np.unique(time_variant_attr.values.flatten())))
 			stc_domain = sorted(list(np.unique(time_invariant_attr.values.flatten())))
 
-			attributes_expl = st.multiselect("Attributes", stc+varying, key='attr_expl')
+			attributes_expl = st.selectbox("Attributes", stc+varying, key='attr_expl')
 			stc_attrs = []
 			var_attrs = []
 			for i in attributes_expl:
@@ -1047,3 +1048,20 @@ elif app_mode == "Graph Exploration":
 			elif submitted_expl and not result_lst:
 				st.title('Exploration Output')
 				st.write('There are no results for ', int(k), 'interaction(s) ', ':neutral_face:')
+
+	if submitted_expl_sky and attributes_expl:
+		with st.container():
+			#try:
+			if submitted_expl_sky and result_sky:
+				with st.spinner('Wait for it...'):
+					time.sleep(3)
+				st.subheader('Skyline-based Exploration Output')
+				#st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
+				attr_values = tuple([str(i) for i in attr_values])
+				st.write('Derived intervals on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values[:int(len(attr_values)/2)]), '), ', '(', ", ".join(attr_values[int(len(attr_values)/2):]), ')).')
+				#st.write(attr_values)
+				st.plotly_chart(fig, use_container_width=True)
+			#except:
+			elif submitted_expl_sky and not result_sky:
+				st.title('Skyline-based Exploration Output')
+				st.write('There are no results for the edge type: ((', ", ".join(attr_values[:int(len(attr_values)/2)]), '), ', '(', ", ".join(attr_values[int(len(attr_values)/2):]), ')).', ':neutral_face:')
