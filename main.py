@@ -706,58 +706,58 @@ elif app_mode == "Graph Exploration":
 	with st.sidebar:
 		st.title('Set up Exploration')
 		#Choose type of exploration
-        expl_type = st.selectbox('Type of Exploration',['Interactions-based','Skyline-based'])
-        if expl_type == 'Interactions-based':
-            event = st.selectbox('Event',['Stability','Growth','Shrinkage'])
-            if not isinstance(time_variant_attr,list):
-                var_domain = sorted(list(np.unique(time_variant_attr.values.flatten())))
-            stc_domain = sorted(list(np.unique(time_invariant_attr.values.flatten())))
+		expl_type = st.selectbox('Type of Exploration',['Interactions-based','Skyline-based'])
+		if expl_type == 'Interactions-based':
+			event = st.selectbox('Event',['Stability','Growth','Shrinkage'])
+			if not isinstance(time_variant_attr,list):
+				var_domain = sorted(list(np.unique(time_variant_attr.values.flatten())))
+			stc_domain = sorted(list(np.unique(time_invariant_attr.values.flatten())))
 
-            attributes_expl = st.multiselect("Attributes", stc+varying, key='attr_expl')
-            stc_attrs = []
-            var_attrs = []
-            for i in attributes_expl:
-                if i in stc:
-                    stc_attrs.append(i)
-                else:
-                    var_attrs.append(i)
+			attributes_expl = st.multiselect("Attributes", stc+varying, key='attr_expl')
+			stc_attrs = []
+			var_attrs = []
+			for i in attributes_expl:
+				if i in stc:
+					stc_attrs.append(i)
+				else:
+					var_attrs.append(i)
 
-            if stc_attrs and not var_attrs:
-                attrtype = 'Static'
-            elif not stc_attrs and var_attrs:
-                attrtype = 'Variant'
-            elif stc_attrs and var_attrs:
-                attrtype = 'Mix'
+			if stc_attrs and not var_attrs:
+				attrtype = 'Static'
+			elif not stc_attrs and var_attrs:
+				attrtype = 'Variant'
+			elif stc_attrs and var_attrs:
+				attrtype = 'Mix'
 
-            if attributes_expl:
-                st.markdown(f'<p style="color:#373737;font-size:14px;">{"Edge attributes"}</p>', unsafe_allow_html=True)
-            col1,col2 = st.columns(2)
-            with col1:
-                with st.expander('Start Node Value(s)'):
-                    start_node = []
-                    if var_attrs:
-                        start_val = st.selectbox(var_attrs[0], sorted([j for j in list(np.unique(time_variant_attr.values.flatten())) if j!=0]), key=i+'str_2')
-                        start_val = float(start_val)
-                        start_node.append(start_val)
-                    if stc_attrs:
-                        for i in stc_attrs:
-                            start_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'str')
-                            start_node.append(start_val)
-            with col2:
-                with st.expander('End Node Value(s)'):
-                    end_node = []
-                    if var_attrs:
-                        end_val = st.selectbox(var_attrs[0], sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0]), key=i+'stp_2')
-                        end_val = float(end_val)
-                        end_node.append(end_val)
-                    if stc_attrs:
-                        for i in stc_attrs:
-                            end_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'stp')
-                            end_node.append(end_val)
+			if attributes_expl:
+				st.markdown(f'<p style="color:#373737;font-size:14px;">{"Edge attributes"}</p>', unsafe_allow_html=True)
+			col1,col2 = st.columns(2)
+			with col1:
+				with st.expander('Start Node Value(s)'):
+					start_node = []
+					if var_attrs:
+						start_val = st.selectbox(var_attrs[0], sorted([j for j in list(np.unique(time_variant_attr.values.flatten())) if j!=0]), key=i+'str_2')
+						start_val = float(start_val)
+						start_node.append(start_val)
+					if stc_attrs:
+						for i in stc_attrs:
+							start_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'str')
+							start_node.append(start_val)
+			with col2:
+				with st.expander('End Node Value(s)'):
+					end_node = []
+					if var_attrs:
+						end_val = st.selectbox(var_attrs[0], sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0]), key=i+'stp_2')
+						end_val = float(end_val)
+						end_node.append(end_val)
+					if stc_attrs:
+						for i in stc_attrs:
+							end_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'stp')
+							end_node.append(end_val)
 
-            attr_values = tuple(start_node+end_node)
-            stc_attrs = [i.lower() for i in stc_attrs]
-            period_expl = [i.lower() for i in period]
+			attr_values = tuple(start_node+end_node)
+			stc_attrs = [i.lower() for i in stc_attrs]
+			period_expl = [i.lower() for i in period]
 
             # Set limits
             if attributes_expl and attr_values:
