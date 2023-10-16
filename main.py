@@ -986,20 +986,20 @@ elif app_mode == "Graph Exploration":
 				var_domain = sorted(list(np.unique(time_variant_attr.values.flatten())))
 			stc_domain = sorted(list(np.unique(time_invariant_attr.values.flatten())))
 
-			attributes_expl = st.selectbox("Attributes", stc+varying, key='attr_expl')
+			attributes_expl_sky = st.selectbox("Attributes", stc+varying, key='attr_expl')
 			stc_attrs = []
 			var_attrs = []
-			if attributes_expl in stc:
-				stc_attrs.append(attributes_expl)
-			elif attributes_expl in varying:
-				var_attrs.append(attributes_expl)
+			if attributes_expl_sky in stc:
+				stc_attrs.append(attributes_expl_sky)
+			elif attributes_expl_sky in varying:
+				var_attrs.append(attributes_expl_sky)
 
 			if stc_attrs:
 				attrtype = 'Static'
 			elif var_attrs:
 				attrtype = 'Variant'
 
-			if attributes_expl:
+			if attributes_expl_sky:
 				st.markdown(f'<p style="color:#373737;font-size:14px;">{"Edge attributes"}</p>', unsafe_allow_html=True)
 			col1,col2 = st.columns(2)
 			with col1:
@@ -1053,7 +1053,7 @@ elif app_mode == "Graph Exploration":
 				st.title('Exploration Output')
 				st.write('There are no results for ', int(k), 'interaction(s) ', ':neutral_face:')
 
-	elif submitted_expl_sky and attributes_expl:
+	elif submitted_expl_sky and attributes_expl_sky:
 		with st.container():
 			#try:
 			if submitted_expl_sky and result_sky:
