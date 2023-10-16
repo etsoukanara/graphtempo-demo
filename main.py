@@ -1052,7 +1052,7 @@ elif app_mode == "Graph Exploration":
 				st.title('Exploration Output')
 				st.write('There are no results for ', int(k), 'interaction(s) ', ':neutral_face:')
 
-	if submitted_expl_sky and attributes_expl:
+	elif submitted_expl_sky and attributes_expl:
 		with st.container():
 			#try:
 			if submitted_expl_sky and result_sky:
