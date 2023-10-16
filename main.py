@@ -988,18 +988,15 @@ elif app_mode == "Graph Exploration":
 			attributes_expl = st.selectbox("Attributes", stc+varying, key='attr_expl')
 			stc_attrs = []
 			var_attrs = []
-			for i in attributes_expl:
-				if i in stc:
-					stc_attrs.append(i)
-				else:
-					var_attrs.append(i)
+			if attributes_expl in stc:
+				stc_attrs.append(attributes_expl)
+			else:
+				var_attrs.append(attributes_expl)
 
-			if stc_attrs and not var_attrs:
+			if stc_attrs:
 				attrtype = 'Static'
-			elif not stc_attrs and var_attrs:
+			elif var_attrs:
 				attrtype = 'Variant'
-			elif stc_attrs and var_attrs:
-				attrtype = 'Mix'
 
 			if attributes_expl:
 				st.markdown(f'<p style="color:#373737;font-size:14px;">{"Edge attributes"}</p>', unsafe_allow_html=True)
