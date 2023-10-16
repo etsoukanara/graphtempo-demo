@@ -987,48 +987,48 @@ elif app_mode == "Graph Exploration":
 			stc_domain = sorted(list(np.unique(time_invariant_attr.values.flatten())))
 
 			attributes_expl_sky = st.selectbox("Attributes", stc+varying, key='attr_expl')
-			stc_attrs = []
-			var_attrs = []
+			stc_attrs_sky = []
+			var_attrs_sky = []
 			if attributes_expl_sky in stc:
-				stc_attrs.append(attributes_expl_sky)
+				stc_attrs_sky.append(attributes_expl_sky)
 			elif attributes_expl_sky in varying:
-				var_attrs.append(attributes_expl_sky)
+				var_attrs_sky.append(attributes_expl_sky)
 			if attributes_expl_sky:
 				st.markdown(f'<p style="color:#373737;font-size:14px;">{"Edge attributes"}</p>', unsafe_allow_html=True)
 			col1,col2 = st.columns(2)
 			with col1:
 				with st.expander('Start Node Value(s)'):
 					start_node = []
-					if var_attrs:
+					if var_attrs_sky:
 						var_lst = sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0])
-						start_val = st.selectbox(var_attrs[0], var_lst, key = 'vs')
+						start_val = st.selectbox(var_attrs_sky[0], var_lst, key = 'vs')
 						start_val = float(start_val)
 						start_node.append(start_val)
-					if stc_attrs:
-						for i in stc_attrs:
+					if stc_attrs_sky:
+						for i in stc_attrs_sky:
 							stc_lst = sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten())))
 							start_val = st.selectbox(i, stc_lst, key = 'ss')
 							start_node.append(start_val)
 			with col2:
 				with st.expander('End Node Value(s)'):
 					end_node = []
-					if var_attrs:
+					if var_attrs_sky:
 						var_lst = sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0])
-						end_val = st.selectbox(var_attrs[0], var_lst, key = 've')
+						end_val = st.selectbox(var_attrs_sky[0], var_lst, key = 've')
 						end_val = float(end_val)
 						end_node.append(end_val)
-					if stc_attrs:
-						for i in stc_attrs:
+					if stc_attrs_sky:
+						for i in stc_attrs_sky:
 							stc_lst = sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten())))
 							end_val = st.selectbox(i, stc_lst, key = 'se')
 							end_node.append(end_val)
 
 			attr_values_sky = tuple(start_node+end_node)
-			stc_attrs = [i.lower() for i in stc_attrs]
-			if event and attr_values_sky and stc_attrs:
+			stc_attrs_sky = [i.lower() for i in stc_attrs_sky]
+			if event and attr_values_sky and stc_attrs_sky:
 				submitted_expl_sky = st.button('Explore')
 				if event == 'Stability':
-					result_sky,dom = Stab_INX_MAX(attr_values_sky,stc_attrs,nodes_df,edges_df,time_invariant_attr)
+					result_sky,dom = Stab_INX_MAX(attr_values_sky,stc_attrs_sky,nodes_df,edges_df,time_invariant_attr)
 
 	if submitted_expl and attributes_expl:
 		with st.container():
