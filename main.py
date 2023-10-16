@@ -706,7 +706,7 @@ elif app_mode == "Graph Exploration":
 	with st.sidebar:
 		st.title('Set up Exploration')
 		#Choose type of exploration
-		expl_type = st.selectbox('Type of Exploration',['Interactions-based','Skyline-based'])
+        expl_type = st.selectbox('Type of Exploration',['Interactions-based','Skyline-based'])
         if expl_type == 'Interactions-based':
             event = st.selectbox('Event',['Stability','Growth','Shrinkage'])
             if not isinstance(time_variant_attr,list):
