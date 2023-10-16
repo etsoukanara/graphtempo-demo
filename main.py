@@ -1029,12 +1029,12 @@ elif app_mode == "Graph Exploration":
 							end_val = st.selectbox(i, stc_lst, key = 'se')
 							end_node.append(end_val)
 
-			attr_values = tuple(start_node+end_node)
+			attr_values_sky = tuple(start_node+end_node)
 			stc_attrs = [i.lower() for i in stc_attrs]
-			if event and attr_values and stc_attrs:
+			if event and attr_values_sky and stc_attrs:
 				submitted_expl_sky = st.button('Explore')
 				if event == 'Stability':
-					result_sky,dom = Stab_INX_MAX(attr_values,stc_attrs,nodes_df,edges_df,time_invariant_attr)
+					result_sky,dom = Stab_INX_MAX(attr_values_sky,stc_attrs,nodes_df,edges_df,time_invariant_attr)
 
 	if submitted_expl and attributes_expl:
 		with st.container():
@@ -1061,11 +1061,11 @@ elif app_mode == "Graph Exploration":
 					time.sleep(3)
 				st.subheader('Skyline-based Exploration Output')
 				#st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
-				attr_values = tuple([str(i) for i in attr_values])
-				st.write('Derived intervals on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values[:int(len(attr_values)/2)]), '), ', '(', ", ".join(attr_values[int(len(attr_values)/2):]), ')).')
-				#st.write(attr_values)
+				attr_values_sky = tuple([str(i) for i in attr_values_sky])
+				st.write('Derived intervals on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
+				#st.write(attr_values_sky)
 				st.write(result_sky)
 			#except:
 			elif submitted_expl_sky and not result_sky:
 				st.title('Skyline-based Exploration Output')
-				st.write('There are no results for the edge type: ((', ", ".join(attr_values[:int(len(attr_values)/2)]), '), ', '(', ", ".join(attr_values[int(len(attr_values)/2):]), ')).', ':neutral_face:')
+				st.write('There are no results for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).', ':neutral_face:')
