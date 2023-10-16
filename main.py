@@ -703,7 +703,7 @@ elif app_mode == "Graph Exploration":
 			'#194d33','#ffaa00','#664400','#33004d','#660066','#006666','#669999','#bf4080','#73264d','#bbbb77',\
 			'#004080','#bf4040','#0077b3']
 	submitted_expl = []
-    submitted_expl_sky = []
+	submitted_expl_sky = []
 	#k_limits = [0]
 	with st.sidebar:
 		st.title('Set up Exploration')
