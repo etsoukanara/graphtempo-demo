@@ -990,7 +990,7 @@ elif app_mode == "Graph Exploration":
 			var_attrs = []
 			if attributes_expl in stc:
 				stc_attrs.append(attributes_expl)
-			else:
+			elif attributes_expl in varying:
 				var_attrs.append(attributes_expl)
 
 			if stc_attrs:
@@ -1005,23 +1005,23 @@ elif app_mode == "Graph Exploration":
 				with st.expander('Start Node Value(s)'):
 					start_node = []
 					if var_attrs:
-						start_val = st.selectbox(var_attrs[0], sorted([j for j in list(np.unique(time_variant_attr.values.flatten())) if j!=0]), key=i+'str_2')
+						start_val = st.selectbox(var_attrs[0], sorted([j for j in list(np.unique(time_variant_attr.values.flatten())) if j!=0]))
 						start_val = float(start_val)
 						start_node.append(start_val)
 					if stc_attrs:
 						for i in stc_attrs:
-							start_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'str')
+							start_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))))
 							start_node.append(start_val)
 			with col2:
 				with st.expander('End Node Value(s)'):
 					end_node = []
 					if var_attrs:
-						end_val = st.selectbox(var_attrs[0], sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0]), key=i+'stp_2')
+						end_val = st.selectbox(var_attrs[0], sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0]))
 						end_val = float(end_val)
 						end_node.append(end_val)
 					if stc_attrs:
 						for i in stc_attrs:
-							end_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))), key=i+'stp')
+							end_val = st.selectbox(i, sorted(list(np.unique(time_invariant_attr[i.lower()].values.flatten()))))
 							end_node.append(end_val)
 
 			attr_values = tuple(start_node+end_node)
