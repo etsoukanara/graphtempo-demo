@@ -1032,8 +1032,8 @@ elif app_mode == "Graph Exploration":
 			stc_attrs = [i.lower() for i in stc_attrs]
 			if event and attr_values and stc_attrs:
 				submitted_expl_sky = st.button('Explore')
-					if event == 'Stability':
-						result_sky,dom = Stab_INX_MAX(attr_values,stc_attrs,nodes_df,edges_df,time_invariant_attr)
+				if event == 'Stability':
+					result_sky,dom = Stab_INX_MAX(attr_values,stc_attrs,nodes_df,edges_df,time_invariant_attr)
 
 	if submitted_expl and attributes_expl:
 		with st.container():
