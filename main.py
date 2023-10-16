@@ -1032,6 +1032,8 @@ elif app_mode == "Graph Exploration":
 			stc_attrs = [i.lower() for i in stc_attrs]
 			if event and attr_values and stc_attrs:
 				submitted_expl_sky = st.button('Explore')
+					if event == 'Stability':
+						result_sky,dom = Stab_INX_MAX(attr_values,stc_attrs,nodes_df,edges_df,time_invariant_attr)
 
 	if submitted_expl and attributes_expl:
 		with st.container():
@@ -1061,7 +1063,7 @@ elif app_mode == "Graph Exploration":
 				attr_values = tuple([str(i) for i in attr_values])
 				st.write('Derived intervals on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values[:int(len(attr_values)/2)]), '), ', '(', ", ".join(attr_values[int(len(attr_values)/2):]), ')).')
 				#st.write(attr_values)
-				st.plotly_chart(fig, use_container_width=True)
+				st.write(result_sky)
 			#except:
 			elif submitted_expl_sky and not result_sky:
 				st.title('Skyline-based Exploration Output')
