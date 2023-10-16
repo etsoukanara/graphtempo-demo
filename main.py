@@ -993,12 +993,6 @@ elif app_mode == "Graph Exploration":
 				stc_attrs.append(attributes_expl_sky)
 			elif attributes_expl_sky in varying:
 				var_attrs.append(attributes_expl_sky)
-
-			if stc_attrs:
-				attrtype = 'Static'
-			elif var_attrs:
-				attrtype = 'Variant'
-
 			if attributes_expl_sky:
 				st.markdown(f'<p style="color:#373737;font-size:14px;">{"Edge attributes"}</p>', unsafe_allow_html=True)
 			col1,col2 = st.columns(2)
