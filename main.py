@@ -1030,9 +1030,9 @@ elif app_mode == "Graph Exploration":
 				if event == 'Stability':
 					result_sky, dom = Stab_INX_MAX(attr_values_sky,stc_attrs_sky,nodes_df,edges_df,time_invariant_attr)
 				if event == 'Growth':
-					result_sky, dom = Growth_UN_MAX(attr_values,stc_attrs,nodes_df,edges_df,time_invariant_attr)
+					result_sky, dom = Growth_UN_MAX(attr_values_sky,stc_attrs,nodes_df,edges_df,time_invariant_attr)
 				if event == 'Shrinkage':
-					result_sky, dom = Shrink_UN_MIN(attr_values,stc_attrs,nodes_df,edges_df,time_invariant_attr)
+					result_sky, dom = Shrink_UN_MIN(attr_values_sky,stc_attrs,nodes_df,edges_df,time_invariant_attr)
 
 	if submitted_expl and attributes_expl:
 		with st.container():
