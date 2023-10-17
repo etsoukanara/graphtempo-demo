@@ -1063,7 +1063,7 @@ elif app_mode == "Graph Exploration":
 				st.subheader('Skyline-based Exploration Output')
 				#st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
-				st.write('Derived intervals on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
+				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
 				#st.write(attr_values_sky)
 
 				style.use('ggplot')
