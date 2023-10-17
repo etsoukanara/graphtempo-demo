@@ -1062,6 +1062,41 @@ elif app_mode == "Graph Exploration":
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
 				st.write('Derived intervals on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
 				#st.write(attr_values_sky)
+				from mpl_toolkits.mplot3d import axes3d
+				import matplotlib.pyplot as plt
+				import numpy as np
+				from matplotlib import style
+				style.use('ggplot')
+
+				fig = plt.figure(figsize=(9,9))
+				ax1 = fig.add_subplot(111, projection='3d')
+
+				x3 = [2011.5,2013.5,2013.5,2017.5,2018.5]
+				y3 = [2012.5,2014.5,2016.5,2018.5,2019.5]
+				z3 = [0,0,0,0,0]
+
+				dx = [1,2,1,1,1]
+				dy = [1,1,1,1,1]
+				dz = [231,235,254,334,297]
+
+				ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.5)
+
+				pos = [i+25 for i in dz]
+				for x,y,d,p in zip(x3,y3,dz,pos):
+					ax1.text(x, y, p, d, fontsize=8, verticalalignment='bottom')
+
+				ax1.set_xticks([2012,2014,2016,2018, 2020])
+				ax1.set_yticks([2012,2014,2016,2018, 2020])
+				ax1.set_zticks([0,100,200,300])
+				ax1.set_xticklabels(['2012','2014','2016','2018','2020'], fontsize=8, rotation=10)
+				ax1.set_yticklabels(['2012','2014','2016','2018','2020'], fontsize=8, va='bottom', ha='left', rotation=-15)
+				ax1.axes.get_zaxis().set_ticks([])
+
+				ax1.set_xlabel('Interval', fontsize=10)
+				ax1.set_ylabel('Reference point', fontsize=10)
+				#ax1.set_zlabel('count', fontsize=8)
+				ax1.view_init(None, None)
+				st.pyplot(fig)
 				st.write(result_sky)
 			#except:
 			elif submitted_expl_sky and not result_sky:
