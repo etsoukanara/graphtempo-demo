@@ -1113,7 +1113,7 @@ elif app_mode == "Graph Exploration":
 				ax1.set_xlabel('Interval', fontsize=10)
 				ax1.set_ylabel('Reference point', fontsize=10)
 				#ax1.set_zlabel('count', fontsize=8)
-				ax1.view_init(None, None)
+				ax1.view_init(20, -110)
 				from io import BytesIO
 				buf = BytesIO()
 				fig.savefig(buf, format="png")
