@@ -13,6 +13,9 @@ import plotly.express as px
 import copy
 import networkx as nx
 from littleballoffur.exploration_sampling import SnowBallSampler
+from mpl_toolkits.mplot3d import axes3d
+import matplotlib.pyplot as plt
+from matplotlib import style
 
 
 st.set_page_config(layout='wide')
@@ -1062,10 +1065,7 @@ elif app_mode == "Graph Exploration":
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
 				st.write('Derived intervals on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
 				#st.write(attr_values_sky)
-				#from mpl_toolkits.mplot3d import axes3d
-				import matplotlib.pyplot as plt
-				import numpy as np
-				from matplotlib import style
+
 				style.use('ggplot')
 
 				fig = plt.figure(figsize=(9,9))
