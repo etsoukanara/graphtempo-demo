@@ -1068,7 +1068,7 @@ elif app_mode == "Graph Exploration":
 
 				values_sorted = sorted(v for v in dom.values())[::-1]
 				topk = values_sorted[2] # TOP-3
-                import ast
+				import ast
 				dominance_stab_top = [list(ast.literal_eval(k)) for k,v in dom.items() if v >= topk]
 				skyline = {k:v for k,v in result_sky.items() if v[0] in dominance_stab_top}
 				colors = ['blue' if v[0] in dominance_stab_top else 'red' for k,v in result_sky.items()]
