@@ -1066,30 +1066,47 @@ elif app_mode == "Graph Exploration":
 				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
 				#st.write(attr_values_sky)
 
-				style.use('ggplot')
+				values_sorted = sorted(v for v in dominance_stab.values())[::-1]
+				topk = values_sorted[2] # TOP-3
+				dominance_stab_top = [list(ast.literal_eval(k)) for k,v in dominance_stab.items() if v >= topk]
+				skyline = {k:v for k,v in skyline_stab.items() if v[0] in dominance_stab_top}
+				colors = ['blue' if v[0] in dominance_stab_top else 'red' for k,v in skyline_stab.items()]
 
+
+				tps = [i for i in edges_df.columns]
+				tps_int = [i for i in range(1,len(tps)+1)]
+				tps_map = dict(zip(tps, tps_int))
+
+				x3 = []
+				y3 = []
+				z3 = []
+				dx = []
+				dy = []
+				dz = []
+				for k,v in skyline_stab.items():
+					x3.append(tps_map[v[0][1][0]] - 0.5)
+					y3.append(tps_map[v[0][-1][0]] - 0.5)
+					z3.append(0)
+					dx.append(len(v[0][1]))
+					dy.append(1)
+					dz.append(v[0][0])
+
+				style.use('ggplot')
 				fig = plt.figure(figsize=(9,9))
 				ax1 = fig.add_subplot(111, projection='3d')
 
-				x3 = [2011.5,2013.5,2013.5,2017.5,2018.5]
-				y3 = [2012.5,2014.5,2016.5,2018.5,2019.5]
-				z3 = [0,0,0,0,0]
-
-				dx = [1,2,1,1,1]
-				dy = [1,1,1,1,1]
-				dz = [231,235,254,334,297]
-
-				ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.5)
+				ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
 
 				pos = [i+25 for i in dz]
 				for x,y,d,p in zip(x3,y3,dz,pos):
 					ax1.text(x, y, p, d, fontsize=8, verticalalignment='bottom')
 
-				ax1.set_xticks([2012,2014,2016,2018, 2020])
-				ax1.set_yticks([2012,2014,2016,2018, 2020])
-				ax1.set_zticks([0,100,200,300])
-				ax1.set_xticklabels(['2012','2014','2016','2018','2020'], fontsize=8, rotation=10)
-				ax1.set_yticklabels(['2012','2014','2016','2018','2020'], fontsize=8, va='bottom', ha='left', rotation=-15)
+				tick_vars = [tps_map[str(i)] for i in range(1,len(tps)+1,2)]
+				tick_lbl_vars = [str(tps_map[str(i)]) for i in range(1,len(tps)+1,2)]
+				ax1.set_xticks(tick_vars)
+				ax1.set_yticks(tick_vars)
+				ax1.set_xticklabels(tick_lbl_vars, fontsize=8, rotation=10)
+				ax1.set_yticklabels(tick_lbl_vars, fontsize=8, va='bottom', ha='left', rotation=-15)
 				ax1.axes.get_zaxis().set_ticks([])
 
 				ax1.set_xlabel('Interval', fontsize=10)
