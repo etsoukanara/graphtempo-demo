@@ -13,7 +13,7 @@ import plotly.express as px
 import copy
 import networkx as nx
 from littleballoffur.exploration_sampling import SnowBallSampler
-from mpl_toolkits.mplot3d import axes3d
+#from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plt
 from matplotlib import style
 
