@@ -1066,11 +1066,11 @@ elif app_mode == "Graph Exploration":
 				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
 				#st.write(attr_values_sky)
 
-				values_sorted = sorted(v for v in dominance_stab.values())[::-1]
+				values_sorted = sorted(v for v in dom.values())[::-1]
 				topk = values_sorted[2] # TOP-3
-				dominance_stab_top = [list(ast.literal_eval(k)) for k,v in dominance_stab.items() if v >= topk]
-				skyline = {k:v for k,v in skyline_stab.items() if v[0] in dominance_stab_top}
-				colors = ['blue' if v[0] in dominance_stab_top else 'red' for k,v in skyline_stab.items()]
+				dominance_stab_top = [list(ast.literal_eval(k)) for k,v in dom.items() if v >= topk]
+				skyline = {k:v for k,v in result_sky.items() if v[0] in dominance_stab_top}
+				colors = ['blue' if v[0] in dominance_stab_top else 'red' for k,v in result_sky.items()]
 
 
 				tps = [i for i in edges_df.columns]
@@ -1083,7 +1083,7 @@ elif app_mode == "Graph Exploration":
 				dx = []
 				dy = []
 				dz = []
-				for k,v in skyline_stab.items():
+				for k,v in result_sky.items():
 					x3.append(tps_map[v[0][1][0]] - 0.5)
 					y3.append(tps_map[v[0][-1][0]] - 0.5)
 					z3.append(0)
