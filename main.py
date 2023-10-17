@@ -1096,7 +1096,10 @@ elif app_mode == "Graph Exploration":
 				ax1.set_ylabel('Reference point', fontsize=10)
 				#ax1.set_zlabel('count', fontsize=8)
 				ax1.view_init(None, None)
-				st.pyplot(fig)
+				buf = BytesIO()
+				fig.savefig(buf, format="png")
+				st.image(buf)
+				#st.pyplot(fig)
 				st.write(result_sky)
 			#except:
 			elif submitted_expl_sky and not result_sky:
