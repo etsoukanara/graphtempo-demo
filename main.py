@@ -1062,7 +1062,7 @@ elif app_mode == "Graph Exploration":
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
 				st.write('Derived intervals on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
 				#st.write(attr_values_sky)
-				from mpl_toolkits.mplot3d import axes3d
+				#from mpl_toolkits.mplot3d import axes3d
 				import matplotlib.pyplot as plt
 				import numpy as np
 				from matplotlib import style
