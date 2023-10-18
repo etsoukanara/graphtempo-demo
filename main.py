@@ -230,6 +230,7 @@ def create_Graph(aggregation,color_palette,flag):
 	                 smooth= {'enabled':True,'type':'dynamic'},
 	                 font={'color':'black'},
 	                 length=300,
+	                 #arrows={'enabled':False},
 	                 color='black')
 	        )
 		elif flag == 1:
@@ -241,6 +242,7 @@ def create_Graph(aggregation,color_palette,flag):
 	                 smooth= {'enabled':True,'type':'dynamic'},
 	                 font={'color':'black'},
 	                 length=300,
+	                 #arrows={'enabled':False},
 	                 color='black')
 	        )
 		else:
@@ -252,6 +254,7 @@ def create_Graph(aggregation,color_palette,flag):
 	                 smooth= {'enabled':True,'type':'dynamic'},
 	                 font={'color':'black'},
 	                 length=300,
+	                 #arrows={'enabled':False},
 	                 color='black')
 	        )
 
@@ -395,6 +398,7 @@ elif app_mode == "Graph Overview":
 			                 smooth= {'enabled':True,'type':'dynamic'},
 			                 font={'color':'black'},
 			                 #length=300,
+                             #arrows={'enabled':False},
 			                 color='black')
 			        )
 
@@ -403,7 +407,7 @@ elif app_mode == "Graph Overview":
 			                #graphviz_layout='fdp',
 			                #graphviz_config={"rankdir": rankdir, "ranksep": ranksep, "nodesep": nodesep},
 			                directed=False,
-			                enabled=True,
+			                enabled=False,
 			                #initiallyActive=True,
 			                nodeHighlightBehavior=True, 
 			                highlightColor="#F7A7A6",
