@@ -370,20 +370,6 @@ def Dims_Eff(dims,agg_std):
     return(agg)
 
 
-# directed to undirected aggregate graph
-
-df = copy.deepcopy(agg_inx[1])
-x = agg_inx[1].index.tolist()
-xnew = []
-for tpl in x:
-    xnew.append(tuple([tpl[:int(len(tpl)/2)], tpl[int(len(tpl)/2):]]))
-xnewnew = [tuple(sorted([tuple(sorted(i[0])),tuple(sorted(i[1]))])) for i in xnew]
-xnewnewnew = [tuple(tpl[0]+tpl[1]) for tpl in xnewnew]
-xnnnmulti = pd.MultiIndex.from_tuples(xnewnewnew)
-df.index = xnnnmulti
-dff = df.groupby(df.index).sum()
-dff.index = pd.MultiIndex.from_tuples(dff.index.tolist())
-
 
 
 
