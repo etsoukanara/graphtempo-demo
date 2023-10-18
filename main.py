@@ -23,7 +23,7 @@ edges.append( Edge(source="Captain_Marvel",
 
 config = Config(width=750,
                 height=950,
-                directed=True, 
+                directed=False, 
                 physics=True, 
                 hierarchical=False,
                 # **kwargs
