@@ -178,7 +178,7 @@ def Aggregate_Static_Dist(oper_output,tia,stc_attrs):
     edges_idx_new = []
     for tpl in edges_idx:
         edges_idx_new.append(tuple([tpl[:int(len(tpl)/2)], tpl[int(len(tpl)/2):]]))
-    edges_idx_new = [tuple(sorted([tuple(sorted(i[0])),tuple(sorted(i[1]))])) for i in edges_idx_new]
+    edges_idx_new = [tuple(sorted(tuple([i[0],i[1]]))) for i in edges_idx_new]
     edges_idx_new = [tuple(tpl[0]+tpl[1]) for tpl in edges_idx_new]
     edges_idx_new = pd.MultiIndex.from_tuples(edges_idx_new)
     edges.index = edges_idx_new
