@@ -533,7 +533,7 @@ elif app_mode == "Graph Aggregation":
 			if any(i in stc for i in attributes) and not any(i in varying for i in attributes):
 				res, tia = eval('Union_Static')(nodes_df,edges_df,time_invariant_attr,[timepoint])
 				agg = eval('Aggregate_Static_Dist')(res,tia,[i.lower() for i in attributes if i not in varying])
-				st.write(agg)
+				#st.write(agg)
 				create_Graph(agg,palette,0)
 			elif any(i in varying for i in attributes) and not any(i in stc for i in attributes):
 				res, tva = eval('Union_Variant')(nodes_df,edges_df,time_variant_attr,[timepoint])
