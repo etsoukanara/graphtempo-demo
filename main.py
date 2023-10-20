@@ -1105,18 +1105,18 @@ elif app_mode == "Graph Exploration":
 
 				pos = [i+5 for i in dz]
 				for x,y,d,p in zip(x3,y3,dz,pos):
-					ax1.text(x, y, p, d, fontsize=12, verticalalignment='bottom', weight= 'bold')#horizontalalignment='left'
+					ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
 
 				tick_vars = [tps_map[str(i)] for i in range(1,len(tps)+1,2)]
 				tick_lbl_vars = [str(tps_map[str(i)]) for i in range(1,len(tps)+1,2)]
 				ax1.set_xticks(tick_vars)
 				ax1.set_yticks(tick_vars)
-				ax1.set_xticklabels(tick_lbl_vars, fontsize=12, rotation=10)
-				ax1.set_yticklabels(tick_lbl_vars, fontsize=12, va='bottom', rotation=-15)#ha='left'
+				ax1.set_xticklabels(tick_lbl_vars, fontsize=10, rotation=10)
+				ax1.set_yticklabels(tick_lbl_vars, fontsize=10, va='bottom', rotation=-15)#ha='left'
 				ax1.axes.get_zaxis().set_ticks([])
 
-				ax1.set_xlabel('Interval', fontsize=12)
-				ax1.set_ylabel('Reference point', fontsize=12)
+				ax1.set_xlabel('Interval', fontsize=10)
+				ax1.set_ylabel('Reference point', fontsize=10)
 				#ax1.set_zlabel('count', fontsize=8)
 				ax1.view_init(20, -110)
 				from io import BytesIO
