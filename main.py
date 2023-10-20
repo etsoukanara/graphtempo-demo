@@ -1103,7 +1103,7 @@ elif app_mode == "Graph Exploration":
 
 				ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
 
-				pos = [i+10 for i in dz]
+				pos = [i+5 for i in dz]
 				for x,y,d,p in zip(x3,y3,dz,pos):
 					ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
 
