@@ -1105,7 +1105,7 @@ elif app_mode == "Graph Exploration":
 
 				pos = [i+5 for i in dz]
 				for x,y,d,p in zip(x3,y3,dz,pos):
-					ax1.text(x, y, p, d, fontsize=12, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
+					ax1.text(x, y, p, d, fontsize=12, verticalalignment='bottom', weight= 'bold')#horizontalalignment='left'
 
 				tick_vars = [tps_map[str(i)] for i in range(1,len(tps)+1,2)]
 				tick_lbl_vars = [str(tps_map[str(i)]) for i in range(1,len(tps)+1,2)]
