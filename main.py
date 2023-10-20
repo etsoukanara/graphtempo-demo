@@ -1112,7 +1112,7 @@ elif app_mode == "Graph Exploration":
 				ax1.set_xticks(tick_vars)
 				ax1.set_yticks(tick_vars)
 				ax1.set_xticklabels(tick_lbl_vars, fontsize=12, rotation=10)
-				ax1.set_yticklabels(tick_lbl_vars, fontsize=12, va='bottom', ha='left', rotation=-15)
+				ax1.set_yticklabels(tick_lbl_vars, fontsize=12, va='bottom', rotation=-15)#ha='left'
 				ax1.axes.get_zaxis().set_ticks([])
 
 				ax1.set_xlabel('Interval', fontsize=12)
