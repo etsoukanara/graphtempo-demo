@@ -1070,7 +1070,7 @@ elif app_mode == "Graph Exploration":
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
 				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')). Blue bars depict top 3 results.')
 				#st.write(attr_values_sky)
-				colors = ['red' for i in range(len(result_sky))]
+				colors = ['blue' for i in range(len(result_sky))]
 				if len(result_sky) > 2:
 					values_sorted = sorted(v for v in dom.values())[::-1]
 					topk = values_sorted[2] # TOP-3
