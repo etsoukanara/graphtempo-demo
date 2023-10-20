@@ -1071,7 +1071,7 @@ elif app_mode == "Graph Exploration":
 				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')). Blue bars depict top 3 results.')
 				#st.write(attr_values_sky)
 				colors = ['red' for i in range(len(result_sky))]
-				if len(result_sky) > 5:
+				if len(result_sky) > 2:
 					values_sorted = sorted(v for v in dom.values())[::-1]
 					topk = values_sorted[2] # TOP-3
 					import ast
@@ -1104,7 +1104,7 @@ elif app_mode == "Graph Exploration":
 
 				ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
 
-				pos = [i+5 for i in dz]
+				pos = [i+2 for i in dz]
 				for x,y,d,p in zip(x3,y3,dz,pos):
 					ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
 
