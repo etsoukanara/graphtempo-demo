@@ -1069,7 +1069,7 @@ elif app_mode == "Graph Exploration":
 				#st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
 				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')). Blue bars depict top 3 results.')
-				#st.write(attr_values_sky)
+				st.write(attr_values_sky)
 				colors = ['blue' for i in range(len(result_sky))]
 				if len(result_sky) > 2:
 					values_sorted = sorted(v for v in dom.values())[::-1]
