@@ -1077,7 +1077,8 @@ elif app_mode == "Graph Exploration":
 					import ast
 					dominance_stab_top = [list(ast.literal_eval(k)) for k,v in dom.items() if v >= topk]
 					skyline = {k:v for k,v in result_sky.items() if v[0] in dominance_stab_top}
-					colors = ['blue' if v[0] in dominance_stab_top else 'red' for k,v in result_sky.items()]
+					colors = ['blue' if lst in dominance_stab_top else 'red' for k,v in result_sky.items() for lst in v]
+
 
 
 				tps = [i for i in edges_df.columns]
