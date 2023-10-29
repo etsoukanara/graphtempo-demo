@@ -1070,7 +1070,6 @@ elif app_mode == "Graph Exploration":
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
 				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')). Blue bars depict top 3 results.')
 				#st.write(attr_values_sky)
-				st.write(result_sky)
 				colors = ['blue' for i in range(len(result_sky))]
 				if len(result_sky) > 2:
 					values_sorted = sorted(v for v in dom.values())[::-1]
@@ -1091,13 +1090,14 @@ elif app_mode == "Graph Exploration":
 				dx = []
 				dy = []
 				dz = []
-				for k,v in result_sky.items():
-					x3.append(tps_map[v[0][1][0]] - 0.5)
-					y3.append(tps_map[v[0][-1][0]] - 0.5)
-					z3.append(0)
-					dx.append(len(v[0][1]))
-					dy.append(1)
-					dz.append(v[0][0])
+				for k,v in skyline_stab.items():
+					for lst in v:
+						x3.append(tps_map[lst[1][0]] - 0.5)
+						y3.append(tps_map[lst[-1][0]] - 0.5)
+						z3.append(0)
+						dx.append(len(lst[1]))
+						dy.append(1)
+						dz.append(lst[0])
 
 				style.use('ggplot')
 				fig = plt.figure(figsize=(9,9))
