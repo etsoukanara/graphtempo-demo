@@ -1090,7 +1090,7 @@ elif app_mode == "Graph Exploration":
 				dx = []
 				dy = []
 				dz = []
-				for k,v in skyline_stab.items():
+				for k,v in result_sky.items():
 					for lst in v:
 						x3.append(tps_map[lst[1][0]] - 0.5)
 						y3.append(tps_map[lst[-1][0]] - 0.5)
