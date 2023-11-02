@@ -1127,7 +1127,7 @@ elif app_mode == "Graph Exploration":
 				fig.savefig(buf, format="png")
 				st.image(buf)
 				#st.pyplot(fig)
-				#st.write(result_sky)
+				st.write(result_sky)
 			#except:
 			elif submitted_expl_sky and not result_sky:
 				st.title('Skyline-based Exploration Output')
