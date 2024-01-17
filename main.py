@@ -297,7 +297,8 @@ if app_mode == "Show instructions":
     	st.write('👈 To continue select "Graph Overview".')
 	
 
-elif app_mode == "Graph Overview":
+elif:
+    if app_mode == "Graph Overview":
 	with st.sidebar:
 		#Choose Dataset
 		st.title('Dataset')
@@ -427,7 +428,7 @@ elif app_mode == "Graph Overview":
 
 
 # Aggregation
-elif app_mode == "Graph Aggregation":
+    if app_mode == "Graph Aggregation":
 	with st.sidebar:
 		#Choose Dataset
 		st.title('Dataset')
@@ -660,7 +661,7 @@ elif app_mode == "Graph Aggregation":
 
 
 # Exploration
-elif app_mode == "Graph Exploration":
+    if app_mode == "Graph Exploration":
 	with st.sidebar:
 		#Choose Dataset
 		st.title('Dataset')
