@@ -297,7 +297,7 @@ if app_mode == "Show instructions":
     	st.write('👈 To continue select "Graph Overview".')
 	
 
-elif:
+else:
     if app_mode == "Graph Overview":
 	with st.sidebar:
 		#Choose Dataset
