@@ -1153,7 +1153,7 @@ elif app_mode == "Graph Exploration":
 				
 				x_vals = [tp_num_dct[i] for i in cols]
 				
-				fig = px.line(sky_df,
+				fig1 = px.line(sky_df,
 				              x="Interval",
 				              y="Count",
 				              color='Count', 
@@ -1162,9 +1162,11 @@ elif app_mode == "Graph Exploration":
 				              facet_col_wrap=1,
 				              #height=600, width=1500
 				              )
-				fig.update_layout(font=dict(size=16))
-				fig.for_each_xaxis(lambda xaxis: xaxis.update(tickvals=cols, ticktext = x_vals))
-				fig.show()
+				fig1.update_layout(font=dict(size=16))
+				fig1.for_each_xaxis(lambda xaxis: xaxis.update(tickvals=cols, ticktext = x_vals))
+				buf1 = BytesIO()
+				fig1.savefig(buf1, format="png")
+				st.image(buf1)
 				###
 			elif submitted_expl_sky and not result_sky:
 				st.title('Skyline-based Exploration Output')
