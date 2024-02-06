@@ -1174,7 +1174,7 @@ elif app_mode == "Graph Exploration":
     								#height=600, width=1500
     								)
 					fig1.update_layout(font=dict(size=16))
-					fig1.for_each_xaxis(lambda xaxis: xaxis.update(tickvals=cols, ticktext = x_vals))
+					fig1.for_each_xaxis(lambda xaxis: xaxis.update(tickvals=x_vals, ticktext = cols))
 					st.plotly_chart(fig1, use_container_width=False)
 					###
 			elif submitted_expl_sky and not result_sky:
