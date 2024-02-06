@@ -17,8 +17,7 @@ from littleballoffur.exploration_sampling import SnowBallSampler
 import matplotlib.pyplot as plt
 from matplotlib import style
 
-st.cache_data.clear()
-st.cache_resource.clear()
+
 st.set_page_config(layout='wide')
 #image = Image.open('logo/app_logo.png')
 
