@@ -1128,7 +1128,44 @@ elif app_mode == "Graph Exploration":
 				st.image(buf)
 				#st.pyplot(fig)
 				#st.write(result_sky)
-			#except:
+				###
+				sky_lst = [i for val in sky.values() for i in val]
+				
+				# skyline result to df
+				cols = list(edges_df.columns)
+				tp_num_dct = {i:cols.index(i)+1 for i in cols}
+				num_tp_dct = {cols.index(i)+1:i for i in cols}
+				
+				
+				sky_df_lst = []
+				for i in sky_lst:
+				    sky_df_lst.append([tp_num_dct[i[2][0]], tp_num_dct[i[1][0]], i[0]])
+				    sky_df_lst.append([tp_num_dct[i[2][0]], tp_num_dct[i[1][-1]], i[0]])
+				
+				sky_df_lst = sorted(sky_df_lst, key=lambda x: x[0])
+				
+				sky_df = pd.DataFrame(sky_df_lst)
+				sky_df.columns = ['Reference point', 'Interval', 'Count']
+				
+				
+				###!!!
+				# multiple subplots / one per ref point
+				
+				x_vals = [tp_num_dct[i] for i in cols]
+				
+				fig = px.line(sky_df,
+				              x="Interval",
+				              y="Count",
+				              color='Count', 
+				              markers=True, 
+				              facet_col='Reference point', color_discrete_sequence=px.colors.qualitative.Bold+px.colors.qualitative.G10,
+				              facet_col_wrap=1,
+				              #height=600, width=1500
+				              )
+				fig.update_layout(font=dict(size=16))
+				fig.for_each_xaxis(lambda xaxis: xaxis.update(tickvals=cols, ticktext = x_vals))
+				fig.show()
+				###
 			elif submitted_expl_sky and not result_sky:
 				st.title('Skyline-based Exploration Output')
 				st.write('There are no results for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).', ':neutral_face:')
