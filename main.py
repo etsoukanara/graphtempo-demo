@@ -1122,12 +1122,7 @@ elif app_mode == "Graph Exploration":
 				ax1.set_ylabel('Reference point', fontsize=10)
 				#ax1.set_zlabel('count', fontsize=8)
 				ax1.view_init(20, -110)
-				from io import BytesIO
-				buf = BytesIO()
-				fig.savefig(buf, format="png")
-				st.image(buf)
-				#st.pyplot(fig)
-				#st.write(result_sky)
+				st.plotly_chart(fig, use_container_width=False)
 				###
 				sky_lst = [i for val in result_sky.values() for i in val]
 				
