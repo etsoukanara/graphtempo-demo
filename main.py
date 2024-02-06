@@ -305,25 +305,25 @@ elif app_mode == "Graph Overview":
 		if dataset == 'DBLP':
 			stc = ['Gender']
 			varying = ['#Publications']
-			edges_df = pd.read_csv('datasets/dblp_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/dblp_dataset/nodes.csv', sep=' ', index_col=0)
-			time_variant_attr = pd.read_csv('datasets/dblp_dataset/time_variant_attr.csv', sep=' ', index_col=0)
-			time_invariant_attr = pd.read_csv('datasets/dblp_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			edges_df = pd.read_csv('datasets_undirected/dblp_dataset/edges.csv', sep=';', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets_undirected/dblp_dataset/nodes.csv', sep=';', index_col=0)
+			time_variant_attr = pd.read_csv('datasets_undirected/dblp_dataset/time_variant_attr.csv', sep=';', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets_undirected/dblp_dataset/time_invariant_attr.csv', sep=';', index_col=0)
 			time_invariant_attr.rename(columns={'0': 'gender'}, inplace=True)
 			nodes_df.index.names = ['userID']
 			#time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
 		elif dataset == 'MovieLens':
 			stc = ['Gender','Age','Occupation']
 			varying = ['Rating']
-			edges_df = pd.read_csv('datasets/movielens_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/movielens_dataset/nodes.csv', sep=' ', index_col=0)
-			time_variant_attr = pd.read_csv('datasets/movielens_dataset/time_variant_attr.csv', sep=' ', index_col=0)
-			time_invariant_attr = pd.read_csv('datasets/movielens_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			edges_df = pd.read_csv('datasets_undirected/movielens_dataset/edges.csv', sep=';', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets_undirected/movielens_dataset/nodes.csv', sep=';', index_col=0)
+			time_variant_attr = pd.read_csv('datasets_undirected/movielens_dataset/time_variant_attr.csv', sep=';', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets_undirected/movielens_dataset/time_invariant_attr.csv', sep=';', index_col=0)
 		elif dataset == 'Primary School':
 			stc = ['Gender','Class']
-			edges_df = pd.read_csv('datasets/school_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/school_dataset/nodes.csv', sep=' ', index_col=0)
-			time_invariant_attr = pd.read_csv('datasets/school_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			edges_df = pd.read_csv('datasets_undirected/school_dataset/edges.csv', sep=';', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets_undirected/school_dataset/nodes.csv', sep=';', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets_undirected/school_dataset/time_invariant_attr.csv', sep=';', index_col=0)
 			time_variant_attr = []
 			varying = []
 		period = list(edges_df.columns)
@@ -332,13 +332,13 @@ elif app_mode == "Graph Overview":
 			uploaded_files = st.file_uploader("Choose a CSV file", type='csv', accept_multiple_files=True)
 			for uploaded_file in uploaded_files:
 				if uploaded_file.name == 'edges.csv':
-					edges_df = pd.read_csv(uploaded_file, sep=' ', index_col=[0,1])
+					edges_df = pd.read_csv(uploaded_file, sep=';', index_col=[0,1])
 				if uploaded_file.name == 'nodes.csv':
-					nodes_df = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+					nodes_df = pd.read_csv(uploaded_file, sep=';', index_col=0)
 				if uploaded_file.name == 'time_variant_attr.csv':
-					time_variant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+					time_variant_attr = pd.read_csv(uploaded_file, sep=';', index_col=0)
 				if uploaded_file.name == 'time_invariant_attr.csv':
-					time_invariant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+					time_invariant_attr = pd.read_csv(uploaded_file, sep=';', index_col=0)
 		
 				period = list(edges_df.columns)
 				stc = list(time_invariant_attr.columns)
@@ -435,25 +435,25 @@ elif app_mode == "Graph Aggregation":
 		if dataset == 'DBLP':
 			stc = ['Gender']
 			varying = ['#Publications']
-			edges_df = pd.read_csv('datasets/dblp_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/dblp_dataset/nodes.csv', sep=' ', index_col=0)
-			time_variant_attr = pd.read_csv('datasets/dblp_dataset/time_variant_attr.csv', sep=' ', index_col=0)
-			time_invariant_attr = pd.read_csv('datasets/dblp_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			edges_df = pd.read_csv('datasets_undirected/dblp_dataset/edges.csv', sep=';', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets_undirected/dblp_dataset/nodes.csv', sep=';', index_col=0)
+			time_variant_attr = pd.read_csv('datasets_undirected/dblp_dataset/time_variant_attr.csv', sep=';', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets_undirected/dblp_dataset/time_invariant_attr.csv', sep=';', index_col=0)
 			time_invariant_attr.rename(columns={'0': 'gender'}, inplace=True)
 			nodes_df.index.names = ['userID']
 			#time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
 		elif dataset == 'MovieLens':
 			stc = ['Gender','Age','Occupation']
 			varying = ['Rating']
-			edges_df = pd.read_csv('datasets/movielens_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/movielens_dataset//nodes.csv', sep=' ', index_col=0)
-			time_variant_attr = pd.read_csv('datasets/movielens_dataset/time_variant_attr.csv', sep=' ', index_col=0)
-			time_invariant_attr = pd.read_csv('datasets/movielens_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			edges_df = pd.read_csv('datasets_undirected/movielens_dataset/edges.csv', sep=';', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets_undirected/movielens_dataset//nodes.csv', sep=';', index_col=0)
+			time_variant_attr = pd.read_csv('datasets_undirected/movielens_dataset/time_variant_attr.csv', sep=';', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets_undirected/movielens_dataset/time_invariant_attr.csv', sep=';', index_col=0)
 		elif dataset == 'Primary School':
 			stc = ['Gender','Class']
-			edges_df = pd.read_csv('datasets/school_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/school_dataset//nodes.csv', sep=' ', index_col=0)
-			time_invariant_attr = pd.read_csv('datasets/school_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			edges_df = pd.read_csv('datasets_undirected/school_dataset/edges.csv', sep=';', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets_undirected/school_dataset//nodes.csv', sep=';', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets_undirected/school_dataset/time_invariant_attr.csv', sep=';', index_col=0)
 			time_variant_attr = []
 			varying = []
 		period = list(edges_df.columns)
@@ -462,13 +462,13 @@ elif app_mode == "Graph Aggregation":
 			uploaded_files = st.file_uploader("Choose a CSV file", type='csv', accept_multiple_files=True)
 			for uploaded_file in uploaded_files:
 				if uploaded_file.name == 'edges.csv':
-					edges_df = pd.read_csv(uploaded_file, sep=' ', index_col=[0,1])
+					edges_df = pd.read_csv(uploaded_file, sep=';', index_col=[0,1])
 				if uploaded_file.name == 'nodes.csv':
-					nodes_df = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+					nodes_df = pd.read_csv(uploaded_file, sep=';', index_col=0)
 				if uploaded_file.name == 'time_variant_attr.csv':
-					time_variant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+					time_variant_attr = pd.read_csv(uploaded_file, sep=';', index_col=0)
 				if uploaded_file.name == 'time_invariant_attr.csv':
-					time_invariant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+					time_invariant_attr = pd.read_csv(uploaded_file, sep=';', index_col=0)
 		
 				period = list(edges_df.columns)
 				stc = list(time_invariant_attr.columns)
@@ -668,25 +668,25 @@ elif app_mode == "Graph Exploration":
 		if dataset == 'DBLP':
 			stc = ['Gender']
 			varying = ['#Publications']
-			edges_df = pd.read_csv('datasets/dblp_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/dblp_dataset/nodes.csv', sep=' ', index_col=0)
-			time_variant_attr = pd.read_csv('datasets/dblp_dataset/time_variant_attr.csv', sep=' ', index_col=0)
-			time_invariant_attr = pd.read_csv('datasets/dblp_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			edges_df = pd.read_csv('datasets_undirected/dblp_dataset/edges.csv', sep=';', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets_undirected/dblp_dataset/nodes.csv', sep=';', index_col=0)
+			time_variant_attr = pd.read_csv('datasets_undirected/dblp_dataset/time_variant_attr.csv', sep=';', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets_undirected/dblp_dataset/time_invariant_attr.csv', sep=';', index_col=0)
 			time_invariant_attr.rename(columns={'0': 'gender'}, inplace=True)
 			nodes_df.index.names = ['userID']
 			#time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
 		elif dataset == 'MovieLens':
 			stc = ['Gender','Age','Occupation']
 			varying = ['Rating']
-			edges_df = pd.read_csv('datasets/movielens_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/movielens_dataset//nodes.csv', sep=' ', index_col=0)
-			time_variant_attr = pd.read_csv('datasets/movielens_dataset/time_variant_attr.csv', sep=' ', index_col=0)
-			time_invariant_attr = pd.read_csv('datasets/movielens_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			edges_df = pd.read_csv('datasets_undirected/movielens_dataset/edges.csv', sep=';', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets_undirected/movielens_dataset//nodes.csv', sep=';', index_col=0)
+			time_variant_attr = pd.read_csv('datasets_undirected/movielens_dataset/time_variant_attr.csv', sep=';', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets_undirected/movielens_dataset/time_invariant_attr.csv', sep=';', index_col=0)
 		elif dataset == 'Primary School':
 			stc = ['Gender','Class']
-			edges_df = pd.read_csv('datasets/school_dataset/edges.csv', sep=' ', index_col=[0,1])
-			nodes_df = pd.read_csv('datasets/school_dataset//nodes.csv', sep=' ', index_col=0)
-			time_invariant_attr = pd.read_csv('datasets/school_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
+			edges_df = pd.read_csv('datasets_undirected/school_dataset/edges.csv', sep=';', index_col=[0,1])
+			nodes_df = pd.read_csv('datasets_undirected/school_dataset//nodes.csv', sep=';', index_col=0)
+			time_invariant_attr = pd.read_csv('datasets_undirected/school_dataset/time_invariant_attr.csv', sep=';', index_col=0)
 			time_variant_attr = []
 			varying = []
 		period = list(edges_df.columns)
@@ -695,13 +695,13 @@ elif app_mode == "Graph Exploration":
 			uploaded_files = st.file_uploader("Choose a CSV file", type='csv', accept_multiple_files=True)
 			for uploaded_file in uploaded_files:
 				if uploaded_file.name == 'edges.csv':
-					edges_df = pd.read_csv(uploaded_file, sep=' ', index_col=[0,1])
+					edges_df = pd.read_csv(uploaded_file, sep=';', index_col=[0,1])
 				if uploaded_file.name == 'nodes.csv':
-					nodes_df = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+					nodes_df = pd.read_csv(uploaded_file, sep=';', index_col=0)
 				if uploaded_file.name == 'time_variant_attr.csv':
-					time_variant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+					time_variant_attr = pd.read_csv(uploaded_file, sep=';', index_col=0)
 				if uploaded_file.name == 'time_invariant_attr.csv':
-					time_invariant_attr = pd.read_csv(uploaded_file, sep=' ', index_col=0)
+					time_invariant_attr = pd.read_csv(uploaded_file, sep=';', index_col=0)
 		
 				period = list(edges_df.columns)
 				stc = list(time_invariant_attr.columns)
