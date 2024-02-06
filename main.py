@@ -311,7 +311,7 @@ elif app_mode == "Graph Overview":
 			time_invariant_attr = pd.read_csv('datasets/dblp_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
 			time_invariant_attr.rename(columns={'0': 'gender'}, inplace=True)
 			nodes_df.index.names = ['userID']
-			time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
+			#time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
 		elif dataset == 'MovieLens':
 			stc = ['Gender','Age','Occupation']
 			varying = ['Rating']
@@ -441,7 +441,7 @@ elif app_mode == "Graph Aggregation":
 			time_invariant_attr = pd.read_csv('datasets/dblp_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
 			time_invariant_attr.rename(columns={'0': 'gender'}, inplace=True)
 			nodes_df.index.names = ['userID']
-			time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
+			#time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
 		elif dataset == 'MovieLens':
 			stc = ['Gender','Age','Occupation']
 			varying = ['Rating']
@@ -674,7 +674,7 @@ elif app_mode == "Graph Exploration":
 			time_invariant_attr = pd.read_csv('datasets/dblp_dataset/time_invariant_attr.csv', sep=' ', index_col=0)
 			time_invariant_attr.rename(columns={'0': 'gender'}, inplace=True)
 			nodes_df.index.names = ['userID']
-			time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
+			#time_invariant_attr.gender.replace(['female','male'], ['F','M'],inplace=True)
 		elif dataset == 'MovieLens':
 			stc = ['Gender','Age','Occupation']
 			varying = ['Rating']
