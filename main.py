@@ -1073,7 +1073,7 @@ elif app_mode == "Graph Exploration":
 					st.write('Blue bars in depict top 3 results.')
 					colors = ['blue' for i in range(len(result_sky))]
 					if len(result_sky) > 2:
-						sorted(v for v in dom.values())[::-1]
+						values_sorted = sorted(v for v in dom.values())[::-1]
 						topk = values_sorted[2] # TOP-3
 						import ast
 						dominance_stab_top = [list(ast.literal_eval(k)) for k,v in dom.items() if v >= topk]
