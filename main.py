@@ -1010,7 +1010,7 @@ elif app_mode == "Graph Exploration":
 					if var_attrs_sky:
 						var_lst = sorted([i for i in list(np.unique(time_variant_attr.values.flatten())) if i!=0])
 						start_val = st.selectbox(var_attrs_sky[0], var_lst, key = 'vs')
-						start_val = float(start_val)
+						#start_val = float(start_val)
 						start_node.append(start_val)
 					if stc_attrs_sky:
 						for i in stc_attrs_sky:
