@@ -1164,9 +1164,7 @@ elif app_mode == "Graph Exploration":
 				              )
 				fig1.update_layout(font=dict(size=16))
 				fig1.for_each_xaxis(lambda xaxis: xaxis.update(tickvals=cols, ticktext = x_vals))
-				buf1 = BytesIO()
-				fig1.savefig(buf1, format="png")
-				st.image(buf1)
+				st.plotly_chart(fig1, use_container_width=True)
 				###
 			elif submitted_expl_sky and not result_sky:
 				st.title('Skyline-based Exploration Output')
