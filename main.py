@@ -1069,7 +1069,7 @@ elif app_mode == "Graph Exploration":
 				#st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
 				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
-				with st.expander("View 3-D"):
+				with st.expander("3-D visualization"):
 					st.write('Blue bars in depict top 3 results.')
 					colors = ['blue' for i in range(len(result_sky))]
 					if len(result_sky) > 2:
@@ -1130,7 +1130,7 @@ elif app_mode == "Graph Exploration":
     				#st.pyplot(fig)
     				#st.write(result_sky)
 				
-				with st.expander("View 2-D"):
+				with st.expander("2-D visualization"):
 					###
 					sky_lst = [i for val in result_sky.values() for i in val]
 					
