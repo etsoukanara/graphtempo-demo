@@ -273,7 +273,7 @@ def Growth_Union_Static_a(k,intvl,nodes_df,edges_df,invar,stc_attrs,values):
     return(growth_a,diff_agg)
 
 
-def Growth_Union_Variant_a(k,intvl,nodes_df,edges_df,values):
+def Growth_Union_Variant_a(k,intvl,nodes_df,edges_df,varying,values):
     growth_invl_a = []
     for i in intvl[:-1]:
         growth_invl_a.append([[intvl[intvl.index(i)+1]],[i]])  
