@@ -1068,70 +1068,69 @@ elif app_mode == "Graph Exploration":
 				st.subheader('Skyline-based Exploration Output')
 				#st.subheader('Points in graph where at least _k_ interactions of a type have occured compared to appropriate past intervals.')
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
-				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')). Blue bars depict top 3 results.')
-				st.write('View a 2-D visualization')
-				two_dim = st.button('2-D')
-				#st.write(attr_values_sky)
-				colors = ['blue' for i in range(len(result_sky))]
-				if len(result_sky) > 2:
-					values_sorted = sorted(v for v in dom.values())[::-1]
-					topk = values_sorted[2] # TOP-3
-					import ast
-					dominance_stab_top = [list(ast.literal_eval(k)) for k,v in dom.items() if v >= topk]
-					skyline = {k:v for k,v in result_sky.items() if v[0] in dominance_stab_top}
-					colors = ['blue' if lst in dominance_stab_top else 'red' for k,v in result_sky.items() for lst in v]
-
-
-
-				tps = [i for i in edges_df.columns]
-				tps_int = [i for i in range(1,len(tps)+1)]
-				tps_map = dict(zip(tps, tps_int))
-
-				x3 = []
-				y3 = []
-				z3 = []
-				dx = []
-				dy = []
-				dz = []
-				for k,v in result_sky.items():
-					for lst in v:
-						x3.append(tps_map[lst[1][0]] - 0.5)
-						y3.append(tps_map[lst[-1][0]] - 0.5)
-						z3.append(0)
-						dx.append(len(lst[1]))
-						dy.append(1)
-						dz.append(lst[0])
-
-				style.use('ggplot')
-				fig = plt.figure(figsize=(9,9))
-				ax1 = fig.add_subplot(111, projection='3d')
-
-				ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
-
-				pos = [i+2 for i in dz]
-				for x,y,d,p in zip(x3,y3,dz,pos):
-					ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
-
-				tick_vars = [tps_map[str(i)] for i in range(1,len(tps)+1,2)]
-				tick_lbl_vars = [str(tps_map[str(i)]) for i in range(1,len(tps)+1,2)]
-				ax1.set_xticks(tick_vars)
-				ax1.set_yticks(tick_vars)
-				ax1.set_xticklabels(tick_lbl_vars, fontsize=10, rotation=10)
-				ax1.set_yticklabels(tick_lbl_vars, fontsize=10, va='bottom', rotation=-15)#ha='left'
-				ax1.axes.get_zaxis().set_ticks([])
-
-				ax1.set_xlabel('Interval', fontsize=10)
-				ax1.set_ylabel('Reference point', fontsize=10)
-				#ax1.set_zlabel('count', fontsize=8)
-				ax1.view_init(20, -110)
-				from io import BytesIO
-				buf = BytesIO()
-				fig.savefig(buf, format="png")
-				st.image(buf)
-				#st.pyplot(fig)
-				#st.write(result_sky)
+				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
+				with st.expander("View 3-D"):
+					st.write('Blue bars in depict top 3 results.')
+					colors = ['blue' for i in range(len(result_sky))]
+					if len(result_sky) > 2:
+						sorted(v for v in dom.values())[::-1]
+						topk = values_sorted[2] # TOP-3
+						import ast
+						dominance_stab_top = [list(ast.literal_eval(k)) for k,v in dom.items() if v >= topk]
+						skyline = {k:v for k,v in result_sky.items() if v[0] in dominance_stab_top}
+						colors = ['blue' if lst in dominance_stab_top else 'red' for k,v in result_sky.items() for lst in v]
+    
+    
+    
+					tps = [i for i in edges_df.columns]
+					tps_int = [i for i in range(1,len(tps)+1)]
+					tps_map = dict(zip(tps, tps_int))
+    
+					x3 = []
+					y3 = []
+					z3 = []
+					dx = []
+					dy = []
+					dz = []
+					for k,v in result_sky.items():
+						for lst in v:
+							x3.append(tps_map[lst[1][0]] - 0.5)
+							y3.append(tps_map[lst[-1][0]] - 0.5)
+							z3.append(0)
+							dx.append(len(lst[1]))
+							dy.append(1)
+							dz.append(lst[0])
+    
+					style.use('ggplot')
+					fig = plt.figure(figsize=(9,9))
+					ax1 = fig.add_subplot(111, projection='3d')
+    
+					ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
+    
+					pos = [i+2 for i in dz]
+					for x,y,d,p in zip(x3,y3,dz,pos):
+						ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
+    
+					tick_vars = [tps_map[str(i)] for i in range(1,len(tps)+1,2)]
+					tick_lbl_vars = [str(tps_map[str(i)]) for i in range(1,len(tps)+1,2)]
+					ax1.set_xticks(tick_vars)
+					ax1.set_yticks(tick_vars)
+					ax1.set_xticklabels(tick_lbl_vars, fontsize=10, rotation=10)
+					ax1.set_yticklabels(tick_lbl_vars, fontsize=10, va='bottom', rotation=-15)#ha='left'
+					ax1.axes.get_zaxis().set_ticks([])
+    
+					ax1.set_xlabel('Interval', fontsize=10)
+					ax1.set_ylabel('Reference point', fontsize=10)
+    				#ax1.set_zlabel('count', fontsize=8)
+					ax1.view_init(20, -110)
+					from io import BytesIO
+					buf = BytesIO()
+					fig.savefig(buf, format="png")
+					st.image(buf)
+    				#st.pyplot(fig)
+    				#st.write(result_sky)
 				
-				if two_dim:
+				with st.expander("View 2-D"):
 					###
 					sky_lst = [i for val in result_sky.values() for i in val]
 					
