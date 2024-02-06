@@ -1153,6 +1153,7 @@ elif app_mode == "Graph Exploration":
 						sky_df_lst.append([tp_num_dct[i[2][0]], tp_num_dct[i[1][-1]], i[0]])
 					
 					sky_df_lst = sorted(sky_df_lst, key=lambda x: x[0])
+					sky_df_lst = [[num_tp_dct[i[0]], i[1], i[2]] for i in sky_df_lst]
 					
 					sky_df = pd.DataFrame(sky_df_lst)
 					sky_df.columns = ['Reference point', 'Interval', 'Count']
