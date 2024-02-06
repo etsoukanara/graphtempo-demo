@@ -1035,8 +1035,12 @@ elif app_mode == "Graph Exploration":
 			stc_attrs_sky = [i.lower() for i in stc_attrs_sky]
 			if event and attr_values_sky and (stc_attrs_sky or var_attrs_sky):
 				submitted_expl_sky = st.button('Explore')
-				if event == 'Stability':
+				if event == 'Stability' and stc_attrs_sky:
 					result_sky, dom = Stab_INX_MAX(attr_values_sky,stc_attrs_sky,nodes_df,edges_df,time_invariant_attr)
+				elif event == 'Stability' and var_attrs_sky:
+					result_sky, dom = Stab_INX_MAX_var(attr_values_sky,nodes_df,edges_df,time_variant_attr)
+				elif event == 'Stability' and stc_attrs_sky and var_attrs_sky:
+					result_sky, dom = Stab_INX_MAX_mix(attr_values_sky,stc_attrs_sky,nodes_df,edges_df,time_invariant_attr,time_variant_attr)
 				if event == 'Growth':
 					result_sky, dom = Growth_UN_MAX(attr_values_sky,stc_attrs_sky,nodes_df,edges_df,time_invariant_attr)
 				if event == 'Shrinkage':
