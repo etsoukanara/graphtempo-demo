@@ -1129,7 +1129,7 @@ elif app_mode == "Graph Exploration":
 				#st.pyplot(fig)
 				#st.write(result_sky)
 				###
-				sky_lst = [i for val in sky.values() for i in val]
+				sky_lst = [i for val in result_sky.values() for i in val]
 				
 				# skyline result to df
 				cols = list(edges_df.columns)
