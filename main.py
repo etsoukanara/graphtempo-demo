@@ -101,7 +101,7 @@ st.set_page_config(layout='wide')
 
 
 
-@st.cache_data
+#@st.cache_data
 def read_data(edgesdf,time_var,time_invar,timepoint):
 	# get indexes of edges_df where first column value is not 0.
 	edges = edges_df.loc[:,timepoint][edges_df.loc[:,timepoint]!=0].index.tolist()
@@ -148,7 +148,7 @@ def read_data(edgesdf,time_var,time_invar,timepoint):
 	sampled_attrs = sampled_attrs.reset_index()
 	return(sampled_edges,sampled_nodes,sampled_attrs,sampling_flag)
 
-@st.cache_resource
+#@st.cache_resource
 def create_Graph(aggregation,color_palette,flag):
 	idx_nodes = aggregation[0].index.tolist()
 	idx_nodes = [[i] if not isinstance(i,tuple) else i for i in idx_nodes]
