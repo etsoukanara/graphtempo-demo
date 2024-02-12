@@ -1187,7 +1187,7 @@ elif app_mode == "Graph Exploration":
 					sky_df_lst = [[num_tp_dct[i[0]], i[1], i[2]] for i in sky_df_lst]
 					
 					sky_df = pd.DataFrame(sky_df_lst)
-					sky_df.columns = ['Reference point', 'Interval', 'Count']
+					sky_df.columns = ['Reference point', 'Time point', 'Count']
 					
 					
 					###!!!
@@ -1196,7 +1196,7 @@ elif app_mode == "Graph Exploration":
 					x_vals = [tp_num_dct[i] for i in cols]
 					
 					fig1 = px.line(sky_df,
-    								x="Interval",
+    								x="Time point",
 									y="Count",
     								color='Count', 
     								markers=True, 
@@ -1204,7 +1204,7 @@ elif app_mode == "Graph Exploration":
     								facet_col_wrap=1,
     								#height=600, width=1500
     								)
-					fig1.update_layout(font=dict(size=16))
+					fig1.update_layout(font=dict(size=16), showlegend=False)
 					fig1.for_each_xaxis(lambda xaxis: xaxis.update(tickvals=x_vals, ticktext = cols))
 					st.plotly_chart(fig1, use_container_width=False)
 					###
