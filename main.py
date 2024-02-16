@@ -1157,7 +1157,7 @@ elif app_mode == "Graph Exploration":
 					ax1.set_yticklabels(tick_lbl_vars, fontsize=10, va='bottom', rotation=-15)#ha='left'
 					ax1.axes.get_zaxis().set_ticks([])
     
-					ax1.set_xlabel('Interval', fontsize=10)
+					ax1.set_xlabel('Time point', fontsize=10)
 					ax1.set_ylabel('Reference point', fontsize=10)
     				#ax1.set_zlabel('count', fontsize=8)
 					ax1.view_init(20, -110)
