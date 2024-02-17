@@ -1169,7 +1169,7 @@ elif app_mode == "Graph Exploration":
     				#ax1.set_zlabel('count', fontsize=8)
 
 					if event == 'Growth' and (attr_values_sky == ('F', 'F') or attr_values_sky == ('M', 'M')):
-						ax1.view_init(30, -110)
+						ax1.view_init(35, -110)
 					else:
 						ax1.view_init(20, -110)
 					
