@@ -1147,9 +1147,9 @@ elif app_mode == "Graph Exploration":
     
 					ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
     
-					pos = [i+(0.1*i) for i in dz]
+					pos = [i for i in dz]
 					for x,y,d,p in zip(x3,y3,dz,pos):
-						ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
+						ax1.text(x, y, p, d, fontsize=8, horizontalalignment='left', verticalalignment='bottom')#, weight= 'bold')
     
 					tick_vars = [tps_map[tps[i]] for i in range(0,len(tps),2)]
 					#tick_vars = [tps_map[str(i)] for i in range(1,len(tps)+1,2)]
