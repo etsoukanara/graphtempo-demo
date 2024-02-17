@@ -1147,7 +1147,7 @@ elif app_mode == "Graph Exploration":
     
 					ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
     
-					if event == 'Growth' and (attr_values_sky == ('F', 'F') or attr_values_sky == ('M', 'M')):
+					if event == 'Growth' and (attr_values_sky == ('F', 'F') or attr_values_sky == ('M', 'M')) and dataset == 'DBLP':
 						pos = [i+(0.1*i) for i in dz]
 						for x,y,d,p in zip(x3,y3,dz,pos):
 							ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom')
@@ -1171,8 +1171,10 @@ elif app_mode == "Graph Exploration":
 					ax1.set_ylabel('Reference point', fontsize=10)
     				#ax1.set_zlabel('count', fontsize=8)
 
-					if event == 'Growth' and (attr_values_sky == ('F', 'F') or attr_values_sky == ('M', 'M')):
+					if event == 'Growth' and attr_values_sky == ('F', 'F') and dataset == 'DBLP':
 						ax1.view_init(35, -110)
+					if event == 'Growth' and attr_values_sky == ('M', 'M') and dataset == 'DBLP':
+						ax1.view_init(40, -110)
 					else:
 						ax1.view_init(20, -110)
 					
