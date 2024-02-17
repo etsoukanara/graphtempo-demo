@@ -1141,7 +1141,8 @@ elif app_mode == "Graph Exploration":
 							dz.append(lst[0])
     
 					style.use('ggplot')
-					fig = plt.figure(figsize=(9,9))
+					#fig = plt.figure(figsize=(9,9))
+					fig = plt.figure(figsize=(15,15))
 					ax1 = fig.add_subplot(111, projection='3d')
     
 					ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
@@ -1164,10 +1165,14 @@ elif app_mode == "Graph Exploration":
 					ax1.set_ylabel('Reference point', fontsize=10)
     				#ax1.set_zlabel('count', fontsize=8)
 					ax1.view_init(20, -110)
-					from io import BytesIO
-					buf = BytesIO()
-					fig.savefig(buf, format="png")
-					st.image(buf)
+					
+					st.pyplot(fig)
+					
+					# from io import BytesIO
+					# buf = BytesIO()
+					# fig.savefig(buf, format="png")
+					# st.image(buf)
+
     				#st.pyplot(fig)
     				#st.write(result_sky)
 				
