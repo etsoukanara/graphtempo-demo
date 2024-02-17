@@ -1149,7 +1149,7 @@ elif app_mode == "Graph Exploration":
     
 					pos = [i for i in dz]
 					for x,y,d,p in zip(x3,y3,dz,pos):
-						ax1.text(x, y, p, d, fontsize=8, horizontalalignment='left', verticalalignment='bottom')#, weight= 'bold')
+						ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
     
 					tick_vars = [tps_map[tps[i]] for i in range(0,len(tps),2)]
 					#tick_vars = [tps_map[str(i)] for i in range(1,len(tps)+1,2)]
@@ -1164,7 +1164,7 @@ elif app_mode == "Graph Exploration":
 					ax1.set_xlabel('Time point', fontsize=10)
 					ax1.set_ylabel('Reference point', fontsize=10)
     				#ax1.set_zlabel('count', fontsize=8)
-					ax1.view_init(20, -110)
+					ax1.view_init(20, -110, 25)
 					
 					st.pyplot(fig)
 					
