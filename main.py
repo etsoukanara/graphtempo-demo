@@ -1142,7 +1142,7 @@ elif app_mode == "Graph Exploration":
     
 					style.use('ggplot')
 					#fig = plt.figure(figsize=(9,9))
-					fig = plt.figure(figsize=(15,15))
+					fig = plt.figure(figsize=(20,20))
 					ax1 = fig.add_subplot(111, projection='3d')
     
 					ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
