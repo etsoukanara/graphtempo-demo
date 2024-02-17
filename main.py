@@ -943,6 +943,10 @@ elif app_mode == "Graph Exploration":
 								tmp = [i,lst[1][0]]
 								result_lst.append(tmp)
 
+						if event == 'Growth':
+							result_lst = [[i[1],i[0]] for i in result_lst]
+						st.write(result_lst)
+
 						# map str to num
 						str_num = {}
 						for i in range(len(period_expl)):
@@ -957,20 +961,20 @@ elif app_mode == "Graph Exploration":
 						result_lst = [[str_num[i],str_num[j]] for i,j in result_lst]
 
 						result_df = pd.DataFrame(result_lst)
-						df_cols = ['Interval','Point of Reference']
+						df_cols = ['Time point','Reference point']
 						result_df.columns = df_cols
-						result_df_grouped = [i[1].values.tolist() for i in result_df.groupby('Point of Reference')]
+						result_df_grouped = [i[1].values.tolist() for i in result_df.groupby('Reference point')]
 						#result_df_grouped = [[i[0],i[-1]] if len(i)>2 else i for i in result_df_grouped]
 						result_df_grouped = [[i[0],i[-1]] for i in result_df_grouped]
 						result_df_grouped = [i for sublst in result_df_grouped for i in sublst]
 						# # return to str
 						result_df = pd.DataFrame(result_df_grouped)
 						result_df.columns = df_cols
-						x = result_df['Interval'].tolist()
+						x = result_df['Time point'].tolist()
 						#x_str = [num_str[i].upper() for i in x]
-						y = result_df['Point of Reference'].tolist()
+						y = result_df['Reference point'].tolist()
 						#y_str = [num_str[i].upper() for i in y]
-						fig = px.line(result_df, x="Interval", y="Point of Reference", color='Point of Reference', markers=True)
+						fig = px.line(result_df, x="Time point", y="Reference point", color='Reference point', markers=True)
 						fig.update_traces(textposition="bottom right", marker_size=12, line=dict(width=2.5), line_color="#4169E1")
 						fig.update_layout(
 							xaxis = dict(
