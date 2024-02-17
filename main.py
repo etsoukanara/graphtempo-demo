@@ -1174,7 +1174,7 @@ elif app_mode == "Graph Exploration":
 					if event == 'Growth' and attr_values_sky == ('F', 'F') and dataset == 'DBLP':
 						ax1.view_init(35, -110)
 					if event == 'Growth' and attr_values_sky == ('M', 'M') and dataset == 'DBLP':
-						ax1.view_init(40, -110)
+						ax1.view_init(45, -110)
 					else:
 						ax1.view_init(20, -110)
 					
