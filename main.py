@@ -1150,7 +1150,7 @@ elif app_mode == "Graph Exploration":
 					if event == 'Growth' and (attr_values_sky == ('F', 'F') or attr_values_sky == ('M', 'M')):
 						pos = [i+(0.1*i) for i in dz]
 						for x,y,d,p in zip(x3,y3,dz,pos):
-							ax1.text(x, y, p, d, fontsize=16, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
+							ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom')
 					else:
 						pos = [i for i in dz]
 						for x,y,d,p in zip(x3,y3,dz,pos):
@@ -1162,12 +1162,9 @@ elif app_mode == "Graph Exploration":
 					#tick_lbl_vars = [str(tps_map[str(i)]) for i in range(1,len(tps)+1,2)]
 					ax1.set_xticks(tick_vars)
 					ax1.set_yticks(tick_vars)
-					if event == 'Growth' and (attr_values_sky == ('F', 'F') or attr_values_sky == ('M', 'M')):
-						ax1.set_xticklabels(tick_lbl_vars, fontsize=16, rotation=10)
-						ax1.set_yticklabels(tick_lbl_vars, fontsize=16, va='bottom', rotation=-15)#ha='left'
-					else:
-						ax1.set_xticklabels(tick_lbl_vars, fontsize=10, rotation=10)
-						ax1.set_yticklabels(tick_lbl_vars, fontsize=10, va='bottom', rotation=-15)#ha='left'
+
+					ax1.set_xticklabels(tick_lbl_vars, fontsize=10, rotation=10)
+					ax1.set_yticklabels(tick_lbl_vars, fontsize=10, va='bottom', rotation=-15)#ha='left'
 					ax1.axes.get_zaxis().set_ticks([])
     
 					ax1.set_xlabel('Time point', fontsize=10)
