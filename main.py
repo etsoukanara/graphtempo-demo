@@ -1164,7 +1164,7 @@ elif app_mode == "Graph Exploration":
 					ax1.set_xlabel('Time point', fontsize=10)
 					ax1.set_ylabel('Reference point', fontsize=10)
     				#ax1.set_zlabel('count', fontsize=8)
-					ax1.view_init(20, -110, 25)
+					ax1.view_init(20, -110)
 					
 					st.pyplot(fig)
 					
