@@ -1147,8 +1147,10 @@ elif app_mode == "Graph Exploration":
     
 					ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
     
-					#pos = [i for i in dz]
-					pos = [i+20 for i in dz]
+					if event == 'Growth' and attr_values_sky == ('F', 'F'):
+						pos = [i+20 for i in dz]
+					else:
+						pos = [i for i in dz]
 					for x,y,d,p in zip(x3,y3,dz,pos):
 						ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
     
@@ -1165,8 +1167,11 @@ elif app_mode == "Graph Exploration":
 					ax1.set_xlabel('Time point', fontsize=10)
 					ax1.set_ylabel('Reference point', fontsize=10)
     				#ax1.set_zlabel('count', fontsize=8)
-					#ax1.view_init(20, -110)
-					ax1.view_init(30, -110)
+
+					if event == 'Growth' and attr_values_sky == ('F', 'F'):
+						ax1.view_init(30, -110)
+					else:
+						ax1.view_init(20, -110)
 					
 					st.pyplot(fig)
 					
