@@ -945,7 +945,6 @@ elif app_mode == "Graph Exploration":
 
 						if event == 'Growth':
 							result_lst = [[i[1],i[0]] for i in result_lst]
-						st.write(result_lst)
 
 						# map str to num
 						str_num = {}
