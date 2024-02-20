@@ -261,7 +261,7 @@ def create_Graph(aggregation,color_palette,flag):
 
 	config = Config(width=1000, 
 	                height=500,
-	                #graphviz_layout='neato',
+	                graphviz_layout='fdp',
 	                #graphviz_layout=layout,
 	                #graphviz_config={"rankd": rankdir, "ranks": ranksep, "nodese": nodesep},
 	                directed=False,
@@ -405,7 +405,7 @@ elif app_mode == "Graph Overview":
 
 			config = Config(width=1000, 
 			                height=500,
-			                #graphviz_layout='fdp',
+			                graphviz_layout='fdp',#'dot', 'twopi', 'fdp', 'sfdp', 'circo'
 			                #graphviz_config={"rankdir": rankdir, "ranksep": ranksep, "nodesep": nodesep},
 			                directed=False,
 			                enabled=True,
@@ -1146,16 +1146,12 @@ elif app_mode == "Graph Exploration":
 					ax1 = fig.add_subplot(111, projection='3d')
     
 					ax1.bar3d(x3, y3, z3, dx, dy, dz, alpha=0.2, color = colors)
-    
-					if event == 'Growth' and (attr_values_sky == ('F', 'F') or attr_values_sky == ('M', 'M')) and dataset == 'DBLP':
-						pos = [i+(0.1*i) for i in dz]
-						for x,y,d,p in zip(x3,y3,dz,pos):
-							ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom')
-					else:
-						pos = [i for i in dz]
-						for x,y,d,p in zip(x3,y3,dz,pos):
-							ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight= 'bold')
-    
+					pos = [i for i in dz]
+					for x,y,d,p in zip(x3,y3,dz,pos):
+						if event == 'Growth' and (attr_values_sky == ('F', 'F') or attr_values_sky == ('M', 'M')) and dataset == 'DBLP':
+							ax1.text(x, y, p, d, (1, 2, 1), fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight='bold', bbox=dict(facecolor='white', alpha=0.5))
+						else:
+							ax1.text(x, y, p, d, fontsize=10, horizontalalignment='left', verticalalignment='bottom', weight='bold')
 					tick_vars = [tps_map[tps[i]] for i in range(0,len(tps),2)]
 					#tick_vars = [tps_map[str(i)] for i in range(1,len(tps)+1,2)]
 					tick_lbl_vars = [tps_map_rvs[i] for i in range(1,len(tps)+1,2)]
@@ -1170,15 +1166,17 @@ elif app_mode == "Graph Exploration":
 					ax1.set_xlabel('Time point', fontsize=10)
 					ax1.set_ylabel('Reference point', fontsize=10)
     				#ax1.set_zlabel('count', fontsize=8)
+					ax1.view_init(20, -110)
 
-					if event == 'Growth' and attr_values_sky == ('F', 'F') and dataset == 'DBLP':
-						ax1.view_init(35, -110)
-					if event == 'Growth' and attr_values_sky == ('M', 'M') and dataset == 'DBLP':
-						ax1.view_init(45, -110)
-					else:
-						ax1.view_init(20, -110)
+					# if event == 'Growth' and attr_values_sky == ('F', 'F') and dataset == 'DBLP':
+					# 	ax1.view_init(35, -120)
+					# elif event == 'Growth' and attr_values_sky == ('M', 'M') and dataset == 'DBLP':
+					# 	ax1.view_init(20, -110)
+					# else:
+					# 	ax1.view_init(20, -110)
 					
 					st.pyplot(fig)
+
 					
 					# from io import BytesIO
 					# buf = BytesIO()
