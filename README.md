@@ -4,7 +4,7 @@ Demonstration for the paper "GraphTempo: An aggregation framework for evolving g
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://etsoukanara-graphtempo-demo-main-ul7qp1.streamlitapp.com/)
 
 
-Datasets information:
+## Datasets information:
 
 _Primary School_ is a **new version** derived from the original dataset:
 - Gemmetto, V.; Barrat, A.; Cattuto, C. Mitigation of infectious disease at school: targeted class closure vs school closure. BMC 918 Infectious Diseases 2014.
