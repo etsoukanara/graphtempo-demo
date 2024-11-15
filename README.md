@@ -14,3 +14,7 @@ _DBLP_ is extracted from https://dblp.uni-trier.de/
 
 _MovieLens_ is a **new version** derived from the original dataset:
 - Harper, F.M.; Konstan, J.A. The MovieLens Datasets: History and Context. ACM Trans. Interact. Intell. Syst. 2016, 5, 19:1–19:19.
+
+### Citation
+
+If you use these datasets in your research, please cite both the **original dataset** and the **new version**.
