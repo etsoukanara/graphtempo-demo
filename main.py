@@ -1108,7 +1108,7 @@ elif app_mode == "Graph Exploration":
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
 				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
 				with st.expander("3-D visualization"):
-					st.write('Blue bars in depict top 3 results.')
+					st.write('Blue bars in depict top 3 results. The x-axis represents time points, the y-axis shows the reference points, and z-axis depicts the count of edges at each point.')
 					colors = ['blue' for i in range(len(result_sky))]
 					if len(result_sky) > 2:
 						values_sorted = sorted(v for v in dom.values())[::-1]
