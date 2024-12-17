@@ -1108,7 +1108,7 @@ elif app_mode == "Graph Exploration":
 				attr_values_sky = tuple([str(i) for i in attr_values_sky])
 				st.write('Skyline on ', event.lower(), ' _event_ for the edge type: ((', ", ".join(attr_values_sky[:int(len(attr_values_sky)/2)]), '), ', '(', ", ".join(attr_values_sky[int(len(attr_values_sky)/2):]), ')).')
 				with st.expander("3-D visualization"):
-					st.write('The x-axis represents past intervals, the y-axis shows reference points, and the z-axis depicts the count of edges at each point, as indicated at the top of each bar. Blue bars depict the top 3 results.')
+					st.write('The x-axis represents past intervals, the y-axis shows reference points, and the z-axis depicts the count of edges at each point, as indicated at the top of each bar. Blue bars represent the top 3 results.')
 					colors = ['blue' for i in range(len(result_sky))]
 					if len(result_sky) > 2:
 						values_sorted = sorted(v for v in dom.values())[::-1]
@@ -1187,7 +1187,7 @@ elif app_mode == "Graph Exploration":
     				#st.write(result_sky)
 				
 				with st.expander("2-D visualization"):
-					st.write('Separate plot for each reference point. The x-axis represents past intervals, and the y-axis shows the count of edges. Different results are shown with distinct line colors. Hover over a line to view the edge count, reference point, and the start and end times of the interval.')
+					st.write('A separate plot is shown for each reference point. The x-axis represents past intervals, and the y-axis displays the count of edges. Different results are shown with distinct line colors. Hover over a line to view the edge count, reference point, and the start and end times of the interval.')
 					###
 					sky_lst = [i for val in result_sky.values() for i in val]
 					
