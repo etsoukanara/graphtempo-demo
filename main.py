@@ -1187,7 +1187,10 @@ elif app_mode == "Graph Exploration":
     				#st.write(result_sky)
 				
 				with st.expander("2-D visualization"):
-					st.write('A separate plot is shown for each reference point. The x-axis represents past intervals, and the y-axis displays the count of edges. Different results are shown with distinct line colors. Hover over the ends of a line to view the edge count, reference point, and the start and end times of the interval.')
+					st.write('A separate plot is shown for each reference point.
+     The x-axis represents past intervals, and the y-axis displays the count of edges.
+     Different results are shown with distinct line colors.
+     Hover over the ends of a line to view the edge count, reference point, and the start and end times of the interval.')
 					###
 					sky_lst = [i for val in result_sky.values() for i in val]
 					
