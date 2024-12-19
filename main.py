@@ -1220,7 +1220,7 @@ elif app_mode == "Graph Exploration":
     								color='Count', 
     								markers=True, 
     								facet_col='Reference point', color_discrete_sequence=px.colors.qualitative.Bold+px.colors.qualitative.G10,
-    								facet_col_wrap=2,
+    								facet_col_wrap=1,
     								#height=600, width=1500
     								)
 					fig1.update_layout(font=dict(size=16), showlegend=False)
