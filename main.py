@@ -1220,10 +1220,10 @@ elif app_mode == "Graph Exploration":
     								color='Count', 
     								markers=True, 
     								facet_col='Reference point', color_discrete_sequence=px.colors.qualitative.Bold+px.colors.qualitative.G10,
-    								facet_col_wrap=1,
+    								facet_col_wrap=2,
     								#height=600, width=1500
     								)
-					fig1.update_layout(font=dict(size=12), showlegend=False)
+					fig1.update_layout(font=dict(size=16), showlegend=False)
 					fig1.for_each_xaxis(lambda xaxis: xaxis.update(tickvals=x_vals, ticktext = cols))
 					st.plotly_chart(fig1, use_container_width=False)
 					###
