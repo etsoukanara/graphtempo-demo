@@ -291,7 +291,7 @@ if app_mode == "Show instructions":
     	i=100
     	st.subheader('Aggregation and Exploration for Evolving Graphs')
     	#st.subheader('Implementation of the paper GraphTempo: An aggregation framework for evolving graphs')
-    	st.write('We provide three real-world datasets for testing the tasks of aggregation and exploration. Alternatively, the user can upload their own dataset providing it follows the appropriate format. The main functions are:')
+    	st.write('We provide three real-world datasets for testing the tasks of aggregation and exploration. Alternatively, the user can upload their own dataset, provided it follows the appropriate format. The main functions are:')
     	st.write('**Graph Overview**: provides a view of the original graph on the selected time point and attribute. When nodes in the graph are more than', i, ', we sample the graph by applying the Snowball Sampling algorithm.')
     	st.write('**Graph Aggregation**: facilitates aggregation on specific periods of time for one or more node attributes. The available temporal operators form a different temporal graph based on the semantics of each operator. The user can choose between two types of aggregation.')
     	st.write('**Graph Exploration**: discovers intervals in the graph as to important events. The user can choose the preferred event, the type of the edge by selecting the values of the attributes interested and the number of the preferred interactions.')
